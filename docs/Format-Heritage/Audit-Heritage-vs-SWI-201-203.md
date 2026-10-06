@@ -73,3 +73,7 @@ Setelah perbaikan, audit ulang: ketiga temuan isi = 0. Perbedaan file sebelum da
 ## Register
 
 Register dipisah per seri: `docs/Register-SWI-201.xlsx` dan `docs/Register-SWI-203.xlsx`, dibuat ulang dari file setelah perbaikan (`build/build_register.py`). Jumlah halaman beberapa file berubah karena bullet Pre-start lebih panjang.
+
+## Seri 204 (ditambahkan 2026-10-06)
+
+Ke-19 SWI 204 diaudit dengan skrip yang sama. 16 SWI tanpa Martabe: semua paragraf ada; yang tidak cocok utuh hanya referensi yang dipecah jadi kolom dan kalimat placeholder 204-003. 204-006: yang hilang hanya Part B moisture analyser (keputusan). 204-008 dan 010: tiga catatan [CONFIRM] yang tertinggal sudah dikembalikan (lihat `Catatan-Perubahan-204-006-008-010.md`).

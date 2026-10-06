@@ -19,6 +19,9 @@ OVERRIDES = {  # decisions taken in the review, shown instead of the raw compari
     '201-020': 'Lime slaker, hydrated lime, ReCYN caustic strength, dan Tailing Flocculant Solution Sampling (dari 201-017) - Step 4-7',
     '203-002': 'Sampling Density Gauge Slurry - tidak dipakai (SWI memakai cutter dengan pompa, Martabe sampling manual)',
     '203-003': 'Cyclone Overflow Underflow Sampling - tidak dipakai (SWI memakai cutter dengan pompa, Martabe sampling manual)',
+    '204-006': 'A&D MS-70 Moisture Analyzer Calibration - tidak dipakai (Mt. Morgan tidak punya moisture analyser)',
+    '204-008': 'Brookfield DV2TLV Viscometer dan Marsh Funnel - cara Martabe dipakai dengan alat yang sama',
+    '204-010': 'Settling Test Strength Variance; Effective Treatment Dosage; Flocculant Testwork on Tailing Using Sieve - Step 4-8',
     '203-010': 'Intertank Screen Inspection - tidak dipakai (inspeksi saat shutdown; cek karbon di launder rutin per jam di 201-004)',
 }
 W = 'http://schemas.openxmlformats.org/wordprocessingml/2006/main'

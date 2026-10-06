@@ -25,3 +25,6 @@ Diaudit terhadap SWI sebelum konversi (`build/audit_vs_source.py`): semua paragr
 
 ## Berlaku untuk semuanya
 Hazard a), b), c), CAUTION, dan emergency ditulis baru dari hazard dokumen. Mohon dicek HSE.
+
+## Persetujuan
+Penambahan pelindung telinga di 204-002, 012, 013, 014, 015, 016, dan 017 disetujui.
