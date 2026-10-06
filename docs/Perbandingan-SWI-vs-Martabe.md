@@ -1,6 +1,6 @@
-# Perbandingan SWI vs Work Instruction Martabe (batch 1 sampai 13)
+# Perbandingan SWI vs Work Instruction Martabe (batch 1 sampai 14)
 
-Enam puluh lima file work instruction (WI) tim Martabe diterima dan dibandingkan dengan SWI yang sesuai. Isi Martabe ditambahkan ke SWI dengan tanda **[M]**. Hal yang tidak jelas atau bertentangan di sumber ditandai **[CONFIRM]** di dalam dokumen dan harus diselesaikan sebelum SWI disetujui.
+Tujuh puluh file work instruction (WI) tim Martabe diterima dan dibandingkan dengan SWI yang sesuai. Isi Martabe ditambahkan ke SWI dengan tanda **[M]**. Hal yang tidak jelas atau bertentangan di sumber ditandai **[CONFIRM]** di dalam dokumen dan harus diselesaikan sebelum SWI disetujui.
 
 SOP `KBK-MIR-...` dan `CNREC-...` yang dirujuk di bagian Reference masih belum diterima (lihat `Matriks-Rujukan-Martabe.xlsx`). WI ini adalah dokumen lain.
 
@@ -255,6 +255,22 @@ Sampel setelah basket strainer, pakai ember Marcy scale supaya tangan jauh dari 
 - **Scale coupon di air elusi, air baku, air pendingin, air proses dan ReCYN:** versi yang lebih luas dari WI scale coupon batch 12. Beda penting: elusi harus berhenti saat kupon diganti (larutan panas, sianida dan kaustik); oven minimal 6 jam pada 80 derajat C (batch 12 hanya 2 jam, suhu tidak disebut); kupon dibersihkan dengan asam asetat 100 mL selama 1 hari (batch 12 memakai HCl 3 persen sampai bersih). Pembersih asam berbeda di dua WI yang sama-sama membahas kupon; konfirmasi mana yang dipakai. Belum dimasukkan karena tidak ada SWI sistem air yang cocok.
 - **SAG mill sound survey:** sound level meter B&K 2240 mode LAeq di atas grit mesh mikrofon audio mill, 5 pengukuran tiap 2 menit. Tidak ada SAG mill di set Anda.
 - Dua file lain adalah duplikat WI di batch 12 (teks identik), tidak ada isi baru.
+
+## Batch 14
+
+| WI Martabe | SWI Anda | Hasil |
+|---|---|---|
+| Detox Analyser Calibration (DOC-3-MET-PMC-WIN-00117-IE) | 207-008 Cyanide analyser calibration | Ditambah Part B; leach menjadi Part A |
+| A&D MS-70 Moisture Analyzer Calibration (DOC-3-MET-PMC-WIN-00121-IE) | 204-006 Moisture content | Ditambah Part B |
+| Weighing Verti Mill and SAG Mill Liner (DOC-3-MET-PMC-WIN-00105-IE) | Tidak ada yang cocok | Belum dimasukkan |
+| SAG Mill Inspection (DOC-3-MET-PMC-WIN-00095-IE) | Tidak ada yang cocok | Belum dimasukkan |
+| Operation and Maintenance of Sparing System | Tidak ada yang cocok | Belum dimasukkan |
+
+- **207-008 Part B (analyser detox):** metode kalibrasi Cynoprobe yang sama dengan Part A, tetapi standar 30, 250 dan 500 ppm (daftar bahan menulis 30, 125, 250), cek HMI pH 6 sampai 9 (leach 9 sampai 11), pengukuran otomatis dan manual dicatat sebelum kalibrasi. Ini menjelaskan kebingungan standar di Part A: salinan Inggris WI leach (30, 250, 500 ppm) rupanya diambil dari WI detox; standar leach yang benar menurut teks Indonesia adalah 250, 500, 700 ppm. Catatan Part A sudah diperbarui.
+- **204-006 Part B (moisture analyser):** verifikasi bobot dengan anak timbangan 50 g (49.995 sampai 50.000), kalibrasi dengan 20 g bila di luar; verifikasi persen kelembapan dengan natrium tartrat dihidrat 5 g, metode MID pada 160 derajat C. Sumber tidak memberi nilai penerimaan; natrium tartrat dihidrat berisi sekitar 15.66 persen air secara teoretis, dipakai sebagai acuan. Oven di Part A tetap metode acuan.
+- **Penimbangan liner VertiMill dan SAG mill:** Franna crane, rigger, timbangan 15 ton, rantai, pengangkatan; hazard kendaraan bergerak dan beban menggantung. Tidak ada mill liner di set Anda (IsaMill).
+- **SAG mill inspection:** masuk ke dalam mill (ruang terbatas, isolasi, uji gas, sentry): ukur grate dengan kaliper, isi mill dengan alat laser, keluar lewat feed trunnion. Pekerjaan kritis keselamatan tertinggi di antara semua WI Martabe; bila pabrik Anda punya mill besar yang perlu diinspeksi, butuh SWI dan JSEA tersendiri.
+- **Sparing system:** pemantauan pH dan TSS efluen WPP secara kontinu untuk regulator (KLHK): pembersihan oleh operasional, verifikasi pH oleh Maintenance Electrical dengan buffer 7.00 dan 10.00, kalibrasi tahunan oleh pihak resmi dan lab yang ditunjuk. Dokumennya masih berkop templat ("[Intranet Code and Numbering]"), jadi draft belum terbit. Terkait dengan 201-019 (discharge WTP) dan kewajiban izin lingkungan pabrik Anda; regulatornya akan berbeda.
 
 ## Belum dimasukkan: dua uji stirred leach
 Keduanya uji leach teraduk 20 jam pada pH 10.5 sampai 11, NaCN 1500 ppm, DO 15 sampai 25 ppm, cek pada jam ke 2, 4, 6, assay Au/Ag/Cu/S di ITS. SWI Anda hanya punya bottle roll (205-007) dan extended/diagnostic leach (205-008), yang bukan uji yang sama. Usul: satu SWI baru, misalnya 205-020 "Stirred Leach Testwork".
