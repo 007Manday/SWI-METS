@@ -1,6 +1,6 @@
-# Perbandingan SWI vs Work Instruction Martabe (batch 1 sampai 9)
+# Perbandingan SWI vs Work Instruction Martabe (batch 1 sampai 10)
 
-Empat puluh lima file work instruction (WI) tim Martabe diterima dan dibandingkan dengan SWI yang sesuai. Isi Martabe ditambahkan ke SWI dengan tanda **[M]**. Hal yang tidak jelas atau bertentangan di sumber ditandai **[CONFIRM]** di dalam dokumen dan harus diselesaikan sebelum SWI disetujui.
+Lima puluh file work instruction (WI) tim Martabe diterima dan dibandingkan dengan SWI yang sesuai. Isi Martabe ditambahkan ke SWI dengan tanda **[M]**. Hal yang tidak jelas atau bertentangan di sumber ditandai **[CONFIRM]** di dalam dokumen dan harus diselesaikan sebelum SWI disetujui.
 
 SOP `KBK-MIR-...` dan `CNREC-...` yang dirujuk di bagian Reference masih belum diterima (lihat `Matriks-Rujukan-Martabe.xlsx`). WI ini adalah dokumen lain.
 
@@ -194,6 +194,22 @@ Sampel setelah basket strainer, pakai ember Marcy scale supaya tangan jauh dari 
 - **Cek flow antiscalant:** ukur aliran dari tabung dengan stopwatch 1 menit, bandingkan dengan panel (seharusnya 5.6 L/jam), minta control room menyesuaikan kecepatan pompa; catat di formulir.
 - **Penimbangan bullion:** kalibrasi timbangan A&D 3P-30K dan Sartorius dengan anak timbang 20 kg, timbang tiap batang, segel plastik dan kabel logam, shipment maksimal 1000 kg bruto (kotak sekitar 715 g), serah terima sampel dengan tanda tangan kedua pihak (chain of custody) antara goldroom, metalurgis dan lab ITS. Bahaya yang disebut hanya merkuri. Ini pekerjaan kritis keamanan dan akuntansi; tidak ada SWI goldroom di set Anda.
 - Usul pengelompokan SWI baru: "RO plant operations" (backwash, antiscalant, eyewash di RO plant) dan "Bullion weighing and chain of custody".
+
+## Batch 10 (WI Martabe terkendali, bilingual)
+
+| WI Martabe | SWI Anda | Hasil |
+|---|---|---|
+| Effective Treatment Dosage (DOC-3-MET-PMC-WIN-00122-IE) | 204-010 Flocculant screening | Ditambah Part C |
+| Dosing Pump Grundfos DDA Calibration (DOC-3-MET-PMC-WIN-00120-IE) | 205-013 Resin elution | Ditambah Part 7 |
+| Cyanide Measurement by AgNO3 Titration (DOC-3-MET-PMC-WIN-00115-IE) | 205-001 Free cyanide titration | Hanya catatan perbandingan; SWI Anda lebih lengkap |
+| Flocculant Screw Feeder Calibration (DOC-3-MET-PMC-WIN-00123-IE) | Tidak ada yang cocok | Belum dimasukkan |
+| SAG Mill Reject Ball Survey (DOC-3-MET-PMC-WIN-00096-IE) | Tidak ada yang cocok | Belum dimasukkan |
+
+- **204-010 Part C (ETD):** 276 g slurry sebanyak 12 sampel diaduk dengan pengaduk besi, uji flokulan, ukur turbiditas air dari penyaringan sieve dengan turbidity meter dan kuvet. Ujinya sendiri ada di "WI Flocculant testwork on tailing using sieve" yang belum diterima; dasar 276 g dan 12 sampel tidak dijelaskan.
+- **205-013 Part 7 (pompa DDA):** kalibrasi pompa dosing Grundfos DDA dengan air: 100 persen, menu kalibrasi, tampung volume, samakan dengan panel (contoh 50 mL), ulangi bila beda. Ini menutup rujukan "WI Kalibrasi Pompa DDA" di WI Copper Loading dan Copper Ads. Perlu dikonfirmasi apakah pompa juga diperiksa pada laju uji (150 mL/jam dan 300 mL/jam), karena kalibrasi sumber memakai air.
+- **205-001:** titrasi Martabe (buret digital, 10 mL dengan jarum suntik, 3 tetes rhodanine, titik akhir "merah muda") lebih sederhana daripada SWI Anda (fume cupboard, penyaringan, kondisioning buret, titik akhir salmon pink 30 detik, duplikat dan standar). SWI Anda dipertahankan; hanya dua hal diambil: cek buret digital terbaca 0.00 dan cek tanggal kedaluwarsa AgNO3.
+- **Flocculant screw feeder (belum dimasukkan):** cek konsentrasi flokulan dengan mengambil bubuk dari screw feeder 10 detik tiga kali, timbang; jika beda dari target, kalibrasi lewat menu "CPS system setup" dengan mode manual, kata sandi, "Enable screw feeder calibration", masukkan laju umpan rata-rata ke Citect. Ini perubahan setpoint sistem kontrol Martabe (CPS dan Citect); pabrik Anda memakai plant flokulan Roytec, jadi layar dan sistemnya harus dipetakan. Bukan sampling; perlu SWI sendiri atau masuk ke operasi flokulan.
+- **SAG mill reject ball survey (belum dimasukkan):** ambil dua bola reject dengan cutter di SAG discharge screen, timbang, ukur diameter di sumbu x, y, z dengan kaliper. Pabrik Anda memakai IsaMill dan tidak ada SAG mill di set; hazard bola baja pecah di bunker. Digabung dengan pebble crusher bila Anda punya SAG.
 
 ## Belum dimasukkan: dua uji stirred leach
 Keduanya uji leach teraduk 20 jam pada pH 10.5 sampai 11, NaCN 1500 ppm, DO 15 sampai 25 ppm, cek pada jam ke 2, 4, 6, assay Au/Ag/Cu/S di ITS. SWI Anda hanya punya bottle roll (205-007) dan extended/diagnostic leach (205-008), yang bukan uji yang sama. Usul: satu SWI baru, misalnya 205-020 "Stirred Leach Testwork".
