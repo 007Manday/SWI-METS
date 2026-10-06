@@ -1,6 +1,6 @@
-# Perbandingan SWI vs Work Instruction Martabe (batch 1 sampai 10)
+# Perbandingan SWI vs Work Instruction Martabe (batch 1 sampai 11)
 
-Lima puluh file work instruction (WI) tim Martabe diterima dan dibandingkan dengan SWI yang sesuai. Isi Martabe ditambahkan ke SWI dengan tanda **[M]**. Hal yang tidak jelas atau bertentangan di sumber ditandai **[CONFIRM]** di dalam dokumen dan harus diselesaikan sebelum SWI disetujui.
+Lima puluh lima file work instruction (WI) tim Martabe diterima dan dibandingkan dengan SWI yang sesuai. Isi Martabe ditambahkan ke SWI dengan tanda **[M]**. Hal yang tidak jelas atau bertentangan di sumber ditandai **[CONFIRM]** di dalam dokumen dan harus diselesaikan sebelum SWI disetujui.
 
 SOP `KBK-MIR-...` dan `CNREC-...` yang dirujuk di bagian Reference masih belum diterima (lihat `Matriks-Rujukan-Martabe.xlsx`). WI ini adalah dokumen lain.
 
@@ -210,6 +210,22 @@ Sampel setelah basket strainer, pakai ember Marcy scale supaya tangan jauh dari 
 - **205-001:** titrasi Martabe (buret digital, 10 mL dengan jarum suntik, 3 tetes rhodanine, titik akhir "merah muda") lebih sederhana daripada SWI Anda (fume cupboard, penyaringan, kondisioning buret, titik akhir salmon pink 30 detik, duplikat dan standar). SWI Anda dipertahankan; hanya dua hal diambil: cek buret digital terbaca 0.00 dan cek tanggal kedaluwarsa AgNO3.
 - **Flocculant screw feeder (belum dimasukkan):** cek konsentrasi flokulan dengan mengambil bubuk dari screw feeder 10 detik tiga kali, timbang; jika beda dari target, kalibrasi lewat menu "CPS system setup" dengan mode manual, kata sandi, "Enable screw feeder calibration", masukkan laju umpan rata-rata ke Citect. Ini perubahan setpoint sistem kontrol Martabe (CPS dan Citect); pabrik Anda memakai plant flokulan Roytec, jadi layar dan sistemnya harus dipetakan. Bukan sampling; perlu SWI sendiri atau masuk ke operasi flokulan.
 - **SAG mill reject ball survey (belum dimasukkan):** ambil dua bola reject dengan cutter di SAG discharge screen, timbang, ukur diameter di sumbu x, y, z dengan kaliper. Pabrik Anda memakai IsaMill dan tidak ada SAG mill di set; hazard bola baja pecah di bunker. Digabung dengan pebble crusher bila Anda punya SAG.
+
+## Batch 11 (WI Martabe terkendali, bilingual)
+
+| WI Martabe | SWI Anda | Hasil |
+|---|---|---|
+| Leach Analyzer Calibration (DOC-3-MET-PMC-WIN-00126-IE) | 207-008 Cyanide analyser calibration | Placeholder diganti metode (draft) |
+| Intertank Screen Inspection (DOC-3-MET-PMC-WIN-00125-IE) | 203-010 Interstage and safety screen check | Ditambah Part B |
+| Measure Viscosity Using Brookfield DV2TLV (DOC-3-MET-PMC-WIN-00128-IE) | 204-008 Slurry viscosity | Ditambah Part B |
+| Operating Anemometer GM8902 (DOC-3-MET-PMC-WIN-00130-IE) | 206-002 Fume cupboard operation | Ditambah Part B |
+| Flocculant Testwork on Tailing Using Sieve (DOC-3-MET-PMC-WIN-00124-IE) | 204-010 Flocculant screening | Ditambah Part D; melengkapi Part C (ETD) |
+
+- **207-008 (kalibrasi analyser sianida):** ini sumber yang mengisi placeholder yang tertahan karena data kalibrasi vendor belum ada. Metode: tiga standar NaCN 2 L, titrasi manual 3 kali tiap standar, kalibrasi 3 titik lewat calibration wizard (WAD tidak dicentang, flush antar standar 4, antar sampel 1, sample times 4), terima jika R kuadrat di atas 0.99 dan catat M dan C, verifikasi selisih otomatis vs manual di bawah plus minus 10 ppm. Masalah di sumber: teks Indonesia menulis standar 250, 500, 700 ppm, teks Inggris 30, 250, 500 ppm, dan "205" muncul sekali; pH analyser 9 sampai 11 melampaui batas 10.5 keselamatan sianida; panduan troubleshooting adalah lampiran yang tidak ada; kalibrasi WAD tidak tercakup, jadi data vendor Cynoprobe v3 WAD tetap kurang. Banner menjadi DRAFT FOR REVIEW. Sumber merujuk probe sianida satu leach hut Martabe; konfirmasi untuk 032-CA-001 dan 051-CA-002.
+- **203-010 (intertank screen):** inspeksi bila karbon di launder di atas 0.1 g/L, atau tiap 2 bulan bila screen lebih dari 6 bulan; angkat dengan gantry crane (operator berlisensi), cuci, ukur celah dengan feeler gauge dari atas, tengah, bawah, ganti bila celah di atas 1.4 mm. **Keselamatan:** sumber menyebut bahaya (slurry bersianida, beban di atas badan, feeler gauge, HCN) tetapi tidak memberi kontrol; kontrol saya tambahkan dan ditandai untuk JSEA. Konfirmasi apakah ada intertank screen di dalam tangki di pabrik Anda dan batas 1.4 mm terhadap register aperture. Terhubung ke 201-004 Part B (karbon di launder).
+- **204-008 (viskometer Brookfield):** autozero tanpa spindle, spindle dan kecepatan yang sama untuk semua sampel, 20 rpm untuk harian, torsi 10 sampai 90 persen. Sumber hanya satu titik, sedangkan Part A mengharuskan deret shear rate, densitas dan suhu; diterapkan di atasnya.
+- **206-002 (anemometer):** ukur kecepatan udara di tengah bukaan sash yang terbuka penuh, 20 bacaan per detik, tanpa pekerjaan di dalam fume cupboard. Tidak ada nilai penerimaan; ambil dari spesifikasi fume cupboard.
+- **204-010 Part D (flokulan dengan sieve):** ini uji yang dirujuk Part C (ETD). Rumus dosis dikonfirmasi: mL = dosis (g/t) x massa slurry (g) x persen padatan / (kekuatan persen x 1.000.000); contoh 60 g/t, 400 g, 46 persen, 0.4 persen = 2.76 mL; ini juga menjelaskan angka 100 dan 0.5 di Part B (contoh dosis 100 g/t dan larutan 0.5 persen). Aseton 3 mL ditambah air 97 mL untuk 0.5 g flokulan; sampling bag flokulan dari satu tumpukan; dosis 30, 40, 60, 80, 120 g/t. **Keselamatan:** tailing bersianida tetapi sumber tidak mencantumkan kontrol HCN; saya tambahkan peringatan dan rujukan ke 201-008 dan 201-017. Titik sampel (safety carbon screen distributor) dan pompa sump PU-372 milik Martabe.
 
 ## Belum dimasukkan: dua uji stirred leach
 Keduanya uji leach teraduk 20 jam pada pH 10.5 sampai 11, NaCN 1500 ppm, DO 15 sampai 25 ppm, cek pada jam ke 2, 4, 6, assay Au/Ag/Cu/S di ITS. SWI Anda hanya punya bottle roll (205-007) dan extended/diagnostic leach (205-008), yang bukan uji yang sama. Usul: satu SWI baru, misalnya 205-020 "Stirred Leach Testwork".
