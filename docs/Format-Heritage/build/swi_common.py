@@ -28,7 +28,7 @@ def desc(setpoints, area, points, frequency, num, extra_bold=(), safety=True, pa
     return d
 
 def prestart(jsea, extra=(), alone=True, rinse=True, steady=True):
-    b = ['Confirm you are trained and signed off against this SWI, signed on to %s at a communication session, and authorised by the Shift Supervisor.' % jsea]
+    b = ['Confirm you are trained and signed off against this SWI, signed on to %s at a communication session, site inducted with current cyanide awareness and gas detection competency where the area requires it, and authorised by the Shift Supervisor.' % jsea]
     if alone:
         b.append('Confirm a second person is in the area. Cyanide-area sampling is not done alone.')
     b += list(extra)
@@ -93,7 +93,7 @@ def desc203(setpoints, area, points, frequency, num, extra_bold=(), safety=True)
     return desc(setpoints, area, points, frequency, num, extra_bold, safety, parent=PARENT_203)
 
 def prestart203(jsea, extra=(), alone=True):
-    b = ['Confirm you are trained and signed off against this SWI, signed on to %s at a communication session, and authorised by the Shift Supervisor.' % jsea]
+    b = ['Confirm you are trained and signed off against this SWI, signed on to %s at a communication session, site inducted with current cyanide awareness and gas detection competency where the area requires it, and authorised by the Shift Supervisor.' % jsea]
     if alone:
         b.append('Confirm a second person is in the area. Cyanide-area work is not done alone.')
     b += list(extra)
@@ -107,6 +107,7 @@ CLOSE203 = ['Leave the area clean. Recover spillage to the drain, not to the gro
       'Return all equipment to its storage point.',
       'Record what was done, what was found and anything not completed.',
       'Notify the control room that the task is complete.',
+      'Record every value determined on the field or bench data sheet - date, time, shift and operator. Make the register or logbook entry and any handover signature.',
       'Record any step not completed, with the reason.',
       'Report to the Shift Supervisor, and record, any control in Part 2 found not in place.']
 CLOSE203_STEP = ('Completion and Clean Up',

@@ -35,7 +35,7 @@ STEPS = [
       'Titration set - burette, pipette, conical flask, stand, wash bottle', 'Standardised AgNO3 for cyanide; standardised HCl for caustic; standardised NaOH for acid',
       'Rhodanine and phenolphthalein indicators', 'Distilled water',
       'Sample containers (sampler) kept at the lime slaker, dry plastic bags, scoop, marker, cable ties, forklift (hydrated lime bags), N95 mask, hazmat overall',
-      '100 mL sample bottle with a closing lid, fume cupboard, sulphuric acid solution', 'Small sample bottle for the flocculant solution',
+      '100 mL sample bottle with a closing lid, fume cupboard, sulphuric acid solution prepared per the Martabe instruction (not received)', 'Small sample bottle for the flocculant solution',
       'Personal protective equipment as listed in PPE Requirements, matched to the reagent being sampled']),
     ('Made-up Reagent Strength Sampling',
      ['HCN released at the cyanide sample point', 'Acid or caustic burn to skin or eyes', 'H2S released from sodium hydrosulphide', 'Dust from cyanide briquettes'],

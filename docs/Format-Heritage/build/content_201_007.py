@@ -8,7 +8,8 @@ TITLE = 'Barren Carbon Sampling at Carbon Dewatering Screen 061-SC-013'
 NEW_TITLE = TITLE
 NEW_JSEA = 'JSEA-PRO-MET-' + NUM
 HAZARDS = hazards_from(os.environ['SRC_DOCX'])
-PPE = PPE_STD[:7] + ['Heat-resistant gloves'] + PPE_STD[7:]
+PPE = list(PPE_STD)
+PPE[4] = 'Chemical resistant suit, nitrile rubber gloves and apron, heat-resistant gloves'
 DESC = desc(['Set the residual gold on barren carbon returning to the CIL circuit.',
              'Barren loading is the direct measure of elution efficiency. A rising barren assay is the first sign the elution circuit is underperforming.'],
             '061 Gold Elution', ['061-SC-013 - Carbon dewatering screen, oversize'],

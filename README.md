@@ -19,4 +19,4 @@ Status perbandingan dengan Martabe: dokumen SOP Martabe (`KBK-MIR-...`, `KBK SOP
 
 ## Format Heritage
 
-Seri 201 (001-025) sudah diubah ke format Heritage. Template dan catatan perubahan ada di `docs/Format-Heritage/`, skrip pembuat di `docs/Format-Heritage/build/`. Register seri 201 (satu file, data dibaca dari dokumen) ada di `docs/Register-SWI-201.xlsx`. Status per SWI untuk semua seri ada di kolom "Format Heritage" pada `docs/Tabel-SWI-vs-Martabe.xlsx`.
+Seri 201 (001-025) sudah diubah ke format Heritage. Template dan catatan perubahan ada di `docs/Format-Heritage/`, skrip pembuat di `docs/Format-Heritage/build/`. Seri 203 (001-012) juga sudah. Register per seri (data dibaca dari dokumen) ada di `docs/Register-SWI-201.xlsx` dan `docs/Register-SWI-203.xlsx`. Hasil audit file Heritage terhadap SWI sebelum konversi ada di `docs/Format-Heritage/Audit-Heritage-vs-SWI-201-203.md`. Status per SWI untuk semua seri ada di kolom "Format Heritage" pada `docs/Tabel-SWI-vs-Martabe.xlsx`.

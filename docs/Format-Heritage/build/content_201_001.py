@@ -44,7 +44,7 @@ STEPS = [
     ('Pre-start Check',
      ['Plant not at steady state', 'Gas monitor or fixed detection not healthy',
       'Safety shower or eyewash not proven flowing', 'Control room not aware the round is starting'],
-     ['Confirm you are trained and signed off against this SWI, signed on to %s at a communication session, and authorised by the Shift Supervisor.' % NEW_JSEA,
+     ['Confirm you are trained and signed off against this SWI, signed on to %s at a communication session, site inducted with current cyanide awareness and gas detection competency where the area requires it, and authorised by the Shift Supervisor.' % NEW_JSEA,
       'Confirm the plant is in steady-state operation - normal operation for a minimum of 15 to 20 minutes before sampling. A sample taken during a swing is not representative.',
       'Notify the control room or DCS operator that the sampling round is starting, and which points it covers.',
       'Confirm the personal gas monitor is on, in calibration date and reading clean, and that fixed detection in the area is healthy.',

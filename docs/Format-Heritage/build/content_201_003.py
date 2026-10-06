@@ -38,7 +38,7 @@ STEPS = [
     ('Pre-start Check',
      ['Working alone in a cyanide area', 'Gas monitor or fixed detection not healthy',
       'Safety shower or eyewash not proven flowing', 'Pump line flow not normal'],
-     ['Confirm you are trained and signed off against this SWI, signed on to %s at a communication session, and authorised by the Shift Supervisor.' % NEW_JSEA,
+     ['Confirm you are trained and signed off against this SWI, signed on to %s at a communication session, site inducted with current cyanide awareness and gas detection competency where the area requires it, and authorised by the Shift Supervisor.' % NEW_JSEA,
       'Confirm a second person is in the area. Cyanide-area sampling is not done alone.',
       'Verify flow on the leach tank sampling pump line is normal - no surging and no blockage.',
       'Confirm the plant is in steady-state operation - normal operation for a minimum of 15 to 20 minutes before sampling. A sample taken during a swing is not representative.',

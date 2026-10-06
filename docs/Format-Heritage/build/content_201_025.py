@@ -42,7 +42,7 @@ STEPS = [
      ['Notify the control room that the round is complete, or that it is stopped and why.',
       'Record any step not completed, with the reason.',
       'Report to the Shift Supervisor, and record, any control in Part 2 found not in place.',
-      'Make the register or logbook entry and any handover signature.'], None, None),
+      'Record every value determined on the field or bench data sheet - date, time, shift and operator. Make the register or logbook entry and any handover signature.'], None, None),
 ]
 REFS = refs(NUM, TITLE, [('SWI-022', 'Gas Detector Alarm Response (HCN and H2S), issued Rev A'),
     ('Control Philosophy 3.1.x', '20 gas detectors at 5 ppm alarm and 10 ppm high-high'),
