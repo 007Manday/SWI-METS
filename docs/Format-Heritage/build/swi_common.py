@@ -186,3 +186,13 @@ def refs206(num, title, rows):
             ('JSEA-PRO-MET-' + num, 'JSEA — ' + title),
             ('HM-MMM-WHS-REG-XXX-R00-SWI-SWMS', 'SWI / SWMS Register — tab SWI-MET')]
     return base + list(rows)
+
+# ---- 205 Met Lab - Chemical and Leach Testwork ----
+PARENT_205 = 'This instruction sits under Standard Work Procedure HM-PRC-VXX-PRO209 - Metallurgical Laboratory Chemical and Leach Testwork. Read that procedure before carrying out this task for the first time.'
+def desc205(setpoints, frequency, num, safety, extra_bold=(), points=('Met lab bench - physical testwork bench and instrument',)):
+    return desc(setpoints, '205 Met Lab - Chemical and Leach Testwork', list(points), frequency, num, extra_bold, safety=safety, parent=PARENT_205)
+def refs205(num, title, rows):
+    base = [('HM-PRC-VXX-PRO209', 'Metallurgical Laboratory Chemical and Leach Testwork'),
+            ('JSEA-PRO-MET-' + num, 'JSEA — ' + title),
+            ('HM-MMM-WHS-REG-XXX-R00-SWI-SWMS', 'SWI / SWMS Register — tab SWI-MET')]
+    return base + list(rows)
