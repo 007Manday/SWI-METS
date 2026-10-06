@@ -72,6 +72,7 @@ _E = {
  'chem': '%d. Skin or Eye Contact with Reagent Flush with copious water at the safety shower or eyewash for a minimum of 15 minutes. Remove contaminated clothing while flushing. Report to the first aider.',
  'elec': '%d. Contact with Live Electrical Equipment Do not touch the person. Switch off the supply at the nearest isolator if it is safe to do so, call CH19 “EMERGENCY” and call 000.',
  'tankdown': '%d. Person Down at a Tank Top or Launder Opening Do not enter the opening. Call CH19 “EMERGENCY” and call 000. Rescue is by the trained rescue team under the site confined space procedure only.',
+ 'cut': '%d. Cuts from Broken Glassware Apply pressure to stop the bleeding, get a trained first aider, and report to the Shift Supervisor. Call CH19 “EMERGENCY” and 000 for a serious cut.',
  'carbon': '%d. Carbon in the Undersize Report it to the Shift Supervisor and the control room immediately, before the round continues. Do not restart sampling until the Shift Supervisor clears it.',
 }
 def emerg(keys, equip='an agitator, pump, screen or sample cutter'):
@@ -116,6 +117,45 @@ CLOSE203_STEP = ('Completion and Clean Up',
 
 def refs203(num, title, rows):
     base = [('HM-PRC-VXX-PRO207', 'Plant Surveys and Circuit Performance Assessment'),
+            ('JSEA-PRO-MET-' + num, 'JSEA — ' + title),
+            ('HM-MMM-WHS-REG-XXX-R00-SWI-SWMS', 'SWI / SWMS Register — tab SWI-MET')]
+    return base + list(rows)
+
+# ---- 204 Met Lab Physical Testwork series: parent PRO208, bench pre-start / completion wording ----
+PARENT_204 = 'This instruction sits under Standard Work Procedure HM-PRC-VXX-PRO208 - Metallurgical Laboratory Physical Testwork. Read that procedure before carrying out this task for the first time.'
+def desc204(setpoints, frequency, num, extra_bold=(), points=('Met lab bench - physical testwork bench and instrument',)):
+    return desc(setpoints, '204 Met Lab - Physical Testwork', list(points), frequency, num, extra_bold, safety=False, parent=PARENT_204)
+
+def prestart_lab(jsea, extra=()):
+    b = ['Confirm you are trained and signed off against this SWI, signed on to %s at a communication session, site inducted with current cyanide awareness and gas detection competency where the area requires it, and authorised by the Shift Supervisor.' % jsea]
+    b += list(extra)
+    b += ['Confirm the fume cupboard airflow, the scrubber and its dosing are running before any acid or cyanide work at the bench.',
+          'Confirm the safety shower and eyewash are within reach and proven flowing.',
+          'Confirm the instrument or balance is within its calibration or verification interval.',
+          'Confirm the reagents to be used are in date and correctly labelled.',
+          'Inspect all glassware for chips and cracks and discard anything damaged.']
+    return b
+PRESTART_LAB_HAZ = ['Fume cupboard or scrubber not running', 'Safety shower or eyewash not proven flowing', 'Instrument out of calibration']
+
+CLOSE_LAB = ['Wash down the bench and the fume cupboard working surface.',
+      'Clean glassware and return it to the drying rack.',
+      'Dispose of residues to the correct waste stream - cyanide-bearing effluent does NOT go to the general drain.',
+      'Record the result, the method used and the instrument or balance identity.',
+      'Record every value determined on the field or bench data sheet - date, time, shift and operator. Make the register or logbook entry and any handover signature.',
+      'Record any step not completed, with the reason.',
+      'Report to the Shift Supervisor, and record, any control in Part 2 found not in place.']
+CLOSE_LAB_STEP = ('Completion and Clean Up',
+    ['Cyanide-bearing residue to the general drain', 'Glassware left dirty', 'Result not traceable to the instrument'],
+    CLOSE_LAB, None, None)
+
+PPE_LAB = ['Safety helmet and safety glasses', 'Chemical splash goggles and face shield', 'High-visibility long-sleeved shirt and long trousers',
+           'Safety boots - nitrile PVC boots', 'Chemical resistant suit, nitrile rubber gloves and apron',
+           'Personal HCN gas monitor, calibrated and in test date',
+           'Full or half gas mask with A2B2E2K2P3 cartridge, carried and available for immediate use']
+PPE_LAB_HEAR = ['Safety helmet, safety glasses and hearing protection'] + PPE_LAB[1:]
+
+def refs204(num, title, rows):
+    base = [('HM-PRC-VXX-PRO208', 'Metallurgical Laboratory Physical Testwork'),
             ('JSEA-PRO-MET-' + num, 'JSEA — ' + title),
             ('HM-MMM-WHS-REG-XXX-R00-SWI-SWMS', 'SWI / SWMS Register — tab SWI-MET')]
     return base + list(rows)

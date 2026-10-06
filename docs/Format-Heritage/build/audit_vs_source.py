@@ -29,7 +29,7 @@ SKIP = re.compile(r'^(\d+ [A-Z][A-Z ]+|Hazard|Control|Tag / point|Description|Do
                   r'Mt\. Morgan SITE WORK INSTRUCTION|Standard Work Instruction .*|Every item below must be true.*|Equipment required:|'
                   r'Part [A-D] - .*|Points and equipment covered:|Safety-critical|Operating)$')
 
-files = sorted(glob.glob('SWI/201-Plant-Sampling/*.docx') + glob.glob('SWI/203-Plant-Survey/*.docx'))
+files = sorted(glob.glob('SWI/20[1-7]-*/*.docx'))
 report = {}
 for f in files:
     code = re.search(r'MET-(\d{3}-\d{3})', f).group(1)
