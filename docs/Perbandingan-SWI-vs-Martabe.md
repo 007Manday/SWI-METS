@@ -1,6 +1,6 @@
-# Perbandingan SWI vs Work Instruction Martabe (batch 1 sampai 11)
+# Perbandingan SWI vs Work Instruction Martabe (batch 1 sampai 12)
 
-Lima puluh lima file work instruction (WI) tim Martabe diterima dan dibandingkan dengan SWI yang sesuai. Isi Martabe ditambahkan ke SWI dengan tanda **[M]**. Hal yang tidak jelas atau bertentangan di sumber ditandai **[CONFIRM]** di dalam dokumen dan harus diselesaikan sebelum SWI disetujui.
+Enam puluh file work instruction (WI) tim Martabe diterima dan dibandingkan dengan SWI yang sesuai. Isi Martabe ditambahkan ke SWI dengan tanda **[M]**. Hal yang tidak jelas atau bertentangan di sumber ditandai **[CONFIRM]** di dalam dokumen dan harus diselesaikan sebelum SWI disetujui.
 
 SOP `KBK-MIR-...` dan `CNREC-...` yang dirujuk di bagian Reference masih belum diterima (lihat `Matriks-Rujukan-Martabe.xlsx`). WI ini adalah dokumen lain.
 
@@ -226,6 +226,20 @@ Sampel setelah basket strainer, pakai ember Marcy scale supaya tangan jauh dari 
 - **204-008 (viskometer Brookfield):** autozero tanpa spindle, spindle dan kecepatan yang sama untuk semua sampel, 20 rpm untuk harian, torsi 10 sampai 90 persen. Sumber hanya satu titik, sedangkan Part A mengharuskan deret shear rate, densitas dan suhu; diterapkan di atasnya.
 - **206-002 (anemometer):** ukur kecepatan udara di tengah bukaan sash yang terbuka penuh, 20 bacaan per detik, tanpa pekerjaan di dalam fume cupboard. Tidak ada nilai penerimaan; ambil dari spesifikasi fume cupboard.
 - **204-010 Part D (flokulan dengan sieve):** ini uji yang dirujuk Part C (ETD). Rumus dosis dikonfirmasi: mL = dosis (g/t) x massa slurry (g) x persen padatan / (kekuatan persen x 1.000.000); contoh 60 g/t, 400 g, 46 persen, 0.4 persen = 2.76 mL; ini juga menjelaskan angka 100 dan 0.5 di Part B (contoh dosis 100 g/t dan larutan 0.5 persen). Aseton 3 mL ditambah air 97 mL untuk 0.5 g flokulan; sampling bag flokulan dari satu tumpukan; dosis 30, 40, 60, 80, 120 g/t. **Keselamatan:** tailing bersianida tetapi sumber tidak mencantumkan kontrol HCN; saya tambahkan peringatan dan rujukan ke 201-008 dan 201-017. Titik sampel (safety carbon screen distributor) dan pompa sump PU-372 milik Martabe.
+
+## Batch 12 (WI Martabe, sebagian terkendali)
+
+| WI Martabe | SWI Anda | Hasil |
+|---|---|---|
+| ReCYN Plant Caustic Strength Measurement (DOC-3-MET-PMC-WIN-00088-IE) | 201-020 dan 205-002 | 201-020 Part D (sampling) dan 205-002 Part B (hitungan H2SO4) |
+| Replace Filter Sock (DOC-3-MET-PMC-WIN-00091) | 207-007 Cyanide analyser daily operation | Ditambah Part B (draft); 207-007 tetap NOT FOR USE |
+| Scale Coupon Measurement (DOC-3-MET-PMC-WIN-00099-IE) | Tidak ada yang cocok | Belum dimasukkan |
+| RO Antiscalant Dosage Check (DOC-3-MET-PMC-WIN-00092-IE) | Tidak ada yang cocok | Belum dimasukkan |
+| Replace Cartridge RO II 55 M3 (DOC-3-MET-PMC-WIN-00090-IE) | Tidak ada yang cocok | Belum dimasukkan |
+
+- **201-020 Part D dan 205-002 Part B (kaustik ReCYN):** sampel dari pipa drain pompa kaustik ReCYN ke botol 100 mL; titrasi dengan H2SO4 (rasio 2:1): [NaOH] = 2 x [H2SO4] x V(H2SO4) / V(sampel). SWI 205-002 memakai HCl (rasio 1:1). Persiapan asam sulfat dan teknik titrasi ada di dua WI Martabe lain yang belum diterima. Konfirmasi bahwa pipa drain pompa membawa larutan encer (SWI Anda: jangan sampling dari tangki pekat).
+- **207-007 Part B (filter sock):** matikan analyser dan pompa HCl, lepas pipa filter probe, cuci dan potong filter sock lama, bilas jalur filtrat dengan memindah jalur pompa ke ember air, pasang filter sock baru dengan silikon dan klem 60 mm, nyalakan analyser. Sumber meminta alarm HCN di bawah 10 ppm; SWI Anda 5 ppm (alarm) dan 10 ppm (high-high), jadi saya terapkan 5 ppm. Langkah mengacu pada foto yang tidak ikut, dan perangkat HCl pada analyser Martabe belum tentu ada di Cynoprobe Anda.
+- **Belum dimasukkan:** pengukuran scale coupon (lepas kupon dari pipa dengan dua kunci inggris, rendam HCl 3 persen, timbang 4 desimal), cek dosis antiscalant RO (gelas ukur 100 mL, 1 menit, sesuaikan kecepatan), ganti cartridge RO II 55 m3 (LOTO, valve 112 dan 113). Semua untuk RO plant dan sistem air Martabe; bergabung dengan kelompok "RO plant operations" (backwash, antiscalant, eyewash di RO plant). Catatan: WI cek dosis antiscalant ini berbeda dari WI "Check Flow Antiscalant" (aliran dengan stopwatch dan nilai 5.6 L/jam); keduanya metode berbeda untuk hal yang sama.
 
 ## Belum dimasukkan: dua uji stirred leach
 Keduanya uji leach teraduk 20 jam pada pH 10.5 sampai 11, NaCN 1500 ppm, DO 15 sampai 25 ppm, cek pada jam ke 2, 4, 6, assay Au/Ag/Cu/S di ITS. SWI Anda hanya punya bottle roll (205-007) dan extended/diagnostic leach (205-008), yang bukan uji yang sama. Usul: satu SWI baru, misalnya 205-020 "Stirred Leach Testwork".
