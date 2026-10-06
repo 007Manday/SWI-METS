@@ -1,6 +1,6 @@
-# Perbandingan SWI vs Work Instruction Martabe (batch 1 sampai 14)
+# Perbandingan SWI vs Work Instruction Martabe (batch 1 sampai 15)
 
-Tujuh puluh file work instruction (WI) tim Martabe diterima dan dibandingkan dengan SWI yang sesuai. Isi Martabe ditambahkan ke SWI dengan tanda **[M]**. Hal yang tidak jelas atau bertentangan di sumber ditandai **[CONFIRM]** di dalam dokumen dan harus diselesaikan sebelum SWI disetujui.
+Tujuh puluh empat file work instruction (WI) tim Martabe diterima dan dibandingkan dengan SWI yang sesuai. Isi Martabe ditambahkan ke SWI dengan tanda **[M]**. Hal yang tidak jelas atau bertentangan di sumber ditandai **[CONFIRM]** di dalam dokumen dan harus diselesaikan sebelum SWI disetujui.
 
 SOP `KBK-MIR-...` dan `CNREC-...` yang dirujuk di bagian Reference masih belum diterima (lihat `Matriks-Rujukan-Martabe.xlsx`). WI ini adalah dokumen lain.
 
@@ -271,6 +271,20 @@ Sampel setelah basket strainer, pakai ember Marcy scale supaya tangan jauh dari 
 - **Penimbangan liner VertiMill dan SAG mill:** Franna crane, rigger, timbangan 15 ton, rantai, pengangkatan; hazard kendaraan bergerak dan beban menggantung. Tidak ada mill liner di set Anda (IsaMill).
 - **SAG mill inspection:** masuk ke dalam mill (ruang terbatas, isolasi, uji gas, sentry): ukur grate dengan kaliper, isi mill dengan alat laser, keluar lewat feed trunnion. Pekerjaan kritis keselamatan tertinggi di antara semua WI Martabe; bila pabrik Anda punya mill besar yang perlu diinspeksi, butuh SWI dan JSEA tersendiri.
 - **Sparing system:** pemantauan pH dan TSS efluen WPP secara kontinu untuk regulator (KLHK): pembersihan oleh operasional, verifikasi pH oleh Maintenance Electrical dengan buffer 7.00 dan 10.00, kalibrasi tahunan oleh pihak resmi dan lab yang ditunjuk. Dokumennya masih berkop templat ("[Intranet Code and Numbering]"), jadi draft belum terbit. Terkait dengan 201-019 (discharge WTP) dan kewajiban izin lingkungan pabrik Anda; regulatornya akan berbeda.
+
+## Batch 15 (WI Martabe terkendali, bilingual; melengkapi WI yang dirujuk batch sebelumnya)
+
+| WI Martabe | SWI Anda | Hasil |
+|---|---|---|
+| Sodium Hydroxide Titration (DOC-3-MET-PMC-WIN-00102-IE) | 205-002 Part B | Titrasi ditambahkan; melengkapi hitungan kaustik ReCYN |
+| pH Meter TPS Cube Calibration (DOC-3-MET-PMC-WIN-00087-IE) | 206-004 Part C | Kalibrasi ditambahkan; melengkapi operasi TPS cube |
+| C2 Meter Calibration (DOC-3-MET-PMC-WIN-00111-IE) | 201-005 Part C | Ditambah; melengkapi cek C2 di Part B |
+| Marsh Funnel Viscosity (DOC-3-MET-PMC-WIN-00127-IE) | 204-008 Part C | Ditambah |
+
+- **205-002 (titrasi NaOH):** 5 mL sampel, 3 sampai 5 tetes phenolphthalein, titrasi dengan H2SO4 dari buret. **Masalah:** sumber menyuruh berhenti saat larutan "soft pink", padahal phenolphthalein merah muda dalam kaustik dan tidak berwarna pada titik akhir; saya tetapkan titik akhir Part A (pink hilang selama 30 detik). Titran "H2SO4 5 persen" bukan molaritas, harus distandarisasi sebelum rumus dipakai. Persiapan asam sulfat masih belum diterima.
+- **206-004 (kalibrasi TPS cube):** pH 7 disetel dengan knob calibrate, pH 10 dan pH 4 dengan sekrup slope; sumber mengkalibrasi dua titik menurut pemakaian (pH 7 dan 10 untuk basa, pH 4 dan 7 untuk asam), sedangkan Part A mengkalibrasi tiga titik pH 4, 7, 10; saya pertahankan Part A kecuali dua titik disetujui. Referensi "tidak diterima" di 201-013 Part D sudah diperbarui.
+- **201-005 (kalibrasi C2):** angkat probe (dua orang), menu F4 settings, kalibrasi di air (ember 20 L), di slurry (keranjang ayakan karbon) dan dengan karbon (ukur RD dan CC manual dulu), terima atau tolak konstanta baru; nilai wajar atenuasi air 9 sampai 15 dB, Mrd 20 sampai 50, Mcc 0.3 sampai 0.8; angka plus minus di sumber tidak jelas. Sumber memakai batas alarm HCN di bawah 10 ppm, saya terapkan 5 ppm SWI Anda. Rujukan "WI Kalibrasi C2 Meter tidak diterima" di Part B sudah diperbarui.
+- **204-008 (Marsh funnel):** tutup lubang dengan jari, tuang slurry, buka lubang sambil mulai stopwatch, hentikan saat tidak ada aliran. Sumber merekam waktu sampai sampel habis, tanpa volume isi, tanpa ayakan partikel kasar dan tanpa hasil detik per quart, jadi saya tandai untuk didefinisikan.
 
 ## Belum dimasukkan: dua uji stirred leach
 Keduanya uji leach teraduk 20 jam pada pH 10.5 sampai 11, NaCN 1500 ppm, DO 15 sampai 25 ppm, cek pada jam ke 2, 4, 6, assay Au/Ag/Cu/S di ITS. SWI Anda hanya punya bottle roll (205-007) dan extended/diagnostic leach (205-008), yang bukan uji yang sama. Usul: satu SWI baru, misalnya 205-020 "Stirred Leach Testwork".
