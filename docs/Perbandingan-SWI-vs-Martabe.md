@@ -1,6 +1,6 @@
-# Perbandingan SWI vs Work Instruction Martabe (batch 1 sampai 7)
+# Perbandingan SWI vs Work Instruction Martabe (batch 1 sampai 8)
 
-Tiga puluh lima file work instruction (WI) tim Martabe diterima dan dibandingkan dengan SWI yang sesuai. Isi Martabe ditambahkan ke SWI dengan tanda **[M]**. Hal yang tidak jelas atau bertentangan di sumber ditandai **[CONFIRM]** di dalam dokumen dan harus diselesaikan sebelum SWI disetujui.
+Empat puluh file work instruction (WI) tim Martabe diterima dan dibandingkan dengan SWI yang sesuai. Isi Martabe ditambahkan ke SWI dengan tanda **[M]**. Hal yang tidak jelas atau bertentangan di sumber ditandai **[CONFIRM]** di dalam dokumen dan harus diselesaikan sebelum SWI disetujui.
 
 SOP `KBK-MIR-...` dan `CNREC-...` yang dirujuk di bagian Reference masih belum diterima (lihat `Matriks-Rujukan-Martabe.xlsx`). WI ini adalah dokumen lain.
 
@@ -161,6 +161,22 @@ Sampel setelah basket strainer, pakai ember Marcy scale supaya tangan jauh dari 
 - **Pebble crusher:** sampling produk pebble crusher dengan sample cutter di tiga posisi, ayak 0.6 sampai 90 mm, catat jam sampling (untuk daya pebble, kecepatan feeder, TPH CV-003). Tidak ada pebble crusher atau SWI-nya di set Anda; konfirmasi apakah pabrik Anda punya pebble crusher.
 - **Refill eyewash:** pengisian ulang eyewash portabel (Honeywell) di Metlab dan RO plant: bilas, kuras, isi air potable, catat di logsheet inspeksi. Hampir semua SWI Anda mensyaratkan eyewash "proven flowing" di bagian Before You Start, tetapi tidak ada SWI untuk inspeksi dan pengisian ulangnya. Saran: SWI baru "Eyewash and safety shower inspection and refill".
 - **Manual handling:** Martabe menetapkan batas angka: ember 20 L tidak lebih dari setengah, atau sekitar 10 kg; kontak tiga titik di tangga; sarung tangan 3M atau nitril; pelatihan pengangkatan manual. Sekitar 35 SWI Anda menulis "site manual handling limit" tanpa angka. Usul: tetapkan angka batas site (misalnya 10 kg bila sesuai) lalu saya perbarui baris itu di semua SWI. Catatan: WI CV004 memberi batas berbeda (66 persen), jadi angka Martabe sendiri tidak konsisten.
+
+## Batch 8 (WI Martabe terkendali, bilingual)
+
+| WI Martabe | SWI Anda | Hasil |
+|---|---|---|
+| Sampling Density Gauge Slurry (DOC-3-MET-PRS-WIN-00060) | 203-002 Flow, density and tonnage verification | Ditambah Part B |
+| Sampling Feed, Product and Final Product of Lime Slaker (DOC-3-MET-PRS-WIN-00059-IE) | 201-020 Reagent solution strength sampling | Ditambah Part B |
+| Sampling Hydrated Lime (DOC-3-MET-PRS-WIN-00061-IE) | 201-020 | Ditambah Part C |
+| Acid Wash Survey (DOC-3-MET-PMC-WIN-00107-IE) | 201-013 Gold elution and EW sampling | Ditambah Part D |
+| Sampling Carbon Launder CIL (DOC-3-MET-PRS-WIN-00058-IE) | 201-004 CIL sampling round | Ditambah Part B |
+
+- **203-002 (density gauge):** empat titik Martabe (leach feed box, siklon ball mill, siklon VertiMill, tailing discharge transfer di filtration plant), komposit potongan (15 potongan di 3 ember untuk leach feed, 9 potongan lainnya), pengecekan skala pulp density dengan air (harus 1.00), saring bertekanan, oven, timbang kering, hitung persen padatan; jika pembacaan PCS berbeda lebih dari 3 persen dari hasil lab, kalibrasi oleh Maintenance Electrical (sama dengan prinsip SWI Anda: jangan disetel sendiri). Masalah: untuk sampling leach feed sumber meminta control room mematikan pompa barren 176 dan 177 serta sump pump 178, 179, 038, 108 (sianida), 163 (kaustik) dan 053 tanpa menyebut alasan. Daftar itu milik Martabe, jadi harus dipetakan dan perlu izin Shift Supervisor; rumus persen padatan tidak ada di teks sumber. Sampling di filtration plant dilakukan dua orang.
+- **201-020 Part B (lime slaker):** sampel dengan sampler dari hopper umpan, hopper produk dan tangki kapur, ke kantong plastik kering. Sumber tidak menyebut uji untuk sampel dan tidak menyebut seberapa panas lumpur kapur.
+- **201-020 Part C (hydrated lime):** sampel dari bag dengan scoop minimal 10 cm di bawah permukaan, ID di kantong, ikat tangan dan kabel tis, dua lapis; kirim ke lab. Masalah: hasil dicatat sebagai "persen padatan" untuk kapur kering, tidak biasa; uji yang dimaksud perlu dikonfirmasi (ketersediaan kapur ada di 205-005). Forklift hanya oleh operator berwenang.
+- **201-013 Part D (acid wash):** sampel saat tahap pembilasan dari tiap bucket strainer dan tangki campur HCl, kuras 30 detik, ukur pH. Sumber tidak memberi pH akhir pembilasan atau kekuatan asam; asam dan sianida: pastikan tidak ada sianida di jalur selama pembilasan.
+- **201-004 Part B (karbon di launder):** 5 sendokan sampler di strainer karbon, cuci, bungkus kertas saring, oven di rak paling bawah, timbang. Sumber tidak menyebut tujuan, volume sampler, suhu dan lama oven, jadi perhitungan konsentrasi tidak bisa ditulis.
 
 ## Belum dimasukkan: dua uji stirred leach
 Keduanya uji leach teraduk 20 jam pada pH 10.5 sampai 11, NaCN 1500 ppm, DO 15 sampai 25 ppm, cek pada jam ke 2, 4, 6, assay Au/Ag/Cu/S di ITS. SWI Anda hanya punya bottle roll (205-007) dan extended/diagnostic leach (205-008), yang bukan uji yang sama. Usul: satu SWI baru, misalnya 205-020 "Stirred Leach Testwork".
