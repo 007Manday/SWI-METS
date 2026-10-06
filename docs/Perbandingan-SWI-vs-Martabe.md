@@ -1,6 +1,6 @@
-# Perbandingan SWI vs Work Instruction Martabe (batch 1 sampai 4)
+# Perbandingan SWI vs Work Instruction Martabe (batch 1 sampai 5)
 
-Dua puluh file work instruction (WI) tim Martabe diterima dan dibandingkan dengan SWI yang sesuai. Isi Martabe ditambahkan ke SWI dengan tanda **[M]**. Hal yang tidak jelas atau bertentangan di sumber ditandai **[CONFIRM]** di dalam dokumen dan harus diselesaikan sebelum SWI disetujui.
+Dua puluh lima file work instruction (WI) tim Martabe diterima dan dibandingkan dengan SWI yang sesuai. Isi Martabe ditambahkan ke SWI dengan tanda **[M]**. Hal yang tidak jelas atau bertentangan di sumber ditandai **[CONFIRM]** di dalam dokumen dan harus diselesaikan sebelum SWI disetujui.
 
 SOP `KBK-MIR-...` dan `CNREC-...` yang dirujuk di bagian Reference masih belum diterima (lihat `Matriks-Rujukan-Martabe.xlsx`). WI ini adalah dokumen lain.
 
@@ -99,6 +99,20 @@ Usul: satu SWI baru "WPP water treatment bench tests" untuk keduanya. 201-019 (s
 
 ## Catatan umum: nama titik dan lab Martabe
 Beberapa WI Martabe memakai titik atau lab milik Martabe: SP09, MHR-1, TSF Toe, WPP, CIL 7, dan ITS sebagai lab eksternal. Di SWI saya mempertahankan nama itu dengan tanda [CONFIRM] di tempat yang penting. Sebelum SWI disetujui, ganti dengan titik sampel dan lab Mt. Morgan yang setara.
+
+## Batch 5 (versi lain dari WI yang sudah ada)
+
+| WI Martabe | SWI Anda | Hasil |
+|---|---|---|
+| Copper Adsorption / elution | 205-012 dan 205-013 | Varian ditambahkan; bagian elusi identik dengan 205-013 Part 2 |
+| MHR1 Quick Lime dan Caustic V1 dan V1.2 | 205-006 | Ditambah Part D |
+| Preconditioning Resin with Cu Variance V2 (07/02/2025) | 205-013 Part 1 | Ditambah dosis 70, 100, 125 kg/t |
+| Se Mn Removal Jan 25 (27/01/2025) | Tidak ada yang cocok | Versi lebih awal dari WI Feb/Mar |
+
+- **Copper Adsorption:** versi lebih awal dari uji adsorpsi pada slurry CIL: 4 L slurry dan 150 mL resin dari kolom (versi 2 g/L memakai 10 g resin dalam 5 L). Ini menjelaskan tabel catatan yang masih 4000 mL di versi 2 g/L; catatan itu saya perbarui. Bagian elusinya sama persis dengan WI NaCl vendor (NaCN 29.4 g, NaCl 36.2 g, 1 BV/jam, 3 jam), jadi 205-013 Part 2 kini punya dua sumber. H2SO4 5 persen (25.21 mL) dan NaOH 0.5 M (18 g dalam 900 mL) disiapkan tanpa tujuan yang disebut; H2SO4 1 persen tercantum di bahan tanpa langkah.
+- **MHR-1 quicklime dan caustic (205-006 Part D):** 2 L per tangki, 0.5 g quicklime per penambahan, catat pH dan TDS, sampai pH 7, lalu ulangi dengan caustic. Data hasil di V1.2 menunjukkan pH awal 2.13 dan TDS sekitar 4800 (satuan tidak disebut), sehingga MHR-1 tampaknya air asam. Satu penambahan 0.5 g melompatkan pH dari 6.2 ke 9.58, jadi saya sarankan dosis lebih kecil mendekati pH 7. Masalah di sumber: V1.2 tidak punya langkah ulang dengan caustic padahal tabelnya ada (Test Kaustik 1 sampai 3); sampel 1 dan 2 saja vs 1, 2, 3; tabel memakai satuan mL/L dan mL/m3 untuk reagen padat; salah ketik di data ("50020", "05632").
+- **Preconditioning V2 (205-013 Part 1):** 300 mL resin, Cu 70, 100, 125 kg/t = 136.4, 194.9, 243.6 mL CuSO4.7H2O dan 20.42, 29.17, 36.46 g NaCN per 4 L; resin dibagi dua: 150 mL ke copper loading test (Part 6) dan 150 mL ke lab untuk AAS di site dan ITS Jakarta. **Tidak konsisten dengan WI NaCl vendor:** 70 kg/t di V2 memakai CuSO4 dua kali lipat (136.4 vs 68.2 mL, resin juga dua kali lipat) tetapi NaCN 2.8 kali lipat (20.42 vs 7.29 g), jadi rasio NaCN dan CuSO4 berbeda (0.15 vs 0.107 g/mL). Perlu konfirmasi.
+- **Se Mn Removal Jan 25:** versi awal dari WI Feb/Mar: 7 L dengan 35 g FeCl3 (5 g/L) vs 8 L dengan 16 g (2 g/L); Mn 4 L dengan 30 g MnO2 (7.5 g/L) vs 5 L dengan 150 g (30 g/L); versi Jan menjalankan pH 8 lalu pH 9 dalam satu uji (sampel menit 150), versi Feb/Mar memisahkannya. Risiko HCN pada pH 4.5 sampai 5 tetap berlaku. Tetap belum dimasukkan.
 
 ## Belum dimasukkan: dua uji stirred leach
 Keduanya uji leach teraduk 20 jam pada pH 10.5 sampai 11, NaCN 1500 ppm, DO 15 sampai 25 ppm, cek pada jam ke 2, 4, 6, assay Au/Ag/Cu/S di ITS. SWI Anda hanya punya bottle roll (205-007) dan extended/diagnostic leach (205-008), yang bukan uji yang sama. Usul: satu SWI baru, misalnya 205-020 "Stirred Leach Testwork".
