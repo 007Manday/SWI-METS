@@ -43,10 +43,12 @@ for f in sorted(glob.glob(os.path.join(FOLDERS[SERIES], '*.docx'))):
     area = [p[6:].rstrip('.') for p in paras if p.startswith('Area: ')][0]
     freq = [p[11:] for p in paras if p.startswith('Frequency: ')][0]
     draft = [p for p in paras if p.startswith('Draft for review')]
-    note = [p for p in paras if p.startswith('Note:') or p.startswith('Safety-critical finding')]
+    note = [p for p in paras if p.startswith('Note:') or p.startswith('Safety-critical finding') or p.startswith('ISSUED BUT NOT FOR USE')]
     openi = [p for p in paras if p.startswith('Open items')]
     status = 'Final (isi tanpa tambahan)'
-    if draft:
+    if [p for p in paras if p.startswith('ISSUED BUT NOT FOR USE')]:
+        status = 'NOT FOR USE (menunggu input)'
+    elif draft:
         status = 'DRAFT FOR REVIEW (tambahan Martabe)'
     elif [p for p in paras if p.startswith('Note:')]:
         status = 'Catatan: titik sampling perlu diupdate'
@@ -84,7 +86,9 @@ for row in ws.iter_rows(min_row=2):
     for c in row:
         c.alignment = Alignment(wrap_text=True, vertical='top', horizontal='center' if c.column in (1, 7, 8, 9, 10, 12, 13, 16) else 'left')
         c.border = Border(top=thin, bottom=thin, left=thin, right=thin)
-    if row[14].value.startswith('DRAFT'):
+    if row[14].value.startswith('NOT FOR USE'):
+        row[14].fill = PatternFill('solid', fgColor='F8CBAD')
+    elif row[14].value.startswith('DRAFT'):
         row[14].fill = PatternFill('solid', fgColor='FFF2CC')
     elif row[14].value.startswith('Catatan'):
         row[14].fill = PatternFill('solid', fgColor='FCE4D6')
