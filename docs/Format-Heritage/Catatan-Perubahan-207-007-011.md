@@ -35,3 +35,5 @@ Tetap NOT FOR USE. Banner menyebut blocker spesifik (bukan "see the folder READM
 Diaudit terhadap SWI sebelum konversi. Setelah revisi, semua langkah Part B lama ada di Step 6 207-008. Yang tidak cocok utuh hanya tanda [M]/[CONFIRM] yang menjadi Draft dan Open items, referensi yang dipecah, dan kalimat "see the folder README" (diganti blocker spesifik).
 
 Hazard a), b), c), CAUTION, dan emergency ditulis baru dari hazard dokumen. Mohon dicek HSE.
+
+Catatan: selain cyanide analyser, plant juga punya density meter serta DO probe dan pH meter online (lihat konfirmasi 201-022). Tidak ada analyser lain.

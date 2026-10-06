@@ -20,3 +20,6 @@ Aturan umum sama dengan catatan sebelumnya. Teks hazard disalin otomatis dari fi
 
 ## Berlaku untuk semuanya
 Hazard a), b), c), CAUTION, dan emergency ditulis baru dari hazard dokumen. Mohon dicek HSE.
+
+## Konfirmasi 201-022 (2026-10-06)
+Instrumen online di Mt. Morgan: cyanide analyser (032-CA-001 CIL, 051-CA-002 ReCYN tailing; membaca pH, free cyanide, WAD cyanide), density meter, serta DO probe dan pH meter. Lingkup 201-022 (pH, cyanide, dissolved oxygen), daftar titiknya, dan Step 5 (cek probe pH tailing dengan buffer) sudah sesuai dan **tidak diubah**.
