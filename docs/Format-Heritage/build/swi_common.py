@@ -159,3 +159,14 @@ def refs204(num, title, rows):
             ('JSEA-PRO-MET-' + num, 'JSEA — ' + title),
             ('HM-MMM-WHS-REG-XXX-R00-SWI-SWMS', 'SWI / SWMS Register — tab SWI-MET')]
     return base + list(rows)
+
+# ---- 207 Automatic Sampling and Online Analyser series: parent PRO211, same pre-start / completion as 203 ----
+PARENT_207 = 'This instruction sits under Standard Work Procedure HM-PRC-VXX-PRO211 - Automatic Sampling and Online Analyser Operation. Read that procedure before carrying out this task for the first time.'
+def desc207(setpoints, points, frequency, num, extra_bold=()):
+    return desc(setpoints, '207 Automatic Sampling and Online Analysers', points, frequency, num, extra_bold, safety=True, parent=PARENT_207)
+
+def refs207(num, title, rows):
+    base = [('HM-PRC-VXX-PRO211', 'Automatic Sampling and Online Analyser Operation'),
+            ('JSEA-PRO-MET-' + num, 'JSEA — ' + title),
+            ('HM-MMM-WHS-REG-XXX-R00-SWI-SWMS', 'SWI / SWMS Register — tab SWI-MET')]
+    return base + list(rows)
