@@ -15,6 +15,7 @@ Step: Pre-start Check, Timed Cut Sampling, Flow and Tonnage Calculation, Out of 
 ## 203-003 Screen and Cyclone Performance (7 halaman)
 Step: Pre-start Check, Simultaneous Sampling, Filtering Drying and Weighing, Sizing, Partition Curve and Report, Completion.
 - **Perubahan APD yang perlu dicek:** daftar APD lama hanya hard hat, kacamata, hi-vis, sepatu, sarung tangan, dan pelindung telinga, padahal hazard-nya memuat HCN dan percikan larutan sianida. Saya samakan dengan APD standar dan menggabungkan pelindung telinga ke baris helmet (ganda di mill dan kompresor).
+  - **Disetujui pengguna (2026-10-06):** APD standar ditambah pelindung telinga untuk 203-003 disetujui.
 - Hazard "hearing damage" jadi bullet Pre-start dan CAUTION Step 2.
 - Baris hazard "inhalation of solid reagent" ada di SWI lama dan saya biarkan apa adanya (mungkin salah tempat; belum ada reagen padat di langkahnya).
 

@@ -24,6 +24,8 @@ OVERRIDES = {  # decisions taken in the review, shown instead of the raw compari
     '204-010': 'Settling Test Strength Variance; Effective Treatment Dosage; Flocculant Testwork on Tailing Using Sieve - Step 4-8',
     '207-007': 'Replace Filter Sock - Step 3, DRAFT (operasi harian tetap NOT FOR USE)',
     '207-008': 'Leach Analyzer Calibration untuk 032-CA-001; Detox Analyser Calibration dipetakan ke analyser ReCYN tailing 051-CA-002',
+    '206-002': 'Operating Anemometer GM8902 - Step 4-5, ukur di tinggi sash kerja, rata-rata dan bacaan terendah dari 20 bacaan',
+    '206-004': 'TPS cube pH meter (kalibrasi tetap 3 titik) - Step 3-4; Operate DO Meter Portable untuk HI9142 tanpa menu Oxyguard - Step 5-6',
     '203-010': 'Intertank Screen Inspection - tidak dipakai (inspeksi saat shutdown; cek karbon di launder rutin per jam di 201-004)',
 }
 W = 'http://schemas.openxmlformats.org/wordprocessingml/2006/main'
