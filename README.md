@@ -13,6 +13,6 @@
 
 Seri 202 belum ada di repositori.
 
-`docs/Matriks-Rujukan-Martabe.xlsx` berisi indeks SWI, pemetaan SOP Martabe ke SWI yang merujuknya, dan daftar SWI tanpa rujukan Martabe.
+`docs/Tabel-Perbandingan-SWI-Martabe.xlsx` membandingkan tiap SWI dengan WI Martabe yang cocok dan memuat daftar WI Martabe tanpa SWI. `docs/Matriks-Rujukan-Martabe.xlsx` berisi indeks SWI, pemetaan SOP Martabe ke SWI yang merujuknya, dan daftar SWI tanpa rujukan Martabe.
 
 Status perbandingan dengan Martabe: dokumen SOP Martabe (`KBK-MIR-...`, `KBK SOP-PROC-CNREC-...`) belum ada di repositori, jadi isi SWI belum dilengkapi.
