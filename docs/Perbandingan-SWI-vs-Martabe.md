@@ -1,8 +1,8 @@
-# Perbandingan SWI vs Work Instruction Martabe (batch 1)
+# Perbandingan SWI vs Work Instruction Martabe (batch 1 dan 2)
 
-Lima work instruction (WI) tim Martabe diterima dan dibandingkan dengan SWI yang sesuai. Isi Martabe ditambahkan ke SWI dengan tanda **[M]**. Hal yang tidak jelas atau bertentangan di sumber ditandai **[CONFIRM]** di dalam dokumen dan harus diselesaikan sebelum SWI disetujui.
+Sepuluh work instruction (WI) tim Martabe diterima dan dibandingkan dengan SWI yang sesuai. Isi Martabe ditambahkan ke SWI dengan tanda **[M]**. Hal yang tidak jelas atau bertentangan di sumber ditandai **[CONFIRM]** di dalam dokumen dan harus diselesaikan sebelum SWI disetujui.
 
-SOP `KBK-MIR-...` dan `CNREC-...` yang dirujuk di bagian Reference masih belum diterima (lihat `Matriks-Rujukan-Martabe.xlsx`). Lima WI ini adalah dokumen lain.
+SOP `KBK-MIR-...` dan `CNREC-...` yang dirujuk di bagian Reference masih belum diterima (lihat `Matriks-Rujukan-Martabe.xlsx`). Sepuluh WI ini adalah dokumen lain.
 
 ## Pemetaan
 
@@ -13,6 +13,11 @@ SOP `KBK-MIR-...` dan `CNREC-...` yang dirujuk di bagian Reference masih belum d
 | Resin activity test (03/03/2025) | 205-012 Resin Adsorption Capacity and Kinetics | Placeholder diganti metode |
 | Testing NaCl from New Vendor (11/01/2025) | 205-013 Resin Elution Efficiency | Placeholder diganti metode |
 | Stirred Leach with %Solid Variation (26/04/2025) | Tidak ada yang cocok | Belum dimasukkan (lihat bawah) |
+| MHR1 - Konsumsi Quick lime, metal removed (file `MHR_1_Liming_vs_Limingair`) | 205-006 Lime | Ditambah Part C |
+| TSF Toe to WPP Test | 205-015 Cyanide Destruction Detox | Ditambah Part B (draft); Part A tetap NOT FOR USE |
+| Scaling eluant garam dengan sulfamic acid (07/10/2025) | 205-013 Resin Elution | Ditambah Part 4 |
+| IPHK mixing NaCN-NaCl | 205-013 Resin Elution | Ditambah Part 5 |
+| Leaching with NaNO2 preoxidation V2 (14/02/2025) | Tidak ada yang cocok | Belum dimasukkan (lihat bawah) |
 
 ## Per dokumen
 
@@ -39,11 +44,27 @@ SOP `KBK-MIR-...` dan `CNREC-...` yang dirujuk di bagian Reference masih belum d
 - Masalah di sumber: titrasi AgNO3 0.1 M di satu tempat, 0.01 M di tempat lain; 29.4 g NaCN dalam 600 mL setara sekitar 49 g/L (sekitar 1 M), mohon konfirmasi kekuatan ini disengaja; pH eluant 10 sampai 11 di bawah aturan pH 10.5; kekuatan CuSO4 tidak disebut; jenis CuSO4 berbeda (7H2O di tabel, "plant" di daftar bahan); empat resin tidak dijelaskan mewakili vendor mana.
 - **Keselamatan:** baris hazard baru untuk penimbangan NaCN padat dan eluant pekat, ditandai untuk JSEA.
 
-## Belum dimasukkan: Stirred Leach with %Solid Variation
-Uji leach teraduk 20 jam pada 50, 52, 55 dan 57 persen padatan (pH 10.5 sampai 11 dengan kapur, NaCN 1500 ppm, DO 15 sampai 25 ppm, cek pada jam ke 2, 4, 6, assay Au/Ag/Cu/S di ITS). SWI Anda hanya punya bottle roll (205-007) dan extended/diagnostic leach (205-008), yang bukan uji yang sama. Pilihan: SWI baru (misalnya 205-020) atau lampiran di 205-007. Menunggu keputusan Anda.
+## Batch 2
+
+### 205-006 - Part C (MHR-1 quicklime)
+Quicklime ke pH 4, 7, 9, 10 pada sampel MHR-1 (1 L), tiga run: A kapur saja, B dengan plant air, C dengan plant air dan 0.5 mL H2O2. Assay base metal di pH 7 dan 10. Masalah di sumber: MHR-1 tidak didefinisikan; aliran udara, kekuatan H2O2 dan volume yang dimaksud 0.5 mL tidak disebut. Sumber hanya mencantumkan kacamata dan sarung tangan karet, di bawah standar SWI. STOP condition bebas-sianida dari Part B berlaku juga di sini (pH 4 dan di bawah 10.5).
+
+### 205-015 - Part B (TSF Toe)
+Hydrated lime ke pH 7 pada air TSF Toe, dengan assay lengkap di ITS (logam, TSS, TDS, free/WAD/total CN, nitrit, ammonia bebas, COD, fluorida, BOD). Part A (uji rute destruksi sianida) tetap NOT FOR USE karena keputusan OR-07 belum ada. Masalah di sumber: tujuan menyebut peroxide atau hydrated lime, tetapi langkah hanya lime (dosis peroxide dan tangki mana yang menerima apa tidak disebut); pH awal sampel tidak diketahui padahal sampel mengandung sianida; 2 L sampel untuk tangki 1 dan 2 ambigu. Saya perlakukan sampel sebagai bersianida.
+
+### 205-013 - Part 4 (sulfamic acid) dan Part 5 (IPHK)
+- Part 4: 7.5 g asam sulfamat dalam 300 mL air proses atau air mentah, 5 g scale, tanpa pengadukan, foto sampai 240 menit, STOP dan evakuasi jika HCN di atas 5 ppm (sama dengan alarm 5 ppm di SWI). Risiko: asam pada scale bersianida melepas HCN. Baris hazard baru.
+- Part 5: campuran 85 mL NaCl plant + 15 mL NaCN plant untuk melihat endapan; selalu NaCN ke NaCl. Masalah di sumber: kekuatan larutan plant tidak disebut (target 1.0 M NaCN dan 0.9 M NaCl berarti sekitar 6.7 M NaCN dan 1.06 M NaCl); pH tidak disebut; arti "IPHK" tidak disebut.
+- Catatan: 205-013 sekarang berisi lima bagian yang semuanya tentang sistem eluant garam. Pertimbangkan memindahkan Part 3 sampai 5 ke SWI terpisah, misalnya "Eluant salt compatibility and scaling tests".
+
+## Belum dimasukkan: dua uji stirred leach
+Keduanya uji leach teraduk 20 jam pada pH 10.5 sampai 11, NaCN 1500 ppm, DO 15 sampai 25 ppm, cek pada jam ke 2, 4, 6, assay Au/Ag/Cu/S di ITS. SWI Anda hanya punya bottle roll (205-007) dan extended/diagnostic leach (205-008), yang bukan uji yang sama. Usul: satu SWI baru, misalnya 205-020 "Stirred Leach Testwork".
+- Variasi persen padatan: 50, 52, 55, 57 persen, dengan sampel leach feed.
+- Preoksidasi NaNO2: 3 botol feed (A 19 jam, B 5 jam, C tanpa) pada 40 persen padatan, dan tailing (D tanpa, E 19 jam). Masalah di sumber: "3 x 1061 kg solid dengan 1592 kg air" untuk 40 persen padatan cocok bila satuannya gram, bukan kg; dosis NaNO2 124.2 satuannya tidak jelas (tabel menulis g) dan terlihat sangat besar untuk 1061 g padatan; penomoran langkah loncat dari 12 ke 20.
+Menunggu keputusan Anda.
 
 ## Yang perlu Anda lakukan
 1. Selesaikan semua [CONFIRM] di keempat SWI.
-2. Perbarui JSEA untuk baris hazard bertanda [JSEA to confirm] (205-006, 201-022, 205-012, 205-013).
+2. Perbarui JSEA untuk baris hazard bertanda [JSEA to confirm] (205-006, 201-022, 205-012, 205-013, 205-015).
 3. Reviewer dan approver mengisi tanda tangan. Revisi tetap Rev A; ubah sesuai aturan kontrol dokumen Anda.
 4. Kirim SOP `KBK-MIR-...` dan `CNREC-...` yang masih kurang.
