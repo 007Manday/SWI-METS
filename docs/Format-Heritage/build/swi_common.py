@@ -15,10 +15,10 @@ PARENT = 'This instruction sits under Standard Work Procedure HM-PRC-VXX-PRO205 
 def register(num):
     return 'Register line: SWI-PRO-MET-%s in HM-MMM-WHS-REG-XXX-R00-SWI-SWMS, tab SWI-MET. The matching hazard analysis is JSEA-PRO-MET-%s.' % (num, num)
 
-def desc(setpoints, area, points, frequency, num, extra_bold=(), safety=True):
+def desc(setpoints, area, points, frequency, num, extra_bold=(), safety=True, parent=None):
     d = [('n', s) for s in setpoints] + [('b', None), ('n', 'Area: %s.' % area), ('n', 'Points and equipment covered:')]
     d += [('n', p) for p in points]
-    d += [('b', None), ('n', 'Frequency: %s' % frequency), ('b', None), ('n', PARENT), ('b', None), ('n', register(num)), ('b', None)]
+    d += [('b', None), ('n', 'Frequency: %s' % frequency), ('b', None), ('n', parent or PARENT), ('b', None), ('n', register(num)), ('b', None)]
     for t in extra_bold:
         d += [('B', t), ('b', None)]
     if safety:
@@ -71,6 +71,7 @@ _E = {
  'h2s': '%d. Hydrogen Sulphide Smell or Alarm If H2S is smelled or the multi-gas monitor alarms, stop work, leave the area upwind and call CH19 “EMERGENCY”. Do not re-enter until the Shift Supervisor clears the area.',
  'chem': '%d. Skin or Eye Contact with Reagent Flush with copious water at the safety shower or eyewash for a minimum of 15 minutes. Remove contaminated clothing while flushing. Report to the first aider.',
  'elec': '%d. Contact with Live Electrical Equipment Do not touch the person. Switch off the supply at the nearest isolator if it is safe to do so, call CH19 “EMERGENCY” and call 000.',
+ 'tankdown': '%d. Person Down at a Tank Top or Launder Opening Do not enter the opening. Call CH19 “EMERGENCY” and call 000. Rescue is by the trained rescue team under the site confined space procedure only.',
  'carbon': '%d. Carbon in the Undersize Report it to the Shift Supervisor and the control room immediately, before the round continues. Do not restart sampling until the Shift Supervisor clears it.',
 }
 def emerg(keys, equip='an agitator, pump, screen or sample cutter'):
@@ -81,6 +82,39 @@ def emerg(keys, equip='an agitator, pump, screen or sample cutter'):
 
 def refs(num, title, rows):
     base = [('HM-PRC-VXX-PRO205', 'Plant Sampling and Metallurgical Data Collection'),
+            ('JSEA-PRO-MET-' + num, 'JSEA — ' + title),
+            ('HM-MMM-WHS-REG-XXX-R00-SWI-SWMS', 'SWI / SWMS Register — tab SWI-MET')]
+    return base + list(rows)
+
+
+# ---- 203 Plant Survey series: parent procedure PRO207 and its own pre-start / completion wording ----
+PARENT_203 = 'This instruction sits under Standard Work Procedure HM-PRC-VXX-PRO207 - Plant Surveys and Circuit Performance Assessment. Read that procedure before carrying out this task for the first time.'
+def desc203(setpoints, area, points, frequency, num, extra_bold=(), safety=True):
+    return desc(setpoints, area, points, frequency, num, extra_bold, safety, parent=PARENT_203)
+
+def prestart203(jsea, extra=(), alone=True):
+    b = ['Confirm you are trained and signed off against this SWI, signed on to %s at a communication session, and authorised by the Shift Supervisor.' % jsea]
+    if alone:
+        b.append('Confirm a second person is in the area. Cyanide-area work is not done alone.')
+    b += list(extra)
+    b += ['Notify the control room that the task is starting, and where you will be.',
+          'Confirm the personal gas monitor is on, in calibration date and reading clean.',
+          'Confirm the safety shower and eyewash nearest the work are within reach and proven flowing.',
+          'Confirm the area is fit - no restricted access, no gas alarm, no spill response in progress.']
+    return b
+
+CLOSE203 = ['Leave the area clean. Recover spillage to the drain, not to the ground.',
+      'Return all equipment to its storage point.',
+      'Record what was done, what was found and anything not completed.',
+      'Notify the control room that the task is complete.',
+      'Record any step not completed, with the reason.',
+      'Report to the Shift Supervisor, and record, any control in Part 2 found not in place.']
+CLOSE203_STEP = ('Completion and Clean Up',
+    ['Spillage left on the ground', 'Equipment not returned', 'Control room not told the task is complete'],
+    CLOSE203, None, None)
+
+def refs203(num, title, rows):
+    base = [('HM-PRC-VXX-PRO207', 'Plant Surveys and Circuit Performance Assessment'),
             ('JSEA-PRO-MET-' + num, 'JSEA — ' + title),
             ('HM-MMM-WHS-REG-XXX-R00-SWI-SWMS', 'SWI / SWMS Register — tab SWI-MET')]
     return base + list(rows)
