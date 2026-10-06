@@ -15,22 +15,26 @@ PARENT = 'This instruction sits under Standard Work Procedure HM-PRC-VXX-PRO205 
 def register(num):
     return 'Register line: SWI-PRO-MET-%s in HM-MMM-WHS-REG-XXX-R00-SWI-SWMS, tab SWI-MET. The matching hazard analysis is JSEA-PRO-MET-%s.' % (num, num)
 
-def desc(setpoints, area, points, frequency, num, extra_bold=()):
+def desc(setpoints, area, points, frequency, num, extra_bold=(), safety=True):
     d = [('n', s) for s in setpoints] + [('b', None), ('n', 'Area: %s.' % area), ('n', 'Points and equipment covered:')]
     d += [('n', p) for p in points]
     d += [('b', None), ('n', 'Frequency: %s' % frequency), ('b', None), ('n', PARENT), ('b', None), ('n', register(num)), ('b', None)]
     for t in extra_bold:
         d += [('B', t), ('b', None)]
-    d.append(('B', SAFETY_CRITICAL))
+    if safety:
+        d.append(('B', SAFETY_CRITICAL))
+    elif d and d[-1] == ('b', None):
+        d.pop()
     return d
 
-def prestart(jsea, extra=(), alone=True, rinse=True):
+def prestart(jsea, extra=(), alone=True, rinse=True, steady=True):
     b = ['Confirm you are trained and signed off against this SWI, signed on to %s at a communication session, and authorised by the Shift Supervisor.' % jsea]
     if alone:
         b.append('Confirm a second person is in the area. Cyanide-area sampling is not done alone.')
     b += list(extra)
-    b += ['Confirm the plant is in steady-state operation - normal operation for a minimum of 15 to 20 minutes before sampling. A sample taken during a swing is not representative.',
-          'Notify the control room or DCS operator that the sampling round is starting, and which points it covers.',
+    if steady:
+        b.append('Confirm the plant is in steady-state operation - normal operation for a minimum of 15 to 20 minutes before sampling. A sample taken during a swing is not representative.')
+    b += ['Notify the control room or DCS operator that the sampling round is starting, and which points it covers.',
           'Confirm the personal gas monitor is on, in calibration date and reading clean, and that fixed detection in the area is healthy.',
           'Confirm the safety shower and eyewash nearest the point are within reach and proven flowing.',
           'Label every container BEFORE sampling - point, date, time and shift.']
@@ -66,6 +70,7 @@ _E = {
  'acid': '%d. HCl Gas or Acid Contact Leave the area upwind. Flush skin or eyes with copious water at the safety shower or eyewash for a minimum of 15 minutes. If breathing is affected call CH19 “EMERGENCY” and call 000.',
  'h2s': '%d. Hydrogen Sulphide Smell or Alarm If H2S is smelled or the multi-gas monitor alarms, stop work, leave the area upwind and call CH19 “EMERGENCY”. Do not re-enter until the Shift Supervisor clears the area.',
  'chem': '%d. Skin or Eye Contact with Reagent Flush with copious water at the safety shower or eyewash for a minimum of 15 minutes. Remove contaminated clothing while flushing. Report to the first aider.',
+ 'elec': '%d. Contact with Live Electrical Equipment Do not touch the person. Switch off the supply at the nearest isolator if it is safe to do so, call CH19 “EMERGENCY” and call 000.',
  'carbon': '%d. Carbon in the Undersize Report it to the Shift Supervisor and the control room immediately, before the round continues. Do not restart sampling until the Shift Supervisor clears it.',
 }
 def emerg(keys, equip='an agitator, pump, screen or sample cutter'):
