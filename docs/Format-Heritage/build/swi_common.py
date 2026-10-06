@@ -170,3 +170,19 @@ def refs207(num, title, rows):
             ('JSEA-PRO-MET-' + num, 'JSEA — ' + title),
             ('HM-MMM-WHS-REG-XXX-R00-SWI-SWMS', 'SWI / SWMS Register — tab SWI-MET')]
     return base + list(rows)
+
+# ---- 206 Met Lab Facility, Safety and Quality series: parent PRO210, same bench pre-start / completion as 204 ----
+PARENT_206 = 'This instruction sits under Standard Work Procedure HM-PRC-VXX-PRO210 - Metallurgical Laboratory Facility, Safety and Quality. Read that procedure before carrying out this task for the first time.'
+def desc206(setpoints, frequency, num, safety, extra_bold=(), points=('Met lab bench - physical testwork bench and instrument',)):
+    return desc(setpoints, '206 Met Lab - Facility, Safety and Quality', list(points), frequency, num, extra_bold, safety=safety, parent=PARENT_206)
+PPE_LAB_ACID = ['Safety helmet and safety glasses', 'Chemical splash goggles and face shield', 'High-visibility long-sleeved shirt and long trousers',
+                'Safety boots - nitrile PVC boots', 'Chemical resistant suit, acid-resistant and nitrile rubber gloves, and apron',
+                'Personal HCN gas monitor, calibrated and in test date',
+                'Full or half gas mask with A2B2E2K2P3 cartridge, carried and available for immediate use']
+PPE_LAB_ACID_HEAR = ['Safety helmet, safety glasses and hearing protection'] + PPE_LAB_ACID[1:]
+LAB_ALONE = 'Confirm a second person is in the laboratory for any cyanide work. Cyanide work is not done alone.'
+def refs206(num, title, rows):
+    base = [('HM-PRC-VXX-PRO210', 'Metallurgical Laboratory Facility, Safety and Quality'),
+            ('JSEA-PRO-MET-' + num, 'JSEA — ' + title),
+            ('HM-MMM-WHS-REG-XXX-R00-SWI-SWMS', 'SWI / SWMS Register — tab SWI-MET')]
+    return base + list(rows)
