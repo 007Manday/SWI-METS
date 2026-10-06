@@ -1,0 +1,19 @@
+import os, sys
+sys.path.insert(0, os.path.dirname(os.path.abspath(CONTENT)))
+from src_helpers import hazards_from
+from swi_common import *
+NUM = '207-007'
+TITLE = 'Cyanide Analyser Daily Operation and Check - 032-CA-001 and 051-CA-002'
+NEW_TITLE = TITLE
+NEW_JSEA = 'JSEA-PRO-MET-' + NUM
+HAZARDS = hazards_from(os.environ['SRC_DOCX'])
+PPE = PPE_STD
+DESC = desc207(['Operate the online cyanide analysers and carry out the daily check.', 'Cyanide is dosed and recovered on what these analysers say. They also sit in a cyanide-bearing enclosure with their own sample pumps and leak detection.', 'Replace the analyser filter sock (Step 3).'], ['032-CA-001 - CIL circuit online cyanide analyser (pH, free cyanide and WAD cyanide)', '051-CA-002 - Cyanide adsorption (ReCYN) online cyanide analyser (pH, free cyanide and WAD cyanide)'], 'To be set once the vendor manual is held.', NUM, extra_bold=['ISSUED BUT NOT FOR USE. The daily operation and check (Step 2) cannot be used until the named input arrives: the Molycop Cynoprobe v3 WAD vendor manual is not held and OS-040_B Cyanide Analyser is still open. The method, frequency and equipment are written when that input arrives.', 'Draft for review: the filter sock replacement (Step 3) is taken from the Martabe work instruction Replace Filter Sock (DOC-3-MET-PMC-WIN-00091, undated), written for the Martabe analyser filter probe. JSEA-PRO-MET-207-007 must be updated for the added hazard before it is used.', 'Open items: (1) confirm the equivalent filter probe and parts on 032-CA-001 and 051-CA-002, and whether these analysers have HCl dosing; (2) the source works from photographs that are not carried here - confirm the filtrate line arrangement for the flush; (3) the source gives no frequency for the filter sock change.'])
+STEPS = [
+    ('Pre-start Check', PRESTART_HAZ + ['HCN alarm active at the analyser'], prestart203(NEW_JSEA, ['Take 5 and prepare 1 new filter sock, a 60 mm hose clamp, screwdriver, water hose, cutting knife and silicone. Check they are in good condition.']), None, ['To be confirmed once the Molycop Cynoprobe manual is held', 'New filter sock, 60 mm hose clamp, screwdriver, water hose, cutting knife, silicone'] + [PPE_EQ]),
+    ('Status - Not for Use', ['Task attempted without the vendor documentation'], ['This task cannot be completed until the Molycop Cynoprobe v3 WAD vendor manual is held.', 'The document is issued so the register line is not empty, and is marked NOT FOR USE.'], None, None),
+    ('Filter Sock Replacement', ['HCl fume at the filter probe', 'HCN in the cyanide-bearing enclosure', 'Slurry contact', 'Cuts from the cutting knife'], ['Switch the cyanide analyser off. Switch off the HCl pump and make sure no HCl fume is left.', 'Disconnect the pipe from the filter probe, then lift the bracket off the U bolt.', 'Wash the filter sock with water.', 'Remove the bolts holding the clamp and filter sock. Cut the old filter sock off with the cutting knife.', 'Flush the filtrate line: move the pump inlet line to the pump discharge line, and the pump discharge line into a bucket of water (arrangement to be confirmed on this analyser).', 'Fit the new filter sock. Join it to the filter cage, seal it with silicone and tighten it with the clamp.', 'Lift and dip the filter probe bracket back in place.', 'Switch the cyanide analyser on and check it works normally again.'], 'CAUTION: Work only with no HCN alarm active (alarm 5 ppm, high-high 10 ppm) and the personal HCN monitor on. The enclosure is cyanide-bearing - not done alone. Cut away from the body.', None),
+    CLOSE203_STEP,
+]
+REFS = refs207(NUM, TITLE, [('Note', 'No source held. Molycop Cynoprobe v3 WAD vendor manual not held; OS-040_B Cyanide Analyser still open.'), ('DOC-3-MET-PMC-WIN-00091', 'Martabe WI Replace Filter Sock (Indonesian, undated) - source of Step 3')])
+EMERG = emerg(['hcn', 'cn', 'skin', 'acid', 'elec', 'slip'], 'a pump or the analyser sample system')

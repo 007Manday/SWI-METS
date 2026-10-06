@@ -22,6 +22,8 @@ OVERRIDES = {  # decisions taken in the review, shown instead of the raw compari
     '204-006': 'A&D MS-70 Moisture Analyzer Calibration - tidak dipakai (Mt. Morgan tidak punya moisture analyser)',
     '204-008': 'Brookfield DV2TLV Viscometer dan Marsh Funnel - cara Martabe dipakai dengan alat yang sama',
     '204-010': 'Settling Test Strength Variance; Effective Treatment Dosage; Flocculant Testwork on Tailing Using Sieve - Step 4-8',
+    '207-007': 'Replace Filter Sock - Step 3, DRAFT (operasi harian tetap NOT FOR USE)',
+    '207-008': 'Leach Analyzer Calibration - dipakai untuk kedua analyser; Detox Analyser Calibration tidak dipakai (tidak ada sirkuit detox)',
     '203-010': 'Intertank Screen Inspection - tidak dipakai (inspeksi saat shutdown; cek karbon di launder rutin per jam di 201-004)',
 }
 W = 'http://schemas.openxmlformats.org/wordprocessingml/2006/main'
