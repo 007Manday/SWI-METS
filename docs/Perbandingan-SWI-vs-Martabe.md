@@ -1,6 +1,6 @@
-# Perbandingan SWI vs Work Instruction Martabe (batch 1 sampai 8)
+# Perbandingan SWI vs Work Instruction Martabe (batch 1 sampai 9)
 
-Empat puluh file work instruction (WI) tim Martabe diterima dan dibandingkan dengan SWI yang sesuai. Isi Martabe ditambahkan ke SWI dengan tanda **[M]**. Hal yang tidak jelas atau bertentangan di sumber ditandai **[CONFIRM]** di dalam dokumen dan harus diselesaikan sebelum SWI disetujui.
+Empat puluh lima file work instruction (WI) tim Martabe diterima dan dibandingkan dengan SWI yang sesuai. Isi Martabe ditambahkan ke SWI dengan tanda **[M]**. Hal yang tidak jelas atau bertentangan di sumber ditandai **[CONFIRM]** di dalam dokumen dan harus diselesaikan sebelum SWI disetujui.
 
 SOP `KBK-MIR-...` dan `CNREC-...` yang dirujuk di bagian Reference masih belum diterima (lihat `Matriks-Rujukan-Martabe.xlsx`). WI ini adalah dokumen lain.
 
@@ -177,6 +177,23 @@ Sampel setelah basket strainer, pakai ember Marcy scale supaya tangan jauh dari 
 - **201-020 Part C (hydrated lime):** sampel dari bag dengan scoop minimal 10 cm di bawah permukaan, ID di kantong, ikat tangan dan kabel tis, dua lapis; kirim ke lab. Masalah: hasil dicatat sebagai "persen padatan" untuk kapur kering, tidak biasa; uji yang dimaksud perlu dikonfirmasi (ketersediaan kapur ada di 205-005). Forklift hanya oleh operator berwenang.
 - **201-013 Part D (acid wash):** sampel saat tahap pembilasan dari tiap bucket strainer dan tangki campur HCl, kuras 30 detik, ukur pH. Sumber tidak memberi pH akhir pembilasan atau kekuatan asam; asam dan sianida: pastikan tidak ada sianida di jalur selama pembilasan.
 - **201-004 Part B (karbon di launder):** 5 sendokan sampler di strainer karbon, cuci, bungkus kertas saring, oven di rak paling bawah, timbang. Sumber tidak menyebut tujuan, volume sampler, suhu dan lama oven, jadi perhitungan konsentrasi tidak bisa ditulis.
+
+## Batch 9 (WI Martabe terkendali, bilingual)
+
+| WI Martabe | SWI Anda | Hasil |
+|---|---|---|
+| Check pH Tailing Slurry Solution (DOC-3-MET-PMC-WIN-00106-IE) | 201-022 Online analyser verification | Ditambah Part C |
+| Sampling Raw and Filtrat Water (DOC-3-MET-PRS-WIN-00063-IE) | 201-019 Water treatment plant sampling | Ditambah Part B (teknik saja); 201-019 tetap NOT FOR USE |
+| Backwash MMF RO Plant (DOC-3-MET-PMS-WIN-00108-IE) | Tidak ada yang cocok | Belum dimasukkan |
+| Check Flow Antiscalant Process (DOC-3-MET-PMC-WIN-00112-IE) | Tidak ada yang cocok | Belum dimasukkan |
+| Bullion Weighing (DOC-3-MET-PMC-WIN-00110-IE) | Tidak ada yang cocok | Belum dimasukkan |
+
+- **201-022 Part C (pH tailing):** probe pH tailing dibersihkan, dicelup ke buffer pH 7 lalu pH 10 dalam tutup botol, dibaca di panel; harus 7 dan 10 atau pembulatannya (contoh 9.8); jika tidak cocok, probe diperbaiki. Masalah: toleransi hanya lewat contoh (sekitar 0.2 pH), sementara batas keselamatan sianida pH di atas 10.5; buffer hanya 7 dan 10 (SWI 206-004 memakai 4, 7, 10).
+- **201-019 Part B (air baku dan filtrat):** teknik sampling di water filter potabel: berdiri tidak di bawah titik, buka keran pelan, tunggu 30 sampai 60 detik, bilas botol, minimal 900 mL, kirim ke lab. 201-019 mensyaratkan feed dan discharge WTP No. 1 dan 2 yang membawa kewajiban izin lingkungan, sedangkan sumber ini hanya filter air potabel; maka hanya saya tambahkan sebagai referensi teknik dan banner NOT FOR USE dipertahankan.
+- **Backwash MMF RO plant:** backwash MMF 1 dan 2 masing-masing 30 menit, bilas 30 menit, nomor valve Martabe (9407 sampai 9411 dan 9507 sampai 9511) dioperasikan oleh control room. Nomor valve milik Martabe dan tidak bisa dipakai di pabrik Anda.
+- **Cek flow antiscalant:** ukur aliran dari tabung dengan stopwatch 1 menit, bandingkan dengan panel (seharusnya 5.6 L/jam), minta control room menyesuaikan kecepatan pompa; catat di formulir.
+- **Penimbangan bullion:** kalibrasi timbangan A&D 3P-30K dan Sartorius dengan anak timbang 20 kg, timbang tiap batang, segel plastik dan kabel logam, shipment maksimal 1000 kg bruto (kotak sekitar 715 g), serah terima sampel dengan tanda tangan kedua pihak (chain of custody) antara goldroom, metalurgis dan lab ITS. Bahaya yang disebut hanya merkuri. Ini pekerjaan kritis keamanan dan akuntansi; tidak ada SWI goldroom di set Anda.
+- Usul pengelompokan SWI baru: "RO plant operations" (backwash, antiscalant, eyewash di RO plant) dan "Bullion weighing and chain of custody".
 
 ## Belum dimasukkan: dua uji stirred leach
 Keduanya uji leach teraduk 20 jam pada pH 10.5 sampai 11, NaCN 1500 ppm, DO 15 sampai 25 ppm, cek pada jam ke 2, 4, 6, assay Au/Ag/Cu/S di ITS. SWI Anda hanya punya bottle roll (205-007) dan extended/diagnostic leach (205-008), yang bukan uji yang sama. Usul: satu SWI baru, misalnya 205-020 "Stirred Leach Testwork".
