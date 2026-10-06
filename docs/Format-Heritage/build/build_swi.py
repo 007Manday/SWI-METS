@@ -78,7 +78,7 @@ if sp.tag == q('p') and not ''.join(sp.itertext()).strip():
     body.remove(sp)
 
 # tighten page 2 further: drop the spacer before the PPE heading (kept only when the list is short)
-if len(ppe) > 8 or len(NEW_TITLE) > 45:
+if len(ppe) >= 8 or len(NEW_TITLE) > 45:
     hd = [e for e in body if e.tag == q('p') and ''.join(e.itertext()).strip() == 'PPE REQUIREMENTS'][0]
     prev = hd.getprevious()
     if prev.tag == q('p') and not ''.join(prev.itertext()).strip():

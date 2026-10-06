@@ -64,6 +64,7 @@ _E = {
  'fall': '%d. Fall from Height Do not move the injured person unless they are in danger. Call CH19 “EMERGENCY”, call 000, and notify the Shift Supervisor.',
  'slip': '%d. Slip, Fall or Lifting Injury Call CH19 “EMERGENCY”, call 000 if the injury is serious, and notify the Shift Supervisor.',
  'acid': '%d. HCl Gas or Acid Contact Leave the area upwind. Flush skin or eyes with copious water at the safety shower or eyewash for a minimum of 15 minutes. If breathing is affected call CH19 “EMERGENCY” and call 000.',
+ 'h2s': '%d. Hydrogen Sulphide Smell or Alarm If H2S is smelled or the multi-gas monitor alarms, stop work, leave the area upwind and call CH19 “EMERGENCY”. Do not re-enter until the Shift Supervisor clears the area.',
  'carbon': '%d. Carbon in the Undersize Report it to the Shift Supervisor and the control room immediately, before the round continues. Do not restart sampling until the Shift Supervisor clears it.',
 }
 def emerg(keys, equip='an agitator, pump, screen or sample cutter'):
