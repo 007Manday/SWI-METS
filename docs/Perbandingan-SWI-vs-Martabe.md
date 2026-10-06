@@ -1,8 +1,8 @@
-# Perbandingan SWI vs Work Instruction Martabe (batch 1 dan 2)
+# Perbandingan SWI vs Work Instruction Martabe (batch 1 sampai 3)
 
-Sepuluh work instruction (WI) tim Martabe diterima dan dibandingkan dengan SWI yang sesuai. Isi Martabe ditambahkan ke SWI dengan tanda **[M]**. Hal yang tidak jelas atau bertentangan di sumber ditandai **[CONFIRM]** di dalam dokumen dan harus diselesaikan sebelum SWI disetujui.
+Lima belas file work instruction (WI) tim Martabe diterima dan dibandingkan dengan SWI yang sesuai. Isi Martabe ditambahkan ke SWI dengan tanda **[M]**. Hal yang tidak jelas atau bertentangan di sumber ditandai **[CONFIRM]** di dalam dokumen dan harus diselesaikan sebelum SWI disetujui.
 
-SOP `KBK-MIR-...` dan `CNREC-...` yang dirujuk di bagian Reference masih belum diterima (lihat `Matriks-Rujukan-Martabe.xlsx`). Sepuluh WI ini adalah dokumen lain.
+SOP `KBK-MIR-...` dan `CNREC-...` yang dirujuk di bagian Reference masih belum diterima (lihat `Matriks-Rujukan-Martabe.xlsx`). WI ini adalah dokumen lain.
 
 ## Pemetaan
 
@@ -35,7 +35,8 @@ SOP `KBK-MIR-...` dan `CNREC-...` yang dirujuk di bagian Reference masih belum d
 ### 205-012 (resin kinetics) - placeholder diganti
 - Banner NOT FOR USE diubah menjadi DRAFT FOR REVIEW. Target penerimaan GG1200M/GG1200C tetap menunggu data vendor.
 - Metode Martabe hanya mengukur kinetika adsorpsi (resin loaded dan Cu-eluted vs resin fresh, 1 L larutan, 5 g resin, sampling menit 5/10/15/20/30). Kapasitas loading tidak tercakup.
-- Masalah di sumber: file bernama "Ball_Mill_Cyclone_Profile" tetapi isinya resin activity test; sampling 30 mL di teks vs 20 mL di tabel; screen 1.18 dan 1.4 mm vs screen 0.9 mm di SWI Anda; konsentrasi larutan CuSO4 tidak disebut; "Cek % solid" tanpa objek.
+- Catatan: file `Work_Instruction_Ball_Mill_Cyclone_Profile` yang diterima lebih dulu ternyata salinan identik dari `Work_Instruction_Resin_Activity_Test` (nama file salah).
+- Masalah di sumber: sampling 30 mL di teks vs 20 mL di tabel; screen 1.18 dan 1.4 mm vs screen 0.9 mm di SWI Anda; konsentrasi larutan CuSO4 tidak disebut; "Cek % solid" tanpa objek.
 - **Keselamatan:** sumber menahan pH 10 sampai 10.5, sedangkan aturan di SWI 205-007: sianida TIDAK boleh ditambahkan di bawah pH 10.5. Saya tulis pH 10.5 atau lebih sebelum NaCN, dan [CONFIRM].
 
 ### 205-013 (elution) - placeholder diganti
@@ -56,6 +57,21 @@ Hydrated lime ke pH 7 pada air TSF Toe, dengan assay lengkap di ITS (logam, TSS,
 - Part 4: 7.5 g asam sulfamat dalam 300 mL air proses atau air mentah, 5 g scale, tanpa pengadukan, foto sampai 240 menit, STOP dan evakuasi jika HCN di atas 5 ppm (sama dengan alarm 5 ppm di SWI). Risiko: asam pada scale bersianida melepas HCN. Baris hazard baru.
 - Part 5: campuran 85 mL NaCl plant + 15 mL NaCN plant untuk melihat endapan; selalu NaCN ke NaCl. Masalah di sumber: kekuatan larutan plant tidak disebut (target 1.0 M NaCN dan 0.9 M NaCl berarti sekitar 6.7 M NaCN dan 1.06 M NaCl); pH tidak disebut; arti "IPHK" tidak disebut.
 - Catatan: 205-013 sekarang berisi lima bagian yang semuanya tentang sistem eluant garam. Pertimbangkan memindahkan Part 3 sampai 5 ke SWI terpisah, misalnya "Eluant salt compatibility and scaling tests".
+
+## Batch 3
+
+### 205-012: versi KCN
+`Resin_Activity_Test_KCN` identik dengan versi NaCN, kecuali memakai 4 g KCN sebagai pengganti 2 g NaCN (tanggal tertulis "03/012/2025"; langkah masih menulis NaCN). 4 g KCN setara sekitar 0.061 mol sianida, 1.5 kali 2 g NaCN (sekitar 0.041 mol); setara molar adalah 2.66 g KCN. Saya tambahkan sebagai catatan varian dengan larangan dijalankan sebelum ada konfirmasi mana yang berlaku.
+
+### 205-013: Part 6 (Copper Loading Test, DOC-3-MET-MEL-WIN-00113-IE v1.0)
+WI Martabe terkendali pertama yang diterima (14 halaman, ada kontrol dokumen, JSEA, bahaya, dan foto). Metode: elusi 150 mL resin loaded dengan 0.5 M Zn(CN)4 (322.8 g ZnSO4.7H2O + 351 g KCN, total 2.2 L), 2 BV/jam (300 mL/jam) selama 6 jam, eluate tiap jam, lalu drain dan bilas 300 mL, assay Cu, Fe, Zn di ITS.
+- Masalah di sumber: teks Indonesia menulis zinc sulphate tetrahydrate, teks Inggris heptahydrate (322.8 g untuk 0.5 M dalam 2.2 L hanya cocok untuk heptahydrate); reagent berganti-ganti antara KCN dan NaCN, serta "larutan" vs "bubuk"; pH 10 di bawah aturan 10.5; tabel kontrol risiko (9.B) adalah untuk penanganan probe DO, salinan dari WI lain, jadi tidak mencakup HCN dan sianida; buangan cair dikirim ke sump pump tailing, perlu dikonfirmasi sebagai aliran bersianida yang disetujui.
+- Tabel kontrol risiko Martabe itu tidak saya bawa. Saya tambahkan baris hazard untuk eluant hi-cyanide 2.2 L, ditandai untuk JSEA.
+- Sumber juga menunjukkan cara sampling resin di loaded screen dengan kantong plastik; saya merujuk ke SWI-PRO-MET-201-012.
+
+### Belum dimasukkan: Peroxide performance test (V1 10/01/2025, V2 14/01/2025)
+Membandingkan H2O2 existing (isotank Evonik) dengan vendor lain (IBC) lewat respons DO pada feed leach, 4 botol E1, E2, R1, R2. V1: 500 mL feed, dosis 0.25 mL dua kali, DO diukur 10 menit setelah tiap dosis. V2 (menggantikan V1): 1 L feed, dosis sampai DO stabil di 15 dan 20 ppm, lalu hitung konsumsi. Tidak ada SWI yang cocok (203-012 adalah survey plant, bukan uji bench). Masalah di sumber: kekuatan H2O2 tidak disebut; kriteria "stabil" tidak didefinisikan; tidak ada bagian bahaya atau APD; peroksida ditambahkan ke feed leach bersianida; ejaan Evonic/Evonix.
+Usul: satu SWI baru untuk uji vendor reagen (peroxide), atau digabung dengan uji NaCl vendor yang sekarang ada di 205-013 Part 1 sampai 3.
 
 ## Belum dimasukkan: dua uji stirred leach
 Keduanya uji leach teraduk 20 jam pada pH 10.5 sampai 11, NaCN 1500 ppm, DO 15 sampai 25 ppm, cek pada jam ke 2, 4, 6, assay Au/Ag/Cu/S di ITS. SWI Anda hanya punya bottle roll (205-007) dan extended/diagnostic leach (205-008), yang bukan uji yang sama. Usul: satu SWI baru, misalnya 205-020 "Stirred Leach Testwork".
