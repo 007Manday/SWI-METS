@@ -1,6 +1,6 @@
-# Perbandingan SWI vs Work Instruction Martabe (batch 1 sampai 5)
+# Perbandingan SWI vs Work Instruction Martabe (batch 1 sampai 6)
 
-Dua puluh lima file work instruction (WI) tim Martabe diterima dan dibandingkan dengan SWI yang sesuai. Isi Martabe ditambahkan ke SWI dengan tanda **[M]**. Hal yang tidak jelas atau bertentangan di sumber ditandai **[CONFIRM]** di dalam dokumen dan harus diselesaikan sebelum SWI disetujui.
+Tiga puluh file work instruction (WI) tim Martabe diterima dan dibandingkan dengan SWI yang sesuai. Isi Martabe ditambahkan ke SWI dengan tanda **[M]**. Hal yang tidak jelas atau bertentangan di sumber ditandai **[CONFIRM]** di dalam dokumen dan harus diselesaikan sebelum SWI disetujui.
 
 SOP `KBK-MIR-...` dan `CNREC-...` yang dirujuk di bagian Reference masih belum diterima (lihat `Matriks-Rujukan-Martabe.xlsx`). WI ini adalah dokumen lain.
 
@@ -113,6 +113,33 @@ Beberapa WI Martabe memakai titik atau lab milik Martabe: SP09, MHR-1, TSF Toe, 
 - **MHR-1 quicklime dan caustic (205-006 Part D):** 2 L per tangki, 0.5 g quicklime per penambahan, catat pH dan TDS, sampai pH 7, lalu ulangi dengan caustic. Data hasil di V1.2 menunjukkan pH awal 2.13 dan TDS sekitar 4800 (satuan tidak disebut), sehingga MHR-1 tampaknya air asam. Satu penambahan 0.5 g melompatkan pH dari 6.2 ke 9.58, jadi saya sarankan dosis lebih kecil mendekati pH 7. Masalah di sumber: V1.2 tidak punya langkah ulang dengan caustic padahal tabelnya ada (Test Kaustik 1 sampai 3); sampel 1 dan 2 saja vs 1, 2, 3; tabel memakai satuan mL/L dan mL/m3 untuk reagen padat; salah ketik di data ("50020", "05632").
 - **Preconditioning V2 (205-013 Part 1):** 300 mL resin, Cu 70, 100, 125 kg/t = 136.4, 194.9, 243.6 mL CuSO4.7H2O dan 20.42, 29.17, 36.46 g NaCN per 4 L; resin dibagi dua: 150 mL ke copper loading test (Part 6) dan 150 mL ke lab untuk AAS di site dan ITS Jakarta. **Tidak konsisten dengan WI NaCl vendor:** 70 kg/t di V2 memakai CuSO4 dua kali lipat (136.4 vs 68.2 mL, resin juga dua kali lipat) tetapi NaCN 2.8 kali lipat (20.42 vs 7.29 g), jadi rasio NaCN dan CuSO4 berbeda (0.15 vs 0.107 g/mL). Perlu konfirmasi.
 - **Se Mn Removal Jan 25:** versi awal dari WI Feb/Mar: 7 L dengan 35 g FeCl3 (5 g/L) vs 8 L dengan 16 g (2 g/L); Mn 4 L dengan 30 g MnO2 (7.5 g/L) vs 5 L dengan 150 g (30 g/L); versi Jan menjalankan pH 8 lalu pH 9 dalam satu uji (sampel menit 150), versi Feb/Mar memisahkannya. Risiko HCN pada pH 4.5 sampai 5 tetap berlaku. Tetap belum dimasukkan.
+
+## Batch 6 (WI Martabe terkendali, bilingual)
+
+Lima WI ini berformat dokumen terkendali Martabe (nomor DOC-3-..., versi 1.0, diterbitkan 25/12/2024 atau 25/01/2025, ada JSEA, bahaya, dan tabel kontrol risiko).
+
+| WI Martabe | SWI Anda | Hasil |
+|---|---|---|
+| Carbon Analyser C2 Check (DOC-3-MET-PRS-WIN-00048-IE) | 201-005 Carbon concentration | Ditambah Part B |
+| Cyclone Overflow Underflow Sampling (DOC-3-MET-PRS-00049-IE) | 203-003 Screen and cyclone survey | Ditambah Part B |
+| Tailing Flocculant Solution Sampling (DOC-3-MET-PRS-WIN-00064-IE) | 201-017 Tails thickener sampling | Ditambah Part B |
+| Electrowinning Survey (DOC-3-MET-PRS-WIN-00052-IE) | 201-013 Gold elution and EW sampling | Ditambah Part B |
+| CV004 Moisture Sampling and Size Distribution (DOC-3-MET-PRS-00050-IE) | Tidak ada yang cocok | Belum dimasukkan |
+
+### 201-005 - cek analyser karbon C2
+Ambil 2 scoop per tangki dengan bucket sampler, ayak, cuci, ukur volume karbon di gelas ukur 100 mL, bandingkan dengan pembacaan analyser C2; di luar toleransi: ambil ulang 3 kali, atur, lalu kalibrasi. Masalah: tidak ada analyser C2 di SWI Anda (perlu dikonfirmasi apakah terpasang). Rumus Martabe volume/(2 x scoop) berbeda dari rumus SWI Anda (SG 0.47 x volume / volume sampel); pembagian 2 tampak seperti densitas sekitar 0.5 g/mL dengan scoop 1 L, tetapi volume scoop tidak disebut. Toleransi 3 g/L (CIL 13 sampai 7) dan 1.5 g/L (CIL 1 dan 2) memakai penomoran tangki Martabe. Kontrol HCN Martabe (monitor tetap, probe pH, pH di atas 10.5) sama dengan SWI Anda.
+
+### 203-003 - sampling siklon
+Sampling manual overflow dan underflow siklon ball mill dan VertiMill: bekerja di ketinggian dengan body harness, 5 cuplikan, satu kali tuang untuk Marcy scale, Tyvek untuk VertiMill, saklar mode open atau close pada underflow VertiMill. Masalah: ditulis untuk ball mill dan VertiMill Martabe, sedangkan pabrik Anda memakai IsaMill; titik jangkar harness dan fungsi saklar open atau close tidak dijelaskan. Baris hazard baru untuk kerja di ketinggian.
+
+### 201-017 - sampling larutan flokulan
+Tabung sampling di area pencampuran flokulan, buka valve kontrol pada jalur dengan pompa menyala, isi tabung, isi botol, kosongkan dengan menutup valve feed dan kontrol bersamaan. Hazard: kontak flokulan, lantai licin, titik jepit valve, jangan sampling saat ada pengangkatan flokulan. Cocok sebagai pendukung 204-010 (kekuatan larutan flokulan).
+
+### 201-013 - survey electrowinning
+Sampel barren eluate tiap jam, tiap train punya titik sampel sendiri, drain sekitar 1 menit, botol 250 mL terang dan gelap, satu kaustik di botol gelap, kirim untuk Au, Ag, Cu dan free cyanide (estimasi NaCN 3000 ppm). Masalah: sumber meletakkan botol plastik di lantai, sedangkan SWI Anda mensyaratkan botol tahan panas dan sampel didinginkan sebelum pH atau titrasi; saya pertahankan kontrol SWI Anda. Jumlah dan tujuan kaustik tidak disebut. Lab tertulis Intertek (WI lain menulis ITS). Mendukung 203-008.
+
+### Belum dimasukkan: CV004 (belt cut conveyor)
+Pemotongan belt 3 m di CV004 di bawah kamera Visiorock, 25 ember 20 L, 3 sekop, isolasi dengan gembok dan tag, izin kerja dan izin ruang terbatas, lalu di lab: oven 105 derajat C minimal 24 jam untuk kadar air dan ayakan 25.4 sampai 1.2 cm. Tidak ada SWI conveyor di set Anda. Ini pekerjaan kritis keselamatan (isolasi, tidak sendirian di atas conveyor, ruang terbatas) dan perlu SWI sendiri, misalnya "Feed conveyor belt-cut sampling". Bagian lab bisa memperkaya 204-006 dan 204-002. Pastikan ada conveyor yang setara di pabrik Anda. Sumber membatasi ember maksimal 10 kg dan tidak lebih dari setengah penuh (di bagian lain tertulis 66 persen), jadi angka itu tidak konsisten.
 
 ## Belum dimasukkan: dua uji stirred leach
 Keduanya uji leach teraduk 20 jam pada pH 10.5 sampai 11, NaCN 1500 ppm, DO 15 sampai 25 ppm, cek pada jam ke 2, 4, 6, assay Au/Ag/Cu/S di ITS. SWI Anda hanya punya bottle roll (205-007) dan extended/diagnostic leach (205-008), yang bukan uji yang sama. Usul: satu SWI baru, misalnya 205-020 "Stirred Leach Testwork".
