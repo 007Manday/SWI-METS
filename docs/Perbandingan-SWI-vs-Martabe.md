@@ -1,6 +1,6 @@
-# Perbandingan SWI vs Work Instruction Martabe (batch 1 sampai 6)
+# Perbandingan SWI vs Work Instruction Martabe (batch 1 sampai 7)
 
-Tiga puluh file work instruction (WI) tim Martabe diterima dan dibandingkan dengan SWI yang sesuai. Isi Martabe ditambahkan ke SWI dengan tanda **[M]**. Hal yang tidak jelas atau bertentangan di sumber ditandai **[CONFIRM]** di dalam dokumen dan harus diselesaikan sebelum SWI disetujui.
+Tiga puluh lima file work instruction (WI) tim Martabe diterima dan dibandingkan dengan SWI yang sesuai. Isi Martabe ditambahkan ke SWI dengan tanda **[M]**. Hal yang tidak jelas atau bertentangan di sumber ditandai **[CONFIRM]** di dalam dokumen dan harus diselesaikan sebelum SWI disetujui.
 
 SOP `KBK-MIR-...` dan `CNREC-...` yang dirujuk di bagian Reference masih belum diterima (lihat `Matriks-Rujukan-Martabe.xlsx`). WI ini adalah dokumen lain.
 
@@ -140,6 +140,27 @@ Sampel barren eluate tiap jam, tiap train punya titik sampel sendiri, drain seki
 
 ### Belum dimasukkan: CV004 (belt cut conveyor)
 Pemotongan belt 3 m di CV004 di bawah kamera Visiorock, 25 ember 20 L, 3 sekop, isolasi dengan gembok dan tag, izin kerja dan izin ruang terbatas, lalu di lab: oven 105 derajat C minimal 24 jam untuk kadar air dan ayakan 25.4 sampai 1.2 cm. Tidak ada SWI conveyor di set Anda. Ini pekerjaan kritis keselamatan (isolasi, tidak sendirian di atas conveyor, ruang terbatas) dan perlu SWI sendiri, misalnya "Feed conveyor belt-cut sampling". Bagian lab bisa memperkaya 204-006 dan 204-002. Pastikan ada conveyor yang setara di pabrik Anda. Sumber membatasi ember maksimal 10 kg dan tidak lebih dari setengah penuh (di bagian lain tertulis 66 persen), jadi angka itu tidak konsisten.
+
+## Batch 7 (WI Martabe terkendali, bilingual)
+
+| WI Martabe | SWI Anda | Hasil |
+|---|---|---|
+| Operate DO Meter Portable (DOC-3-MET-PRS-WIN-00055-IE) | 206-004 pH, DO and conductivity calibration | Ditambah Part B |
+| Elution Survey (DOC-3-MET-PRS-WIN-00053-IE) | 201-013 Gold elution and EW sampling | Ditambah Part C |
+| Pebble Crusher Product Sampling and Sizing (DOC-3-MET-PRS-WIN-00056) | Tidak ada yang cocok | Belum dimasukkan |
+| Refill Eyewash (DOC-3-MET-PRS-WIN-00057-IE) | Tidak ada yang cocok | Belum dimasukkan |
+| Manual Handling by Bucket or Another Container (DOC-3-MET-PRS-WIN-00054-IE) | Baris hazard di banyak SWI | Belum dimasukkan, perlu keputusan |
+
+### 206-004 - DO meter portabel
+Kalibrasi di udara (nilai yang diizinkan 6 sampai 8), lalu ukur DO di tangki slurry dan catat di Daily Task Checklist. Masalah: ditulis untuk Oxyguard Handy Polaris, sedangkan SWI Anda mencantumkan Hanna HI9142, jadi langkah menu hanya berlaku untuk Oxyguard; satuan dan dasar nilai 6 sampai 8 (mg/L atau persen jenuh) tidak disebut.
+
+### 201-013 - elution survey (Part C)
+Sampel setelah basket strainer, pakai ember Marcy scale supaya tangan jauh dari larutan panas, biarkan dingin, tuang ke botol gelap dan terang; sampel pertama di 65 derajat C, kedua di 100 derajat C, lalu tiap 30 menit atau akhir tahap; bungkus plastik berlabel "sianida tinggi"; assay Au, Ag, Cu, free cyanide (NaCN sekitar 3000 ppm). **Keselamatan:** sumber menyuruh menuang sisa larutan ke lantai. Itu eluate panas bersianida, jadi langkah itu tidak saya bawa; diganti dengan "jangan dibuang ke lantai, kirim ke aliran limbah bersianida", ditandai [CONFIRM]. Lab tertulis ITS, perlu diganti lab Mt. Morgan.
+
+### Belum dimasukkan
+- **Pebble crusher:** sampling produk pebble crusher dengan sample cutter di tiga posisi, ayak 0.6 sampai 90 mm, catat jam sampling (untuk daya pebble, kecepatan feeder, TPH CV-003). Tidak ada pebble crusher atau SWI-nya di set Anda; konfirmasi apakah pabrik Anda punya pebble crusher.
+- **Refill eyewash:** pengisian ulang eyewash portabel (Honeywell) di Metlab dan RO plant: bilas, kuras, isi air potable, catat di logsheet inspeksi. Hampir semua SWI Anda mensyaratkan eyewash "proven flowing" di bagian Before You Start, tetapi tidak ada SWI untuk inspeksi dan pengisian ulangnya. Saran: SWI baru "Eyewash and safety shower inspection and refill".
+- **Manual handling:** Martabe menetapkan batas angka: ember 20 L tidak lebih dari setengah, atau sekitar 10 kg; kontak tiga titik di tangga; sarung tangan 3M atau nitril; pelatihan pengangkatan manual. Sekitar 35 SWI Anda menulis "site manual handling limit" tanpa angka. Usul: tetapkan angka batas site (misalnya 10 kg bila sesuai) lalu saya perbarui baris itu di semua SWI. Catatan: WI CV004 memberi batas berbeda (66 persen), jadi angka Martabe sendiri tidak konsisten.
 
 ## Belum dimasukkan: dua uji stirred leach
 Keduanya uji leach teraduk 20 jam pada pH 10.5 sampai 11, NaCN 1500 ppm, DO 15 sampai 25 ppm, cek pada jam ke 2, 4, 6, assay Au/Ag/Cu/S di ITS. SWI Anda hanya punya bottle roll (205-007) dan extended/diagnostic leach (205-008), yang bukan uji yang sama. Usul: satu SWI baru, misalnya 205-020 "Stirred Leach Testwork".
