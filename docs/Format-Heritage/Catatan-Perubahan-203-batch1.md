@@ -27,3 +27,6 @@ Sembilan SWI ini tidak punya padanan Martabe. 203-002, 003, dan 010 punya padana
 
 ## Berlaku untuk semuanya
 Hazard a), b), c), CAUTION, dan emergency ditulis baru dari hazard dokumen. Classification dibuang; Area ke Description of work. Mohon dicek HSE.
+
+## Persetujuan
+Perubahan APD di 203-008 dan 203-009 (lihat atas) disetujui.
