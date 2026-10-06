@@ -1,6 +1,6 @@
-# Perbandingan SWI vs Work Instruction Martabe (batch 1 sampai 3)
+# Perbandingan SWI vs Work Instruction Martabe (batch 1 sampai 4)
 
-Lima belas file work instruction (WI) tim Martabe diterima dan dibandingkan dengan SWI yang sesuai. Isi Martabe ditambahkan ke SWI dengan tanda **[M]**. Hal yang tidak jelas atau bertentangan di sumber ditandai **[CONFIRM]** di dalam dokumen dan harus diselesaikan sebelum SWI disetujui.
+Dua puluh file work instruction (WI) tim Martabe diterima dan dibandingkan dengan SWI yang sesuai. Isi Martabe ditambahkan ke SWI dengan tanda **[M]**. Hal yang tidak jelas atau bertentangan di sumber ditandai **[CONFIRM]** di dalam dokumen dan harus diselesaikan sebelum SWI disetujui.
 
 SOP `KBK-MIR-...` dan `CNREC-...` yang dirujuk di bagian Reference masih belum diterima (lihat `Matriks-Rujukan-Martabe.xlsx`). WI ini adalah dokumen lain.
 
@@ -72,6 +72,33 @@ WI Martabe terkendali pertama yang diterima (14 halaman, ada kontrol dokumen, JS
 ### Belum dimasukkan: Peroxide performance test (V1 10/01/2025, V2 14/01/2025)
 Membandingkan H2O2 existing (isotank Evonik) dengan vendor lain (IBC) lewat respons DO pada feed leach, 4 botol E1, E2, R1, R2. V1: 500 mL feed, dosis 0.25 mL dua kali, DO diukur 10 menit setelah tiap dosis. V2 (menggantikan V1): 1 L feed, dosis sampai DO stabil di 15 dan 20 ppm, lalu hitung konsumsi. Tidak ada SWI yang cocok (203-012 adalah survey plant, bukan uji bench). Masalah di sumber: kekuatan H2O2 tidak disebut; kriteria "stabil" tidak didefinisikan; tidak ada bagian bahaya atau APD; peroksida ditambahkan ke feed leach bersianida; ejaan Evonic/Evonix.
 Usul: satu SWI baru untuk uji vendor reagen (peroxide), atau digabung dengan uji NaCl vendor yang sekarang ada di 205-013 Part 1 sampai 3.
+
+## Batch 4
+
+| WI Martabe | SWI Anda | Hasil |
+|---|---|---|
+| Settling Test with Variance %Strength Flocc (22/03/2025) | 204-010 Flocculant Screening | Ditambah Part B |
+| Adsorption Test Fresh Resin / "Adsorption Resin - 2 gpl" (09/01/2025) | 205-012 Resin Adsorption | Ditambah uji adsorpsi pada slurry CIL |
+| Testwork QC Expired Reagent (28/03/2025) | 205-017 Standard Solutions | Ditambah Part B |
+| Se dan Mn Removal dengan FeCl3 dan MnO2 (28/02/2025) | Tidak ada yang cocok | Belum dimasukkan |
+| TDS Water vs Scaling Rate (03/03/2025) | Tidak ada yang cocok | Belum dimasukkan |
+
+### 204-010 - Part B
+Variasi kekuatan larutan flokulan 0.35, 0.40, 0.45, 0.50 persen, dosis 70, 80, 90, 100 g/t, 1 L tailing per silinder, 4 silinder per set (selisih berat di bawah 4 g), 8 kali pengadukan, level padatan menit 5 sampai 60 dan 24 serta 48 jam. SWI Anda menahan kekuatan tetap (Part A). Masalah di sumber: rumus volume flokulan memakai angka tetap 100 dan 0.5 (dibaca sebagai dosis dan kekuatan); susunan 4 kekuatan dan 4 dosis ke 4 silinder tidak dijelaskan; "60, 24 jam" ambigu; SOP pembuatan flokulan Martabe belum diterima. SWI Anda menulis silinder settling NOT PURCHASED; Martabe memakai gelas ukur biasa.
+
+### 205-012 - adsorpsi resin fresh pada slurry CIL
+10 g resin (2 g/L) dalam 5 L slurry, sampling 150 mL menit 2, 5, 10, 20, 40, 60. Masalah di sumber: "CIL 7" adalah titik Martabe (CIL Anda hanya 032-TK-002 sampai 006); tabel catatan mulai dari 4000 mL, bukan 5 L; beberapa baris di sumber diberi stabilo (tampak draft yang belum final). Slurry bersianida: saya rujuk ke SWI 201-004 dan kontrol HCN.
+
+### 205-017 - Part B (QC reagen kedaluwarsa)
+Re-kualifikasi phenolphthalein (visual, kelarutan di etanol 96 persen, uji NaOH dan asam; berlaku 1 tahun setelah uji) dan silica gel (oven 2 jam, kembali oranye). Ini bertentangan dengan Part A langkah 2 (hanya reagen dalam masa berlaku). Saya batasi ke indikator dan desikan saja, tidak untuk standar, reagen primer atau sianida, dan memerlukan persetujuan kebijakan. Suhu oven tidak disebut. Sumber merujuk DOC-IV-MET-CHH-SOP-00039 (Metallurgy Reagent Lifetime Management System), belum diterima.
+
+### Belum dimasukkan: dua uji air (WPP)
+- Se dan Mn removal: 70 persen air TSF + 30 persen larutan produk detox; Se dengan 16 g FeCl3 per 8 L pada pH 4.5 sampai 5 (sampel menit 5, 15, 30, 60, 120, duplo); Mn dengan 150 g MnO2 per 5 L pada pH 8 dan 9, udara 1.5 L/menit. Masalah di sumber: bagian pH 9 menulis "maintain pH 7.5-8.5" (salinan dari bagian pH 8; targetnya 8.7 sampai 9); "ulangi langkah 7 dan 8" menunjuk langkah yang salah. **Keselamatan:** sumber menurunkan pH ke 4.5 sampai 5 dengan asam sulfat pada campuran yang mengandung air TSF dan produk detox, yang bisa masih mengandung sianida: risiko HCN. Perlu syarat bebas sianida seperti di 205-006 Part B dan C.
+- TDS vs scaling rate: 2.5 g "NaCO3" (mungkin Na2CO3) dalam 100 mL, 2 mL ke 300 mL masing-masing air (raw, filter, overflow WPP, permeat RO, permeat RO TDS buruk), aduk 10 menit, ukur turbidity.
+Usul: satu SWI baru "WPP water treatment bench tests" untuk keduanya. 201-019 (sampling WTP) hanya sampling di plant dan tidak cocok.
+
+## Catatan umum: nama titik dan lab Martabe
+Beberapa WI Martabe memakai titik atau lab milik Martabe: SP09, MHR-1, TSF Toe, WPP, CIL 7, dan ITS sebagai lab eksternal. Di SWI saya mempertahankan nama itu dengan tanda [CONFIRM] di tempat yang penting. Sebelum SWI disetujui, ganti dengan titik sampel dan lab Mt. Morgan yang setara.
 
 ## Belum dimasukkan: dua uji stirred leach
 Keduanya uji leach teraduk 20 jam pada pH 10.5 sampai 11, NaCN 1500 ppm, DO 15 sampai 25 ppm, cek pada jam ke 2, 4, 6, assay Au/Ag/Cu/S di ITS. SWI Anda hanya punya bottle roll (205-007) dan extended/diagnostic leach (205-008), yang bukan uji yang sama. Usul: satu SWI baru, misalnya 205-020 "Stirred Leach Testwork".
