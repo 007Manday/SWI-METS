@@ -29,7 +29,7 @@ DESC = [
     ('n', '032-TK-005 - CIL tank 4 launder'),
     ('n', '032-TK-006 - CIL tank 5 launder, final CIL tank'),
     ('b', None),
-    ('n', 'Frequency: Once per shift across all five tanks; CIL-1 and CIL-5 hourly. Frequency of the carbon-in-launder check: to be set.'),
+    ('n', 'Frequency: Once per shift across all five tanks; CIL-1 and CIL-5 hourly. Carbon-in-launder check (Step 5): hourly, as a routine check.'),
     ('b', None),
     ('n', 'This instruction sits under Standard Work Procedure HM-PRC-VXX-PRO205 - Plant Sampling and Metallurgical Data Collection. Read that procedure before carrying out this task for the first time.'),
     ('b', None),
