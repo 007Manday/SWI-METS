@@ -1,6 +1,6 @@
-# Perbandingan SWI vs Work Instruction Martabe (batch 1 sampai 12)
+# Perbandingan SWI vs Work Instruction Martabe (batch 1 sampai 13)
 
-Enam puluh file work instruction (WI) tim Martabe diterima dan dibandingkan dengan SWI yang sesuai. Isi Martabe ditambahkan ke SWI dengan tanda **[M]**. Hal yang tidak jelas atau bertentangan di sumber ditandai **[CONFIRM]** di dalam dokumen dan harus diselesaikan sebelum SWI disetujui.
+Enam puluh lima file work instruction (WI) tim Martabe diterima dan dibandingkan dengan SWI yang sesuai. Isi Martabe ditambahkan ke SWI dengan tanda **[M]**. Hal yang tidak jelas atau bertentangan di sumber ditandai **[CONFIRM]** di dalam dokumen dan harus diselesaikan sebelum SWI disetujui.
 
 SOP `KBK-MIR-...` dan `CNREC-...` yang dirujuk di bagian Reference masih belum diterima (lihat `Matriks-Rujukan-Martabe.xlsx`). WI ini adalah dokumen lain.
 
@@ -240,6 +240,21 @@ Sampel setelah basket strainer, pakai ember Marcy scale supaya tangan jauh dari 
 - **201-020 Part D dan 205-002 Part B (kaustik ReCYN):** sampel dari pipa drain pompa kaustik ReCYN ke botol 100 mL; titrasi dengan H2SO4 (rasio 2:1): [NaOH] = 2 x [H2SO4] x V(H2SO4) / V(sampel). SWI 205-002 memakai HCl (rasio 1:1). Persiapan asam sulfat dan teknik titrasi ada di dua WI Martabe lain yang belum diterima. Konfirmasi bahwa pipa drain pompa membawa larutan encer (SWI Anda: jangan sampling dari tangki pekat).
 - **207-007 Part B (filter sock):** matikan analyser dan pompa HCl, lepas pipa filter probe, cuci dan potong filter sock lama, bilas jalur filtrat dengan memindah jalur pompa ke ember air, pasang filter sock baru dengan silikon dan klem 60 mm, nyalakan analyser. Sumber meminta alarm HCN di bawah 10 ppm; SWI Anda 5 ppm (alarm) dan 10 ppm (high-high), jadi saya terapkan 5 ppm. Langkah mengacu pada foto yang tidak ikut, dan perangkat HCl pada analyser Martabe belum tentu ada di Cynoprobe Anda.
 - **Belum dimasukkan:** pengukuran scale coupon (lepas kupon dari pipa dengan dua kunci inggris, rendam HCl 3 persen, timbang 4 desimal), cek dosis antiscalant RO (gelas ukur 100 mL, 1 menit, sesuaikan kecepatan), ganti cartridge RO II 55 m3 (LOTO, valve 112 dan 113). Semua untuk RO plant dan sistem air Martabe; bergabung dengan kelompok "RO plant operations" (backwash, antiscalant, eyewash di RO plant). Catatan: WI cek dosis antiscalant ini berbeda dari WI "Check Flow Antiscalant" (aliran dengan stopwatch dan nilai 5.6 L/jam); keduanya metode berbeda untuk hal yang sama.
+
+## Batch 13
+
+| WI Martabe | SWI Anda | Hasil |
+|---|---|---|
+| Operating pH Cube Meter / TPS cube (DOC-3-MET-PMC-WIN-00089-IE) | 206-004 pH, DO and conductivity calibration | Ditambah Part C |
+| Scale Coupon in Elution, Raw Water, Cooling Water and Process Water Area (DOC-3-MET-PMC-WIN-00098-IE) | Tidak ada yang cocok | Belum dimasukkan |
+| SAG Mill Sound Survey (DOC-3-MET-PMC-WIN-00097-IE) | Tidak ada yang cocok | Belum dimasukkan |
+| Replace Filter Sock | Sudah ada di batch 12 | Duplikat, teks identik |
+| RO Antiscalant Dosage Check | Sudah ada di batch 12 | Duplikat, teks identik |
+
+- **206-004 Part C (TPS cube):** mode pH, pasang sensor pH dan suhu, lepas tutup probe, bilas, celup, tunggu stabil, catat; simpan probe dalam air; sampel ke jeriken limbah B3. Kalibrasinya ada di WI Martabe yang belum diterima (juga dirujuk Acid Wash Survey, 201-013 Part D). Meter TPS cube tidak ada di daftar alat 206-004 Anda.
+- **Scale coupon di air elusi, air baku, air pendingin, air proses dan ReCYN:** versi yang lebih luas dari WI scale coupon batch 12. Beda penting: elusi harus berhenti saat kupon diganti (larutan panas, sianida dan kaustik); oven minimal 6 jam pada 80 derajat C (batch 12 hanya 2 jam, suhu tidak disebut); kupon dibersihkan dengan asam asetat 100 mL selama 1 hari (batch 12 memakai HCl 3 persen sampai bersih). Pembersih asam berbeda di dua WI yang sama-sama membahas kupon; konfirmasi mana yang dipakai. Belum dimasukkan karena tidak ada SWI sistem air yang cocok.
+- **SAG mill sound survey:** sound level meter B&K 2240 mode LAeq di atas grit mesh mikrofon audio mill, 5 pengukuran tiap 2 menit. Tidak ada SAG mill di set Anda.
+- Dua file lain adalah duplikat WI di batch 12 (teks identik), tidak ada isi baru.
 
 ## Belum dimasukkan: dua uji stirred leach
 Keduanya uji leach teraduk 20 jam pada pH 10.5 sampai 11, NaCN 1500 ppm, DO 15 sampai 25 ppm, cek pada jam ke 2, 4, 6, assay Au/Ag/Cu/S di ITS. SWI Anda hanya punya bottle roll (205-007) dan extended/diagnostic leach (205-008), yang bukan uji yang sama. Usul: satu SWI baru, misalnya 205-020 "Stirred Leach Testwork".
