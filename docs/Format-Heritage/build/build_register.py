@@ -26,6 +26,13 @@ OVERRIDES = {  # decisions taken in the review, shown instead of the raw compari
     '207-008': 'Leach Analyzer Calibration untuk 032-CA-001; Detox Analyser Calibration dipetakan ke analyser ReCYN tailing 051-CA-002',
     '206-002': 'Operating Anemometer GM8902 - Step 4-5, ukur di tinggi sash kerja, rata-rata dan bacaan terendah dari 20 bacaan',
     '206-004': 'TPS cube pH meter (kalibrasi tetap 3 titik) - Step 3-4; Operate DO Meter Portable untuk HI9142 tanpa menu Oxyguard - Step 5-6',
+    '205-001': 'Cyanide Measurement by AgNO3 Titration - pembanding; diambil cek buret digital 0.00 dan kedaluwarsa AgNO3',
+    '205-002': 'ReCYN Plant Caustic Strength Measurement dan Sodium Hydroxide Titration - Step 4 (titrasi H2SO4 alternatif)',
+    '205-006': 'Dosing NaOH vs Ca(OH)2, MHR1 quicklime (udara, H2O2), MHR1 quicklime dan caustic, TSF Toe (dari 205-015) - digabung jadi Step 4-7, sampel bebas sianida',
+    '205-012': 'Resin Activity Test dan Adsorption Test Fresh Resin - Step 2-6; varian KCN tidak dipakai; CIL 7 dipetakan ke 032-TK-006',
+    '205-013': 'NaCl vendor, Preconditioning V2, Sulfamic acid, IPHK, Copper Loading Test, Grundfos DDA - Step 2-10',
+    '205-015': 'TSF Toe to WPP Test - dipindah ke 205-006 (Mt. Morgan tidak punya sirkuit detox)',
+    '205-017': 'Testwork QC Expired Reagent - Step 5-6, terbatas phenolphthalein dan silica gel',
     '203-010': 'Intertank Screen Inspection - tidak dipakai (inspeksi saat shutdown; cek karbon di launder rutin per jam di 201-004)',
 }
 W = 'http://schemas.openxmlformats.org/wordprocessingml/2006/main'
