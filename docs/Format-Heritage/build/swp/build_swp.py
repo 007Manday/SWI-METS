@@ -299,7 +299,7 @@ warning(warn[len('Warning:'):].strip())
 heading(2, 'Procedure and Implementation Steps')
 normal([x for x in texts if x.startswith('The documents below')][0])
 wi = tables[0]
-table([' '.join(c) for c in wi[0]], [[' '.join(c) for c in r] for r in wi[1:]], [2200, 2200, 4094, 1700], label_col=False)
+table([' '.join(c) for c in wi[0]], [[' '.join(c) for c in r] for r in wi[1:]], [2450, 2300, 3744, 1700], label_col=False)
 heading(2, 'Schedule')
 sch = tables[1]
 table([' '.join(c) for c in sch[0]], [[' '.join(c) for c in r] for r in sch[1:]], [5600, 4594], label_col=False)
@@ -330,19 +330,28 @@ heading(1, 'Legislation & References')
 heading(2, 'Legislation')
 bullet('Queensland Mining and Quarrying Safety and Health Act 1999')
 bullet('Queensland Mining and Quarrying Safety and Health Regulation 2017')
-heading(2, 'Source Documents by Task')
-normal('The source documents and notes held for each task. Register lines are on tabs JSEA_LAB and SWI-LAB (Section %d).' % [i for i, t in enumerate([e for e in toc if e[0] == 1], 1) if t[2] == 'Register Traceability'][0])
-task = {r[0][0]: r[2][0] for r in wi[1:]}
-ref_rows, pend = [], []
-for k, x in items('REFERENCE'):
-    mm = re.match(r'Heritage register line (JSEA-PRO-\S+), tab', x)
-    if mm:
-        ref_rows.append([mm.group(1), task.get(mm.group(1), ''), pend or ['No source document held']])
-        pend = []
-    else:
-        pend.append(x)
-assert not pend, ('unpaired references', pend)
-table(['JSEA', 'Task', 'Source documents and notes'], [[a, b, c] for a, b, c in ref_rows], [2350, 3200, 4644], label_col=False)
+refs = [x for k, x in items('REFERENCE')]
+tabs = re.search(r'on tabs (\S+) and (\S+)', info['Register area'])
+sec_rt = [i for i, t in enumerate([e for e in toc if e[0] == 1], 1) if t[2] == 'Register Traceability'][0]
+if any(re.match(r'Heritage register line ', x) for x in refs):
+    heading(2, 'Source Documents by Task')
+    normal('The source documents and notes held for each task. Register lines are on tabs %s and %s (Section %d).' % (tabs.group(1), tabs.group(2), sec_rt))
+    task = {r[0][0]: r[2][0] for r in wi[1:]}
+    ref_rows, pend = [], []
+    for x in refs:
+        mm = re.match(r'Heritage register line (JSEA-PRO-\S+), tab', x)
+        if mm:
+            ref_rows.append([mm.group(1), task.get(mm.group(1), ''), pend or ['No source document held']])
+            pend = []
+        else:
+            pend.append(x)
+    assert not pend, ('unpaired references', pend)
+    table(['JSEA', 'Task', 'Source documents and notes'], [[a, b, c] for a, b, c in ref_rows], [2350, 3200, 4644], label_col=False)
+else:
+    heading(2, 'Source Documents')
+    normal('The source documents and notes held for the tasks in this area. Register lines are on tabs %s and %s (Section %d).' % (tabs.group(1), tabs.group(2), sec_rt))
+    for x in refs:
+        bullet(x)
 
 # ---------- 6. table of contents ----------
 tc_ = toc_sdt.find(q('sdtContent'))

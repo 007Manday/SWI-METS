@@ -5,7 +5,7 @@ set -e
 HERE=$(cd "$(dirname "$0")" && pwd)
 SRC=$1; OUTD=$2
 NAME=$(basename "$SRC" | sed 's/^[0-9a-f]\{8\}-//')
-N=$(echo "$NAME" | grep -o 'SWP-21[0-9]')
+N=$(echo "$NAME" | grep -o 'SWP-2[0-9][0-9]')
 mkdir -p "$OUTD"
 python3 "$HERE/build_swp.py" "$SRC" "${TPL_X:-$HERE/../swp_tpl/x}" "$HERE/w$N" "$OUTD/$NAME" >/dev/null
 (cd "$OUTD" && soffice --headless --convert-to pdf "$NAME" >/dev/null 2>&1)

@@ -1,6 +1,6 @@
-# Catatan perubahan: SWP laboratorium 212 sampai 216 ke format Heritage
+# Catatan perubahan: SWP ke format Heritage (PRO206, PRO208, PRO212 sampai PRO217)
 
-Dokumen: HM-PRC-VXX-PRO212 Laboratory Sample Preparation, PRO213 Laboratory Wet Chemistry and Digestion, PRO214 Laboratory Instrumental Analysis, PRO215 Laboratory Environmental and Cyanide Analysis, dan PRO216 Laboratory Services, Safety and Quality.
+Dokumen: HM-PRC-VXX-PRO206 Metallurgical Accounting and Reconciliation, PRO208 Metallurgical Laboratory Physical Testwork, PRO212 Laboratory Sample Preparation, PRO213 Laboratory Wet Chemistry and Digestion, PRO214 Laboratory Instrumental Analysis, PRO215 Laboratory Environmental and Cyanide Analysis, PRO216 Laboratory Services, Safety and Quality, dan PRO217 Bullion Assay and Custody.
 
 Template: contoh SWP Heritage dari pengguna, `docs/Format-Heritage/SWP-PRO-000_000_Sodium_Hydrosulphide_Management_Plan.docx`. File asli (layout GGT) ada di commit sebelumnya dalam riwayat folder `SWP/`.
 
@@ -27,7 +27,7 @@ Template: contoh SWP Heritage dari pengguna, `docs/Format-Heritage/SWP-PRO-000_0
 
 ## Perubahan kecil yang perlu diketahui
 1. **Istilah.** Definisi "Standard work procedure" dan "Standard work instruction" diganti "Safe work procedure" dan "Safe work instruction", sesuai judul dokumen Heritage. Singkatan SWP dan SWI tetap sama.
-2. **Referensi** disusun ulang menjadi tabel JSEA | Task | Source documents and notes. Baris "Heritage register line JSEA-…, tab JSEA_LAB / SWI-LAB" menjadi kolom JSEA, dan tab register disebut sekali di atas tabel. Tugas tanpa dokumen sumber ditulis "No source document held".
+2. **Referensi.** Untuk SWP lab (212-217), referensi disusun ulang menjadi tabel JSEA | Task | Source documents and notes. Baris "Heritage register line JSEA-…, tab JSEA_LAB / SWI-LAB" menjadi kolom JSEA, dan tab register disebut sekali di atas tabel. Tugas tanpa dokumen sumber ditulis "No source document held". SWP MET (206, 208) di dokumen lama memakai daftar referensi biasa tanpa pasangan register line, jadi tetap berupa daftar bullet di bawah "Source Documents" dengan isi yang sama. Tab register (JSEA_LAB/SWI-LAB atau JSEA_MET/SWI-MET) diambil dari Register area tiap dokumen.
 3. **Legislation** menambahkan Queensland Mining and Quarrying Safety and Health Act 1999 dan Regulation 2017. Keduanya bagian baku template SWP Heritage. Mohon dikonfirmasi bila lab tidak berada di bawah regulasi ini.
 4. **Review Criteria.** Kalimat lama dipecah menjadi dua bullet (setiap 12 bulan, atau segera setelah insiden atau perubahan) tanpa mengubah isi. Siklus 12 bulan dipertahankan, bukan 2 tahun seperti di template.
 5. **Flowchart.** Kalimat "in Section 6" dihapus, karena langkah kerja ada di masing-masing SWI.
@@ -42,12 +42,15 @@ Template: contoh SWP Heritage dari pengguna, `docs/Format-Heritage/SWP-PRO-000_0
 ## Hasil
 | SWP | Halaman | JSEA / SWI di bawahnya |
 |---|---|---|
+| PRO206 Metallurgical Accounting and Reconciliation | 8 | 12 / 0 (semua tugas desk-based, tanpa SWI) |
+| PRO208 Metallurgical Laboratory Physical Testwork | 9 | 19 / 19 (induk seri SWI 204) |
 | PRO212 Laboratory Sample Preparation | 8 | 17 / 17 |
 | PRO213 Laboratory Wet Chemistry and Digestion | 10 | 33 / 33 |
 | PRO214 Laboratory Instrumental Analysis | 8 | 14 / 13 |
 | PRO215 Laboratory Environmental and Cyanide Analysis | 10 | 25 / 25 |
-| PRO216 Laboratory Services, Safety and Quality | 8 | 16 / 12 |
+| PRO216 Laboratory Services, Safety and Quality | 9 | 16 / 12 |
+| PRO217 Bullion Assay and Custody | 7 | 6 / 5 |
 
-Semua lolos validasi docx. Audit teks: setiap paragraf dan sel tabel lama ada di dokumen baru. Yang tidak cocok persis hanya judul bab lama, label tabel judul, baris register line (sekarang kolom JSEA), definisi yang diganti istilahnya, kalimat review yang dipecah, dan format tanggal.
+Semua lolos validasi docx. Kolom JSEA di tabel prosedur dilebarkan agar nomor JSEA tidak terpotong (kelima SWP lab pertama ikut dibangun ulang). Audit teks: setiap paragraf dan sel tabel lama ada di dokumen baru. Yang tidak cocok persis hanya judul bab lama, label tabel judul, baris register line (sekarang kolom JSEA), definisi yang diganti istilahnya, kalimat review yang dipecah, dan format tanggal.
 
 Skrip: `docs/Format-Heritage/build/swp/`. Jalankan dengan `TPL_X=<template SWP yang sudah di-unzip> run_swp.sh <SWP lama> <folder output>`.
