@@ -33,7 +33,7 @@ for el in old.find(q('body')):
         else:
             sec[cur].append(('tbl', rows))
 
-DOCNO, TITLE = info['Document number'], info['Title']
+DOCNO, TITLE = re.sub(r'^HM-PRC-VXX-PRO(\d+)$', r'SWP-\1', info['Document number']), info['Title']
 d, m, y = info['Date'].split()
 MONTHS = 'January February March April May June July August September October November December'.split()
 DATE = '%02d/%02d/%s' % (int(d), MONTHS.index(m) + 1, y)
@@ -263,9 +263,9 @@ def items(name, kinds=('p', 'li', 'tbl')):
 # ---------- 5. content ----------
 heading(1, 'Purpose and Scope')
 for k, x in items('PURPOSE / SCOPE'):
-    normal(x)
+    normal(re.sub(r' It is the procedure that .* in register area \d+ sit under\.$', '', x))
 normal('Document details:')
-for label in ['Register area', 'Hazard analyses beneath', 'Work instructions beneath', 'Process owner', 'Document owner', 'Document approver']:
+for label in ['Hazard analyses beneath', 'Work instructions beneath', 'Process owner', 'Document owner', 'Document approver']:
     bullet('%s: %s' % (label, info[label].replace('  ·  ', ', ')))
 
 heading(1, 'Responsibilities')
@@ -311,12 +311,16 @@ heading(1, 'Training')
 for k, x in items('TRAINING'):
     (bullet if k == 'li' else normal)(x)
 
-heading(1, 'Register Traceability')
+heading(1, 'Document Traceability')
 for k, x in sec['REGISTER TRACEABILITY']:
     if k == 'tbl':
-        table([' '.join(c) for c in x[0]], [[' '.join(c) for c in r] for r in x[1:]], [7000, 3194])
+        rows = [[' '.join(c) for c in r] for r in x[1:]]
+        rows = [[re.sub(r'^Register lines in area', 'Tasks in area', a), b] for a, b in rows]
+        table([' '.join(c) for c in x[0]], rows, [7000, 3194])
+    elif x.startswith('Registers:'):
+        continue
     else:
-        normal(x)
+        normal(x.replace('shared between the two registers', 'shared between the hazard analysis and the work instruction'))
 
 heading(1, 'Review Criteria')
 rev = ' '.join(x for k, x in items('REVIEW'))
@@ -331,11 +335,9 @@ heading(2, 'Legislation')
 bullet('Queensland Mining and Quarrying Safety and Health Act 1999')
 bullet('Queensland Mining and Quarrying Safety and Health Regulation 2017')
 refs = [x for k, x in items('REFERENCE')]
-tabs = re.search(r'on tabs (\S+) and (\S+)', info['Register area'])
-sec_rt = [i for i, t in enumerate([e for e in toc if e[0] == 1], 1) if t[2] == 'Register Traceability'][0]
 if any(re.match(r'Heritage register line ', x) for x in refs):
     heading(2, 'Source Documents by Task')
-    normal('The source documents and notes held for each task. Register lines are on tabs %s and %s (Section %d).' % (tabs.group(1), tabs.group(2), sec_rt))
+    normal('The source documents and notes held for each task.')
     task = {r[0][0]: r[2][0] for r in wi[1:]}
     ref_rows, pend = [], []
     for x in refs:
@@ -349,7 +351,7 @@ if any(re.match(r'Heritage register line ', x) for x in refs):
     table(['JSEA', 'Task', 'Source documents and notes'], [[a, b, c] for a, b, c in ref_rows], [2350, 3200, 4644], label_col=False)
 else:
     heading(2, 'Source Documents')
-    normal('The source documents and notes held for the tasks in this area. Register lines are on tabs %s and %s (Section %d).' % (tabs.group(1), tabs.group(2), sec_rt))
+    normal('The source documents and notes held for the tasks in this area.')
     for x in refs:
         bullet(x)
 

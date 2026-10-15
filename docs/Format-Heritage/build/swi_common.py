@@ -12,13 +12,10 @@ PPE_STD = [
 SAFETY_CRITICAL = 'This is a safety-critical task. It is not carried out alone in a cyanide area, and not without the Shift Supervisor knowing it is in progress.'
 PARENT = 'This instruction sits under Standard Work Procedure HM-PRC-VXX-PRO205 - Plant Sampling and Metallurgical Data Collection. Read that procedure before carrying out this task for the first time.'
 
-def register(num):
-    return 'Register line: SWI-PRO-MET-%s in HM-MMM-WHS-REG-XXX-R00-SWI-SWMS, tab SWI-MET. The matching hazard analysis is JSEA-PRO-MET-%s.' % (num, num)
-
 def desc(setpoints, area, points, frequency, num, extra_bold=(), safety=True, parent=None):
     d = [('n', s) for s in setpoints] + [('b', None), ('n', 'Area: %s.' % area), ('n', 'Points and equipment covered:')]
     d += [('n', p) for p in points]
-    d += [('b', None), ('n', 'Frequency: %s' % frequency), ('b', None), ('n', parent or PARENT), ('b', None), ('n', register(num)), ('b', None)]
+    d += [('b', None), ('n', 'Frequency: %s' % frequency), ('b', None)]
     for t in extra_bold:
         d += [('B', t), ('b', None)]
     if safety:
@@ -82,9 +79,7 @@ def emerg(keys, equip='an agitator, pump, screen or sample cutter'):
     return out
 
 def refs(num, title, rows):
-    base = [('HM-PRC-VXX-PRO205', 'Plant Sampling and Metallurgical Data Collection'),
-            ('JSEA-PRO-MET-' + num, 'JSEA — ' + title),
-            ('HM-MMM-WHS-REG-XXX-R00-SWI-SWMS', 'SWI / SWMS Register — tab SWI-MET')]
+    base = [('JSEA-PRO-MET-' + num, 'JSEA — ' + title)]
     return base + list(rows)
 
 
@@ -116,9 +111,7 @@ CLOSE203_STEP = ('Completion and Clean Up',
     CLOSE203, None, None)
 
 def refs203(num, title, rows):
-    base = [('HM-PRC-VXX-PRO207', 'Plant Surveys and Circuit Performance Assessment'),
-            ('JSEA-PRO-MET-' + num, 'JSEA — ' + title),
-            ('HM-MMM-WHS-REG-XXX-R00-SWI-SWMS', 'SWI / SWMS Register — tab SWI-MET')]
+    base = [('JSEA-PRO-MET-' + num, 'JSEA — ' + title)]
     return base + list(rows)
 
 # ---- 204 Met Lab Physical Testwork series: parent PRO208, bench pre-start / completion wording ----
@@ -155,9 +148,7 @@ PPE_LAB = ['Safety helmet and safety glasses', 'Chemical splash goggles and face
 PPE_LAB_HEAR = ['Safety helmet, safety glasses and hearing protection'] + PPE_LAB[1:]
 
 def refs204(num, title, rows):
-    base = [('HM-PRC-VXX-PRO208', 'Metallurgical Laboratory Physical Testwork'),
-            ('JSEA-PRO-MET-' + num, 'JSEA — ' + title),
-            ('HM-MMM-WHS-REG-XXX-R00-SWI-SWMS', 'SWI / SWMS Register — tab SWI-MET')]
+    base = [('JSEA-PRO-MET-' + num, 'JSEA — ' + title)]
     return base + list(rows)
 
 # ---- 207 Automatic Sampling and Online Analyser series: parent PRO211, same pre-start / completion as 203 ----
@@ -166,9 +157,7 @@ def desc207(setpoints, points, frequency, num, extra_bold=()):
     return desc(setpoints, '207 Automatic Sampling and Online Analysers', points, frequency, num, extra_bold, safety=True, parent=PARENT_207)
 
 def refs207(num, title, rows):
-    base = [('HM-PRC-VXX-PRO211', 'Automatic Sampling and Online Analyser Operation'),
-            ('JSEA-PRO-MET-' + num, 'JSEA — ' + title),
-            ('HM-MMM-WHS-REG-XXX-R00-SWI-SWMS', 'SWI / SWMS Register — tab SWI-MET')]
+    base = [('JSEA-PRO-MET-' + num, 'JSEA — ' + title)]
     return base + list(rows)
 
 # ---- 206 Met Lab Facility, Safety and Quality series: parent PRO210, same bench pre-start / completion as 204 ----
@@ -182,9 +171,7 @@ PPE_LAB_ACID = ['Safety helmet and safety glasses', 'Chemical splash goggles and
 PPE_LAB_ACID_HEAR = ['Safety helmet, safety glasses and hearing protection'] + PPE_LAB_ACID[1:]
 LAB_ALONE = 'Confirm a second person is in the laboratory for any cyanide work. Cyanide work is not done alone.'
 def refs206(num, title, rows):
-    base = [('HM-PRC-VXX-PRO210', 'Metallurgical Laboratory Facility, Safety and Quality'),
-            ('JSEA-PRO-MET-' + num, 'JSEA — ' + title),
-            ('HM-MMM-WHS-REG-XXX-R00-SWI-SWMS', 'SWI / SWMS Register — tab SWI-MET')]
+    base = [('JSEA-PRO-MET-' + num, 'JSEA — ' + title)]
     return base + list(rows)
 
 # ---- 205 Met Lab - Chemical and Leach Testwork ----
@@ -192,7 +179,5 @@ PARENT_205 = 'This instruction sits under Standard Work Procedure HM-PRC-VXX-PRO
 def desc205(setpoints, frequency, num, safety, extra_bold=(), points=('Met lab bench - physical testwork bench and instrument',)):
     return desc(setpoints, '205 Met Lab - Chemical and Leach Testwork', list(points), frequency, num, extra_bold, safety=safety, parent=PARENT_205)
 def refs205(num, title, rows):
-    base = [('HM-PRC-VXX-PRO209', 'Metallurgical Laboratory Chemical and Leach Testwork'),
-            ('JSEA-PRO-MET-' + num, 'JSEA — ' + title),
-            ('HM-MMM-WHS-REG-XXX-R00-SWI-SWMS', 'SWI / SWMS Register — tab SWI-MET')]
+    base = [('JSEA-PRO-MET-' + num, 'JSEA — ' + title)]
     return base + list(rows)

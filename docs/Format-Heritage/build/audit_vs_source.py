@@ -2,7 +2,7 @@
 against the Heritage-format SWI. Prints paragraphs whose content cannot be found in the new file.
 Usage: python audit_vs_source.py <base_commit> <out.json> [code ...]
 <base_commit> is the commit before the first Heritage conversion (all SWIs still in the old format)."""
-import glob, json, re, subprocess, sys, zipfile, io
+import glob, json, os, re, subprocess, sys, zipfile, io
 from lxml import etree
 
 BASE, OUT = sys.argv[1:3]
@@ -35,7 +35,10 @@ for f in files:
     code = re.search(r'MET-(\d{3}-\d{3})', f).group(1)
     if ONLY and code not in ONLY:
         continue
-    old = paras(subprocess.run(['git', 'show', '%s:%s' % (BASE, f)], capture_output=True).stdout)
+    old_f = os.path.join(os.path.dirname(f), 'MM-4034-033-OR-03-' + os.path.basename(f))  # files were renamed after the base commit
+    src = subprocess.run(['git', 'show', '%s:%s' % (BASE, f)], capture_output=True).stdout or \
+          subprocess.run(['git', 'show', '%s:%s' % (BASE, old_f)], capture_output=True).stdout
+    old = paras(src)
     new = paras(open(f, 'rb').read())
     new_t = [set(toks(p)) for p in new]
     new_all = set().union(*new_t)

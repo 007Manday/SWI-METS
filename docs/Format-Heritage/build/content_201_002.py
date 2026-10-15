@@ -28,10 +28,6 @@ DESC = [
     ('n', '022-PP-090 - IsaMill media pump, not a sample point, noted for isolation awareness'),
     ('b', None),
     ('n', 'Frequency: Hourly spot samples on feed and discharge, composited per shift. Full sizing at least once per shift.'),
-    ('b', None),
-    ('n', 'This instruction sits under Standard Work Procedure HM-PRC-VXX-PRO205 - Plant Sampling and Metallurgical Data Collection. Read that procedure before carrying out this task for the first time.'),
-    ('b', None),
-    ('n', 'Register line: SWI-PRO-MET-201-002 in HM-MMM-WHS-REG-XXX-R00-SWI-SWMS, tab SWI-MET. The matching hazard analysis is JSEA-PRO-MET-201-002.'),
 ]
 HAZARDS = hazards_from(os.environ['SRC_DOCX'])
 STEPS = [
@@ -85,9 +81,7 @@ STEPS = [
      None, None),
 ]
 REFS = [
-    ('HM-PRC-VXX-PRO205', 'Plant Sampling and Metallurgical Data Collection'),
     (NEW_JSEA, 'JSEA — %s' % NEW_TITLE),
-    ('HM-MMM-WHS-REG-XXX-R00-SWI-SWMS', 'SWI / SWMS Register — tab SWI-MET'),
     ('HM-PRC-V01-PRO003', 'Milling Circuit - IsaMill'),
     ('Mt. Morgan site procedure 2', 'ISAMILL Feed Sampling [LIVE]'),
     ('Mt. Morgan site procedure 3', 'ISAMILL Discharge Sampling [LIVE]'),

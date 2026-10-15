@@ -129,8 +129,7 @@ for l in ['Register seri %s %s (%d dokumen dalam format Heritage).' % (SERIES, N
           'Klasifikasi dan padanan Martabe diambil dari docs/Matriks-Rujukan-Martabe.xlsx dan docs/Tabel-SWI-vs-Martabe.xlsx, ditimpa oleh keputusan review bila ada. Format Heritage tidak memuat kolom klasifikasi, jadi klasifikasi hanya ada di register.',
           'Jumlah step dan halaman dihitung dari render dokumen (LibreOffice); halaman bisa sedikit berbeda di Microsoft Word.',
           'Status isi: Final = tanpa tambahan Martabe terbuka; DRAFT FOR REVIEW = ada tambahan Martabe yang menunggu JSEA; Catatan = ada catatan yang perlu ditindaklanjuti.',
-          'Sheet "Draft dan open items" memuat paragraf draft, catatan, temuan safety-critical, dan open items di Description of work.',
-          'Referensi register: HM-MMM-WHS-REG-XXX-R00-SWI-SWMS, tab SWI-MET.']:
+          'Sheet "Draft dan open items" memuat paragraf draft, catatan, temuan safety-critical, dan open items di Description of work.']:
     w3.append([l])
 w3.column_dimensions['A'].width = 160
 for row in w3.iter_rows():
