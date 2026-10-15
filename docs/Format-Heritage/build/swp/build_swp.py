@@ -33,7 +33,7 @@ for el in old.find(q('body')):
         else:
             sec[cur].append(('tbl', rows))
 
-DOCNO, TITLE = info['Document number'], info['Title']
+DOCNO, TITLE = re.sub(r'^HM-PRC-VXX-PRO(\d+)$', r'SWP-\1', info['Document number']), info['Title']
 d, m, y = info['Date'].split()
 MONTHS = 'January February March April May June July August September October November December'.split()
 DATE = '%02d/%02d/%s' % (int(d), MONTHS.index(m) + 1, y)

@@ -20,7 +20,7 @@ Permintaan pengguna (setelah PR #1 di-merge): nomor HM-PRC-VXX-PRO2xx dan regist
   - Baris tabel "Register lines in area NNN" menjadi "Tasks in area NNN".
 - Bab 10.2: kalimat "Register lines are on tabs … (Section 8)." dihapus.
 - Daftar isi dibangun ulang dengan nomor halaman yang baru. Semua lolos validasi docx.
-- **Belum diubah:** nomor dokumen SWP sendiri (HM-PRC-VXX-PRO206, PRO208, PRO212 sampai PRO217) di sampul, header dan tabel Document History. Menunggu keputusan pengguna.
+- **Nomor dokumen SWP** diganti dari HM-PRC-VXX-PRO2xx menjadi **SWP-2xx** (contoh: HM-PRC-VXX-PRO212 menjadi SWP-212), sesuai keputusan pengguna. Perubahan ini berlaku di sampul, header, footer, tabel Document History dan judul dokumen (properti file).
 
 ## Nama file
 - `SWI/…/MM-4034-033-OR-03-SWI-PRO-MET-…docx` menjadi `SWI/…/SWI-PRO-MET-…docx`.
