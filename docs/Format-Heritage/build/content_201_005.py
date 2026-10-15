@@ -29,10 +29,6 @@ DESC = [
     ('b', None),
     ('n', 'Frequency: Once per shift on every tank.'),
     ('b', None),
-    ('n', 'This instruction sits under Standard Work Procedure HM-PRC-VXX-PRO205 - Plant Sampling and Metallurgical Data Collection. Read that procedure before carrying out this task for the first time.'),
-    ('b', None),
-    ('n', 'Register line: SWI-PRO-MET-201-005 in HM-MMM-WHS-REG-XXX-R00-SWI-SWMS, tab SWI-MET. The matching hazard analysis is JSEA-PRO-MET-201-005.'),
-    ('b', None),
     ('B', 'This is a safety-critical task. It is not carried out alone in a cyanide area, and not without the Shift Supervisor knowing it is in progress.'),
 ]
 HAZARDS = [h for h in hazards_from(os.environ['SRC_DOCX']) if not h.startswith('[JSEA to confirm]')]
@@ -82,9 +78,7 @@ STEPS = [
      None, None),
 ]
 REFS = [
-    ('HM-PRC-VXX-PRO205', 'Plant Sampling and Metallurgical Data Collection'),
     (NEW_JSEA, 'JSEA — %s' % NEW_TITLE),
-    ('HM-MMM-WHS-REG-XXX-R00-SWI-SWMS', 'SWI / SWMS Register — tab SWI-MET'),
     ('HM-PRC-V01-PRO005', 'Carbon in Leach (CIL) Circuit'),
     ('Mt. Morgan site procedure 5', 'Carbon Concentration Sampling [LIVE]'),
     ('KBK-MIR-MP-PRO-OPE-SOP-0013', 'Particle Size Distribution of Activated Carbon'),

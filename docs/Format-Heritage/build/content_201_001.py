@@ -25,10 +25,6 @@ DESC = [
     ('n', 'AIT-021002 - Density transmitter downstream of the discharge pumps, read at the time of sampling'),
     ('b', None),
     ('n', 'Frequency: Hourly spot sample, composited to four 12-litre composites per shift.'),
-    ('b', None),
-    ('n', 'This instruction sits under Standard Work Procedure HM-PRC-VXX-PRO205 - Plant Sampling and Metallurgical Data Collection. Read that procedure before carrying out this task for the first time.'),
-    ('b', None),
-    ('n', 'Register line: SWI-PRO-MET-201-001 in HM-MMM-WHS-REG-XXX-R00-SWI-SWMS, tab SWI-MET. The matching hazard analysis is JSEA-PRO-MET-201-001.'),
 ]
 HAZARDS = [
     'Hydrogen cyanide gas released at the open sample point — Personal HCN monitor worn, switched on and in calibration date. Fixed detection healthy - alarm 5 ppm, high-high 10 ppm. Sample point approached from upwind. Stream pH confirmed above 10.5 before opening. Second person in sight and clear. Antidote kit on site and a trained first aider on shift. Withdraw upwind and report any reading above the site action level.',
@@ -95,9 +91,7 @@ STEPS = [
      None, None),
 ]
 REFS = [
-    ('HM-PRC-VXX-PRO205', 'Plant Sampling and Metallurgical Data Collection'),
     (NEW_JSEA, 'JSEA — %s' % NEW_TITLE),
-    ('HM-MMM-WHS-REG-XXX-R00-SWI-SWMS', 'SWI / SWMS Register — tab SWI-MET'),
     ('HM-PRC-V01-PRO002', 'Scrubber and Trash Screening Circuit'),
     ('Mt. Morgan site procedure 1', 'Scrubber Mill Discharge Sampling [LIVE]'),
     ('4034-PR-PRO-002', 'Sampling Protocol'),

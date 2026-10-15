@@ -31,10 +31,6 @@ DESC = [
     ('b', None),
     ('n', 'Frequency: Once per shift across all five tanks; CIL-1 and CIL-5 hourly. Carbon-in-launder check (Step 5): hourly, as a routine check.'),
     ('b', None),
-    ('n', 'This instruction sits under Standard Work Procedure HM-PRC-VXX-PRO205 - Plant Sampling and Metallurgical Data Collection. Read that procedure before carrying out this task for the first time.'),
-    ('b', None),
-    ('n', 'Register line: SWI-PRO-MET-201-004 in HM-MMM-WHS-REG-XXX-R00-SWI-SWMS, tab SWI-MET. The matching hazard analysis is JSEA-PRO-MET-201-004.'),
-    ('b', None),
     ('B', 'Draft for review: the carbon-in-launder check (Step 5) is taken from the Martabe work instruction Sampling Carbon Launder CIL (DOC-3-MET-PRS-WIN-00058-IE v1.0, 25/12/2024). The sampler volume, oven temperature, drying time and concentration calculation are not stated in the source and must be confirmed. JSEA-PRO-MET-201-004 must be updated for the added hazard (sampler striking the head, pinch point at the sampling point cover) before this instruction is approved.'),
     ('b', None),
     ('B', 'This is a safety-critical task. It is not carried out alone in a cyanide area, and not without the Shift Supervisor knowing it is in progress.'),
@@ -105,9 +101,7 @@ STEPS = [
      None, None),
 ]
 REFS = [
-    ('HM-PRC-VXX-PRO205', 'Plant Sampling and Metallurgical Data Collection'),
     (NEW_JSEA, 'JSEA — %s' % NEW_TITLE),
-    ('HM-MMM-WHS-REG-XXX-R00-SWI-SWMS', 'SWI / SWMS Register — tab SWI-MET'),
     ('HM-PRC-V01-PRO005', 'Carbon in Leach (CIL) Circuit'),
     ('Mt. Morgan site procedure 6', 'CIL-1 & 5 Tank Sampling [LIVE]'),
     ('4034-PR-PRO-002', 'Sampling Protocol, CIL table'),

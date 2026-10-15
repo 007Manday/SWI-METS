@@ -27,10 +27,6 @@ DESC = [
     ('b', None),
     ('n', 'Frequency: Hourly spot sample, composited to four 12-litre composites per shift.'),
     ('b', None),
-    ('n', 'This instruction sits under Standard Work Procedure HM-PRC-VXX-PRO205 - Plant Sampling and Metallurgical Data Collection. Read that procedure before carrying out this task for the first time.'),
-    ('b', None),
-    ('n', 'Register line: SWI-PRO-MET-201-003 in HM-MMM-WHS-REG-XXX-R00-SWI-SWMS, tab SWI-MET. The matching hazard analysis is JSEA-PRO-MET-201-003.'),
-    ('b', None),
     ('B', 'This is a safety-critical task. It is not carried out alone in a cyanide area, and not without the Shift Supervisor knowing it is in progress.'),
 ]
 HAZARDS = hazards_from(os.environ['SRC_DOCX'])
@@ -108,9 +104,7 @@ STEPS = [
      None, None),
 ]
 REFS = [
-    ('HM-PRC-VXX-PRO205', 'Plant Sampling and Metallurgical Data Collection'),
     (NEW_JSEA, 'JSEA — %s' % NEW_TITLE),
-    ('HM-MMM-WHS-REG-XXX-R00-SWI-SWMS', 'SWI / SWMS Register — tab SWI-MET'),
     ('HM-PRC-V01-PRO004', 'Leach Circuit'),
     ('Mt. Morgan site procedure 4', 'Leach Tank Sampling [LIVE]'),
     ('KBK-MIR-MP-PRO-MET-SOP-0048', 'Pengambilan Sampel dan Pengukuran Profil Tangki Leaching, received 11 Aug 2026'),
