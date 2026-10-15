@@ -1,0 +1,21 @@
+import os, sys
+sys.path.insert(0, os.path.dirname(os.path.abspath(CONTENT)))
+from src_helpers import hazards_from
+from swi_common import *
+NUM = '205-002'
+TITLE = 'Caustic Soda Strength Titration'
+NEW_TITLE = TITLE
+NEW_JSEA = 'JSEA-PRO-MET-' + NUM
+HAZARDS = hazards_from(os.environ['SRC_DOCX'])
+PPE = PPE_LAB_ACID
+DESC = desc205(['Determine sodium hydroxide strength by acid titration.', 'Caustic strength sets the elution eluant and the pH control across the plant.', 'Standardised HCl is the main titrant. Standardised sulphuric acid, as used at Martabe for ReCYN caustic, is the alternative.'], 'Every made-up batch and once per shift on standing solution.', NUM, False, extra_bold=['Draft for review: Step 4 follows the Martabe work instructions ReCYN Plant Caustic Strength Measurement (DOC-3-MET-PMC-WIN-00088-IE) and Sodium Hydroxide Titration (DOC-3-MET-PMC-WIN-00102-IE), v1.0, 25/12/2024, as an alternative titration with standardised sulphuric acid. HCl titration (Step 3) stays the main method. JSEA-PRO-MET-205-002 must be checked before this instruction is approved.', 'Open items: (1) the Martabe instruction for preparing the sulphuric acid titrant has not been received - set the make-up and standardisation of the titrant before Step 4 is used.'], points=('Met lab bench - physical testwork bench and instrument',))
+STEPS = [
+    ('Pre-start Check', PRESTART_LAB_HAZ, prestart_lab(NEW_JSEA, []), None, ['Burette and stand', 'Pipette and 10 mL syringe', 'Conical flasks, 100 mL and 500 mL beakers', 'Standardised HCl', 'Standardised sulphuric acid (alternative titrant)', 'Phenolphthalein indicator', 'Distilled water', 'Closed 100 to 120 mL sample bottle', 'Fume cupboard'] + [PPE_EQ]),
+    ('Sampling and Dilution', ['Concentrated caustic sampled', 'Caustic splash', 'Cracked or leaking glassware'], ['Take the sample from the designated diluted-solution valve, never from the concentrated tank. ReCYN caustic is sampled as SWI-PRO-MET-201-020, in a closed 100 to 120 mL bottle.', 'Check the equipment - no cracked or leaking bottle, beaker or syringe. Confirm the titrant and phenolphthalein are in date.', 'Dilute the aliquot where the method requires it, adding caustic to water.'], 'CAUTION: Add caustic to water, never the reverse.', None),
+    ('HCl Titration', ['Acid splash', 'End point overshot'], ['Add phenolphthalein indicator - the solution turns pink.', 'Titrate with standardised HCl until the pink just disappears and stays gone for 30 seconds.', 'Record the titre and calculate strength.'], None, None),
+    ('Sulphuric Acid Titration - Alternative', ['Sulphuric acid splash', 'Unstandardised titrant', 'Wrong reaction ratio'], ['Take 5 mL of the NaOH sample with a syringe and put it in the beaker. Add 3 to 5 drops of phenolphthalein.', 'Titrate with standardised sulphuric acid from the burette, swirling gently, until the pink just disappears and stays gone for 30 seconds. The Martabe "soft pink" end point is not used.', 'Use the standardised molarity of the sulphuric acid. A "5 per cent" acid is not a molarity and is standardised before use.', 'Sulphuric acid reacts 2:1 - H2SO4 + 2 NaOH gives Na2SO4 + 2 H2O. Calculate [NaOH] = 2 x [H2SO4] x V(H2SO4) / V(sample NaOH). Multiply [NaOH] in mol/L by 40.0 for g/L.'], 'CAUTION: Sulphuric acid reacts 2:1 with NaOH. Use the factor 2, not the HCl calculation.', None),
+    ('Reporting and Waste', ['Off-strength batch used', 'Waste to the wrong stream'], ['Compare against the target make-up strength and report any batch outside range before it is used.', 'Pour the remaining solution to the site waste stream for its classification.'], None, None),
+    CLOSE_LAB_STEP,
+]
+REFS = refs205(NUM, TITLE, [('KBK-MIR-MP-PRO-OPE-SOP-0009', 'Titrasi Kaustik Soda'), ('KBK-MIR-MP-PRO-MET-SOP-0025 and SOP-0039/0040', 'Hydrochloric acid titration (received 11 Aug 2026)'), ('DOC-3-MET-PMC-WIN-00088-IE v1.0', 'Martabe WI ReCYN Plant Caustic Strength Measurement (25/12/2024) - source of the Step 4 calculation'), ('DOC-3-MET-PMC-WIN-00102-IE v1.0', 'Martabe WI Sodium Hydroxide Titration (25/12/2024) - source of the Step 4 titration'), ('SWI-PRO-MET-201-020', 'Reagent Solution Strength Sampling - ReCYN caustic sample')])
+EMERG = emerg(['chem', 'acid', 'cut'], 'bench equipment')

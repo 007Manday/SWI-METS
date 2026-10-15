@@ -1,0 +1,198 @@
+"""Shared wording for the 201 series Heritage conversions (taken from the original SWI boilerplate)."""
+PPE_STD = [
+    'Safety helmet and safety glasses',
+    'Chemical splash goggles and face shield',
+    'High-visibility long-sleeved shirt and long trousers',
+    'Safety boots with sound tread - nitrile PVC boots at the sample point',
+    'Chemical resistant suit, nitrile rubber gloves and apron',
+    'Personal HCN gas monitor, calibrated and in test date',
+    'Full or half gas mask with A2B2E2K2P3 cartridge, carried and available for immediate use',
+    'Harness and fall arrest where no fixed platform exists',
+]
+SAFETY_CRITICAL = 'This is a safety-critical task. It is not carried out alone in a cyanide area, and not without the Shift Supervisor knowing it is in progress.'
+PARENT = 'This instruction sits under Standard Work Procedure HM-PRC-VXX-PRO205 - Plant Sampling and Metallurgical Data Collection. Read that procedure before carrying out this task for the first time.'
+
+def register(num):
+    return 'Register line: SWI-PRO-MET-%s in HM-MMM-WHS-REG-XXX-R00-SWI-SWMS, tab SWI-MET. The matching hazard analysis is JSEA-PRO-MET-%s.' % (num, num)
+
+def desc(setpoints, area, points, frequency, num, extra_bold=(), safety=True, parent=None):
+    d = [('n', s) for s in setpoints] + [('b', None), ('n', 'Area: %s.' % area), ('n', 'Points and equipment covered:')]
+    d += [('n', p) for p in points]
+    d += [('b', None), ('n', 'Frequency: %s' % frequency), ('b', None), ('n', parent or PARENT), ('b', None), ('n', register(num)), ('b', None)]
+    for t in extra_bold:
+        d += [('B', t), ('b', None)]
+    if safety:
+        d.append(('B', SAFETY_CRITICAL))
+    elif d and d[-1] == ('b', None):
+        d.pop()
+    return d
+
+def prestart(jsea, extra=(), alone=True, rinse=True, steady=True):
+    b = ['Confirm you are trained and signed off against this SWI, signed on to %s at a communication session, site inducted with current cyanide awareness and gas detection competency where the area requires it, and authorised by the Shift Supervisor.' % jsea]
+    if alone:
+        b.append('Confirm a second person is in the area. Cyanide-area sampling is not done alone.')
+    b += list(extra)
+    if steady:
+        b.append('Confirm the plant is in steady-state operation - normal operation for a minimum of 15 to 20 minutes before sampling. A sample taken during a swing is not representative.')
+    b += ['Notify the control room or DCS operator that the sampling round is starting, and which points it covers.',
+          'Confirm the personal gas monitor is on, in calibration date and reading clean, and that fixed detection in the area is healthy.',
+          'Confirm the safety shower and eyewash nearest the point are within reach and proven flowing.',
+          'Label every container BEFORE sampling - point, date, time and shift.']
+    if rinse:
+        b.append('Rinse the container, cutter or sieve with process water and then with the stream being sampled. Discard the rinse.')
+    return b
+
+PRESTART_HAZ = ['Working alone in a cyanide area', 'Gas monitor or fixed detection not healthy', 'Safety shower or eyewash not proven flowing']
+
+CLOSE = ['Close the sample valve or stop the sample pump and confirm the point is not weeping.',
+      'Wash down the point and the surrounding walkway. Leave nothing on the grating.',
+      'Record sampling time, operator name and the operating conditions read at the time - flow, density and any instrument value available.',
+      'Deliver the labelled samples to the laboratory or to the composite station as the schedule requires, and sign the handover.',
+      'Notify the control room that the round is complete.',
+      'Record the result, the method used and the instrument or balance identity on the field or bench data sheet - date, time, shift, operator and every value determined. Make the register or logbook entry and any handover signature.',
+      'Record any step not completed, with the reason.',
+      'Report to the Shift Supervisor, and record, any control in Part 2 found not in place.']
+CLOSE_STEP = ('Completion and Clean Up',
+    ['Sample valve left weeping', 'Samples not handed over with a signed record', 'Control room not told the round is complete'],
+    CLOSE, None, None)
+
+PPE_EQ = 'Personal protective equipment as listed in PPE Requirements'
+CAUTION_VALVE = 'CAUTION: Open the sample valve slowly, with the container positioned first and the body out of the spray path. Never open a valve whose discharge cannot be seen.'
+
+_E = {
+ 'hcn': '%d. HCN Gas Alarm If the personal monitor or fixed detection alarms (5 ppm alarm, 10 ppm high-high), stop work, leave the area upwind and call CH19 “EMERGENCY”. Do not re-enter until the Shift Supervisor clears the area.',
+ 'equip': '%d. Contact with Moving Equipment If a person is caught by or struck by %s, hit the nearest emergency stop, call CH19 “EMERGENCY” and call 000. Do not approach the equipment until it is isolated and locked out.',
+ 'cn': '%d. Suspected Cyanide Exposure If a person becomes dizzy, short of breath or collapses, call CH19 “EMERGENCY”, call 000, and bring the cyanide antidote kit and a trained first aider. Do not give mouth-to-mouth resuscitation.',
+ 'skin': '%d. Skin or Eye Contact with Slurry Flush with copious water at the safety shower or eyewash for a minimum of 15 minutes. Remove contaminated clothing while flushing. Report to the first aider.',
+ 'burn': '%d. Burns Cool the burn under cool running water for 20 minutes. Do not apply ice. Seek first aid.',
+ 'fall': '%d. Fall from Height Do not move the injured person unless they are in danger. Call CH19 “EMERGENCY”, call 000, and notify the Shift Supervisor.',
+ 'slip': '%d. Slip, Fall or Lifting Injury Call CH19 “EMERGENCY”, call 000 if the injury is serious, and notify the Shift Supervisor.',
+ 'acid': '%d. HCl Gas or Acid Contact Leave the area upwind. Flush skin or eyes with copious water at the safety shower or eyewash for a minimum of 15 minutes. If breathing is affected call CH19 “EMERGENCY” and call 000.',
+ 'h2s': '%d. Hydrogen Sulphide Smell or Alarm If H2S is smelled or the multi-gas monitor alarms, stop work, leave the area upwind and call CH19 “EMERGENCY”. Do not re-enter until the Shift Supervisor clears the area.',
+ 'chem': '%d. Skin or Eye Contact with Reagent Flush with copious water at the safety shower or eyewash for a minimum of 15 minutes. Remove contaminated clothing while flushing. Report to the first aider.',
+ 'elec': '%d. Contact with Live Electrical Equipment Do not touch the person. Switch off the supply at the nearest isolator if it is safe to do so, call CH19 “EMERGENCY” and call 000.',
+ 'tankdown': '%d. Person Down at a Tank Top or Launder Opening Do not enter the opening. Call CH19 “EMERGENCY” and call 000. Rescue is by the trained rescue team under the site confined space procedure only.',
+ 'cut': '%d. Cuts from Broken Glassware Apply pressure to stop the bleeding, get a trained first aider, and report to the Shift Supervisor. Call CH19 “EMERGENCY” and 000 for a serious cut.',
+ 'carbon': '%d. Carbon in the Undersize Report it to the Shift Supervisor and the control room immediately, before the round continues. Do not restart sampling until the Shift Supervisor clears it.',
+}
+def emerg(keys, equip='an agitator, pump, screen or sample cutter'):
+    out = []
+    for i, k in enumerate(keys, 1):
+        out.append(_E[k] % ((i, equip) if k == 'equip' else (i,)))
+    return out
+
+def refs(num, title, rows):
+    base = [('HM-PRC-VXX-PRO205', 'Plant Sampling and Metallurgical Data Collection'),
+            ('JSEA-PRO-MET-' + num, 'JSEA — ' + title),
+            ('HM-MMM-WHS-REG-XXX-R00-SWI-SWMS', 'SWI / SWMS Register — tab SWI-MET')]
+    return base + list(rows)
+
+
+# ---- 203 Plant Survey series: parent procedure PRO207 and its own pre-start / completion wording ----
+PARENT_203 = 'This instruction sits under Standard Work Procedure HM-PRC-VXX-PRO207 - Plant Surveys and Circuit Performance Assessment. Read that procedure before carrying out this task for the first time.'
+def desc203(setpoints, area, points, frequency, num, extra_bold=(), safety=True):
+    return desc(setpoints, area, points, frequency, num, extra_bold, safety, parent=PARENT_203)
+
+def prestart203(jsea, extra=(), alone=True):
+    b = ['Confirm you are trained and signed off against this SWI, signed on to %s at a communication session, site inducted with current cyanide awareness and gas detection competency where the area requires it, and authorised by the Shift Supervisor.' % jsea]
+    if alone:
+        b.append('Confirm a second person is in the area. Cyanide-area work is not done alone.')
+    b += list(extra)
+    b += ['Notify the control room that the task is starting, and where you will be.',
+          'Confirm the personal gas monitor is on, in calibration date and reading clean.',
+          'Confirm the safety shower and eyewash nearest the work are within reach and proven flowing.',
+          'Confirm the area is fit - no restricted access, no gas alarm, no spill response in progress.']
+    return b
+
+CLOSE203 = ['Leave the area clean. Recover spillage to the drain, not to the ground.',
+      'Return all equipment to its storage point.',
+      'Record what was done, what was found and anything not completed.',
+      'Notify the control room that the task is complete.',
+      'Record every value determined on the field or bench data sheet - date, time, shift and operator. Make the register or logbook entry and any handover signature.',
+      'Record any step not completed, with the reason.',
+      'Report to the Shift Supervisor, and record, any control in Part 2 found not in place.']
+CLOSE203_STEP = ('Completion and Clean Up',
+    ['Spillage left on the ground', 'Equipment not returned', 'Control room not told the task is complete'],
+    CLOSE203, None, None)
+
+def refs203(num, title, rows):
+    base = [('HM-PRC-VXX-PRO207', 'Plant Surveys and Circuit Performance Assessment'),
+            ('JSEA-PRO-MET-' + num, 'JSEA — ' + title),
+            ('HM-MMM-WHS-REG-XXX-R00-SWI-SWMS', 'SWI / SWMS Register — tab SWI-MET')]
+    return base + list(rows)
+
+# ---- 204 Met Lab Physical Testwork series: parent PRO208, bench pre-start / completion wording ----
+PARENT_204 = 'This instruction sits under Standard Work Procedure HM-PRC-VXX-PRO208 - Metallurgical Laboratory Physical Testwork. Read that procedure before carrying out this task for the first time.'
+def desc204(setpoints, frequency, num, extra_bold=(), points=('Met lab bench - physical testwork bench and instrument',)):
+    return desc(setpoints, '204 Met Lab - Physical Testwork', list(points), frequency, num, extra_bold, safety=False, parent=PARENT_204)
+
+def prestart_lab(jsea, extra=()):
+    b = ['Confirm you are trained and signed off against this SWI, signed on to %s at a communication session, site inducted with current cyanide awareness and gas detection competency where the area requires it, and authorised by the Shift Supervisor.' % jsea]
+    b += list(extra)
+    b += ['Confirm the fume cupboard airflow, the scrubber and its dosing are running before any acid or cyanide work at the bench.',
+          'Confirm the safety shower and eyewash are within reach and proven flowing.',
+          'Confirm the instrument or balance is within its calibration or verification interval.',
+          'Confirm the reagents to be used are in date and correctly labelled.',
+          'Inspect all glassware for chips and cracks and discard anything damaged.']
+    return b
+PRESTART_LAB_HAZ = ['Fume cupboard or scrubber not running', 'Safety shower or eyewash not proven flowing', 'Instrument out of calibration']
+
+CLOSE_LAB = ['Wash down the bench and the fume cupboard working surface.',
+      'Clean glassware and return it to the drying rack.',
+      'Dispose of residues to the correct waste stream - cyanide-bearing effluent does NOT go to the general drain.',
+      'Record the result, the method used and the instrument or balance identity.',
+      'Record every value determined on the field or bench data sheet - date, time, shift and operator. Make the register or logbook entry and any handover signature.',
+      'Record any step not completed, with the reason.',
+      'Report to the Shift Supervisor, and record, any control in Part 2 found not in place.']
+CLOSE_LAB_STEP = ('Completion and Clean Up',
+    ['Cyanide-bearing residue to the general drain', 'Glassware left dirty', 'Result not traceable to the instrument'],
+    CLOSE_LAB, None, None)
+
+PPE_LAB = ['Safety helmet and safety glasses', 'Chemical splash goggles and face shield', 'High-visibility long-sleeved shirt and long trousers',
+           'Safety boots - nitrile PVC boots', 'Chemical resistant suit, nitrile rubber gloves and apron',
+           'Personal HCN gas monitor, calibrated and in test date',
+           'Full or half gas mask with A2B2E2K2P3 cartridge, carried and available for immediate use']
+PPE_LAB_HEAR = ['Safety helmet, safety glasses and hearing protection'] + PPE_LAB[1:]
+
+def refs204(num, title, rows):
+    base = [('HM-PRC-VXX-PRO208', 'Metallurgical Laboratory Physical Testwork'),
+            ('JSEA-PRO-MET-' + num, 'JSEA — ' + title),
+            ('HM-MMM-WHS-REG-XXX-R00-SWI-SWMS', 'SWI / SWMS Register — tab SWI-MET')]
+    return base + list(rows)
+
+# ---- 207 Automatic Sampling and Online Analyser series: parent PRO211, same pre-start / completion as 203 ----
+PARENT_207 = 'This instruction sits under Standard Work Procedure HM-PRC-VXX-PRO211 - Automatic Sampling and Online Analyser Operation. Read that procedure before carrying out this task for the first time.'
+def desc207(setpoints, points, frequency, num, extra_bold=()):
+    return desc(setpoints, '207 Automatic Sampling and Online Analysers', points, frequency, num, extra_bold, safety=True, parent=PARENT_207)
+
+def refs207(num, title, rows):
+    base = [('HM-PRC-VXX-PRO211', 'Automatic Sampling and Online Analyser Operation'),
+            ('JSEA-PRO-MET-' + num, 'JSEA — ' + title),
+            ('HM-MMM-WHS-REG-XXX-R00-SWI-SWMS', 'SWI / SWMS Register — tab SWI-MET')]
+    return base + list(rows)
+
+# ---- 206 Met Lab Facility, Safety and Quality series: parent PRO210, same bench pre-start / completion as 204 ----
+PARENT_206 = 'This instruction sits under Standard Work Procedure HM-PRC-VXX-PRO210 - Metallurgical Laboratory Facility, Safety and Quality. Read that procedure before carrying out this task for the first time.'
+def desc206(setpoints, frequency, num, safety, extra_bold=(), points=('Met lab bench - physical testwork bench and instrument',)):
+    return desc(setpoints, '206 Met Lab - Facility, Safety and Quality', list(points), frequency, num, extra_bold, safety=safety, parent=PARENT_206)
+PPE_LAB_ACID = ['Safety helmet and safety glasses', 'Chemical splash goggles and face shield', 'High-visibility long-sleeved shirt and long trousers',
+                'Safety boots - nitrile PVC boots', 'Chemical resistant suit, acid-resistant and nitrile rubber gloves, and apron',
+                'Personal HCN gas monitor, calibrated and in test date',
+                'Full or half gas mask with A2B2E2K2P3 cartridge, carried and available for immediate use']
+PPE_LAB_ACID_HEAR = ['Safety helmet, safety glasses and hearing protection'] + PPE_LAB_ACID[1:]
+LAB_ALONE = 'Confirm a second person is in the laboratory for any cyanide work. Cyanide work is not done alone.'
+def refs206(num, title, rows):
+    base = [('HM-PRC-VXX-PRO210', 'Metallurgical Laboratory Facility, Safety and Quality'),
+            ('JSEA-PRO-MET-' + num, 'JSEA — ' + title),
+            ('HM-MMM-WHS-REG-XXX-R00-SWI-SWMS', 'SWI / SWMS Register — tab SWI-MET')]
+    return base + list(rows)
+
+# ---- 205 Met Lab - Chemical and Leach Testwork ----
+PARENT_205 = 'This instruction sits under Standard Work Procedure HM-PRC-VXX-PRO209 - Metallurgical Laboratory Chemical and Leach Testwork. Read that procedure before carrying out this task for the first time.'
+def desc205(setpoints, frequency, num, safety, extra_bold=(), points=('Met lab bench - physical testwork bench and instrument',)):
+    return desc(setpoints, '205 Met Lab - Chemical and Leach Testwork', list(points), frequency, num, extra_bold, safety=safety, parent=PARENT_205)
+def refs205(num, title, rows):
+    base = [('HM-PRC-VXX-PRO209', 'Metallurgical Laboratory Chemical and Leach Testwork'),
+            ('JSEA-PRO-MET-' + num, 'JSEA — ' + title),
+            ('HM-MMM-WHS-REG-XXX-R00-SWI-SWMS', 'SWI / SWMS Register — tab SWI-MET')]
+    return base + list(rows)

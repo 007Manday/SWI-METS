@@ -1,0 +1,98 @@
+import os, sys
+sys.path.insert(0, os.path.dirname(os.path.abspath(CONTENT)))
+from src_helpers import hazards_from
+TITLE = 'Carbon Concentration Measurement in CIL Tanks'
+NUM = '201-005'
+NEW_TITLE = TITLE
+NEW_JSEA = 'JSEA-PRO-MET-' + NUM
+PPE = [
+    'Safety helmet and safety glasses',
+    'Chemical splash goggles and face shield',
+    'High-visibility long-sleeved shirt and long trousers',
+    'Safety boots with sound tread - nitrile PVC boots at the sample point',
+    'Chemical resistant suit, nitrile rubber gloves and apron',
+    'Personal HCN gas monitor, calibrated and in test date',
+    'Full or half gas mask with A2B2E2K2P3 cartridge, carried and available for immediate use',
+    'Harness and fall arrest where no fixed platform exists',
+]
+DESC = [
+    ('n', 'Set the carbon concentration in each CIL tank in grams per litre, which is the control on carbon inventory and on adsorption capacity.'),
+    ('n', 'Give early warning of carbon loss down the train.'),
+    ('b', None),
+    ('n', 'Area: 032 Carbon in Leach.'),
+    ('n', 'Points and equipment covered:'),
+    ('n', '032-TK-002 - CIL tank 1'),
+    ('n', '032-TK-003 - CIL tank 2'),
+    ('n', '032-TK-004 - CIL tank 3'),
+    ('n', '032-TK-005 - CIL tank 4'),
+    ('n', '032-TK-006 - CIL tank 5'),
+    ('b', None),
+    ('n', 'Frequency: Once per shift on every tank.'),
+    ('b', None),
+    ('n', 'This instruction sits under Standard Work Procedure HM-PRC-VXX-PRO205 - Plant Sampling and Metallurgical Data Collection. Read that procedure before carrying out this task for the first time.'),
+    ('b', None),
+    ('n', 'Register line: SWI-PRO-MET-201-005 in HM-MMM-WHS-REG-XXX-R00-SWI-SWMS, tab SWI-MET. The matching hazard analysis is JSEA-PRO-MET-201-005.'),
+    ('b', None),
+    ('B', 'This is a safety-critical task. It is not carried out alone in a cyanide area, and not without the Shift Supervisor knowing it is in progress.'),
+]
+HAZARDS = [h for h in hazards_from(os.environ['SRC_DOCX']) if not h.startswith('[JSEA to confirm]')]
+STEPS = [
+    ('Pre-start Check',
+     ['Working alone in a cyanide area', 'Gas monitor or fixed detection not healthy',
+      'Safety shower or eyewash not proven flowing', 'Cutter or container carrying carbon from the previous point'],
+     ['Confirm you are trained and signed off against this SWI, signed on to %s at a communication session, site inducted with current cyanide awareness and gas detection competency where the area requires it, and authorised by the Shift Supervisor.' % NEW_JSEA,
+      'Confirm a second person is in the area. Cyanide-area sampling is not done alone.',
+      'Confirm the plant is in steady-state operation - normal operation for a minimum of 15 to 20 minutes before sampling. A sample taken during a swing is not representative.',
+      'Notify the control room or DCS operator that the sampling round is starting, and which points it covers.',
+      'Confirm the personal gas monitor is on, in calibration date and reading clean, and that fixed detection in the area is healthy.',
+      'Confirm the safety shower and eyewash nearest the point are within reach and proven flowing.',
+      'Confirm the sample cutter and container are clean and free of carbon from the previous point - flush with process water.',
+      'Label every container BEFORE sampling - point, date, time and shift.'],
+     None,
+     ['Sample cutter', '1 mm sieve', 'Measuring glass, graduated', '1 litre measuring container',
+      'Process water hose for flushing', 'Personal protective equipment as listed in PPE Requirements']),
+    ('Sampling and Carbon Volume',
+     ['HCN released at the open sample point', 'Splash of cyanide-bearing slurry',
+      'Fall from the tank top', 'Cross-contamination between tanks'],
+     ['Take the sample with the sample cutter at CIL tank 1.',
+      'Strain the carbon from the slurry through the 1 mm sieve.',
+      'Wash the retained carbon free of slurry with process water.',
+      'Measure the drained carbon volume in the measuring glass.',
+      'Repeat for CIL tanks 2, 3, 4 and 5, cleaning the cutter and sieve between each tank.'],
+     'CAUTION: Open the sample valve slowly, with the container positioned first and the body out of the spray path. Carry sample containers in a bag or hoist them, not in the hand on a ladder.',
+     None),
+    ('Carbon Concentration Calculation',
+     ['Wrong specific gravity used', 'Profile not recorded on one sheet'],
+     ['Carbon mass = specific gravity of carbon x carbon volume. Take SG carbon as 0.47 g/mL (0.47 t/m3) unless the laboratory has measured it on the carbon in use.',
+      'Worked example - sample volume 1 L, carbon volume 20 mL: carbon mass = 0.47 g/mL x 20 mL = 9.4 g.',
+      'Carbon concentration = carbon mass divided by sample volume = 9.4 g / 1 L = 9.4 g/L.',
+      'Record the concentration for every tank on the one sheet so the profile down the train is visible.'],
+     None, None),
+    ('Completion and Clean Up',
+     ['Sample valve left weeping', 'Samples not handed over with a signed record',
+      'Control room not told the round is complete'],
+     ['Close the sample valve or stop the sample pump and confirm the point is not weeping.',
+      'Wash down the point and the surrounding walkway. Leave nothing on the grating.',
+      'Record sampling time, operator name and the operating conditions read at the time - flow, density and any instrument value available.',
+      'Deliver the labelled samples to the laboratory or to the composite station as the schedule requires, and sign the handover.',
+      'Notify the control room that the round is complete.',
+      'Record the result, the method used and the instrument or balance identity on the field or bench data sheet - date, time, shift, operator and every value determined. Make the register or logbook entry and any handover signature.',
+      'Record any step not completed, with the reason.',
+      'Report to the Shift Supervisor, and record, any control in Part 2 found not in place.'],
+     None, None),
+]
+REFS = [
+    ('HM-PRC-VXX-PRO205', 'Plant Sampling and Metallurgical Data Collection'),
+    (NEW_JSEA, 'JSEA — %s' % NEW_TITLE),
+    ('HM-MMM-WHS-REG-XXX-R00-SWI-SWMS', 'SWI / SWMS Register — tab SWI-MET'),
+    ('HM-PRC-V01-PRO005', 'Carbon in Leach (CIL) Circuit'),
+    ('Mt. Morgan site procedure 5', 'Carbon Concentration Sampling [LIVE]'),
+    ('KBK-MIR-MP-PRO-OPE-SOP-0013', 'Particle Size Distribution of Activated Carbon'),
+]
+EMERG = [
+    '1. HCN Gas Alarm If the personal monitor or fixed detection alarms (5 ppm alarm, 10 ppm high-high), stop work, leave the area upwind and call CH19 “EMERGENCY”. Do not re-enter until the Shift Supervisor clears the area.',
+    '2. Contact with Moving Equipment If a person is caught by or struck by an agitator, pump or screen, hit the nearest emergency stop, call CH19 “EMERGENCY” and call 000. Do not approach the equipment until it is isolated and locked out.',
+    '3. Suspected Cyanide Exposure If a person becomes dizzy, short of breath or collapses, call CH19 “EMERGENCY”, call 000, and bring the cyanide antidote kit and a trained first aider. Do not give mouth-to-mouth resuscitation.',
+    '4. Skin or Eye Contact with Slurry or Filtrate Flush with copious water at the safety shower or eyewash for a minimum of 15 minutes. Remove contaminated clothing while flushing. Report to the first aider.',
+    '5. Fall from Height Do not move the injured person unless they are in danger. Call CH19 “EMERGENCY”, call 000, and notify the Shift Supervisor.',
+]
