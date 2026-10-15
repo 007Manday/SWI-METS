@@ -263,7 +263,7 @@ def items(name, kinds=('p', 'li', 'tbl')):
 # ---------- 5. content ----------
 heading(1, 'Purpose and Scope')
 for k, x in items('PURPOSE / SCOPE'):
-    normal(re.sub(r' It is the procedure that .* in register area \d+ sit under\.$', '', x))
+    normal(re.sub(r' It is the procedure that .* in register area \d+ sit under\.$', '', x).replace('. at the Mt. Morgan processing plant', ' at the Mt. Morgan processing plant'))
 normal('Document details:')
 for label in ['Hazard analyses beneath', 'Work instructions beneath', 'Process owner', 'Document owner', 'Document approver']:
     bullet('%s: %s' % (label, info[label].replace('  ·  ', ', ')))

@@ -1,4 +1,4 @@
-# Catatan perubahan: SWP ke format Heritage (PRO206, PRO208, PRO212 sampai PRO217)
+# Catatan perubahan: SWP ke format Heritage (SWP-205 sampai SWP-217)
 
 Dokumen: HM-PRC-VXX-PRO206 Metallurgical Accounting and Reconciliation, PRO208 Metallurgical Laboratory Physical Testwork, PRO212 Laboratory Sample Preparation, PRO213 Laboratory Wet Chemistry and Digestion, PRO214 Laboratory Instrumental Analysis, PRO215 Laboratory Environmental and Cyanide Analysis, PRO216 Laboratory Services, Safety and Quality, dan PRO217 Bullion Assay and Custody.
 
@@ -42,15 +42,31 @@ Template: contoh SWP Heritage dari pengguna, `docs/Format-Heritage/SWP-PRO-000_0
 ## Hasil
 | SWP | Halaman | JSEA / SWI di bawahnya |
 |---|---|---|
+| SWP-205 Plant Sampling and Metallurgical Data Collection | 11 | 25 / 25 (induk seri SWI 201) |
 | PRO206 Metallurgical Accounting and Reconciliation | 8 | 12 / 0 (semua tugas desk-based, tanpa SWI) |
-| PRO208 Metallurgical Laboratory Physical Testwork | 9 | 19 / 19 (induk seri SWI 204) |
+| SWP-207 Plant Surveys and Circuit Performance Assessment | 9 | 12 / 12 (induk seri SWI 203) |
+| PRO208 Metallurgical Laboratory Physical Testwork | 8 | 19 / 19 (induk seri SWI 204) |
+| SWP-209 Metallurgical Laboratory Chemical and Leach Testwork | 9 | 19 / 19 (induk seri SWI 205) |
+| SWP-210 Metallurgical Laboratory Facility, Safety and Quality | 8 | 14 / 13 (induk seri SWI 206) |
+| SWP-211 Automatic Sampling and Online Analyser Operation | 8 | 12 / 11 (induk seri SWI 207) |
 | PRO212 Laboratory Sample Preparation | 8 | 17 / 17 |
 | PRO213 Laboratory Wet Chemistry and Digestion | 10 | 33 / 33 |
 | PRO214 Laboratory Instrumental Analysis | 8 | 14 / 13 |
 | PRO215 Laboratory Environmental and Cyanide Analysis | 10 | 25 / 25 |
-| PRO216 Laboratory Services, Safety and Quality | 9 | 16 / 12 |
+| PRO216 Laboratory Services, Safety and Quality | 8 | 16 / 12 |
 | PRO217 Bullion Assay and Custody | 7 | 6 / 5 |
 
 Semua lolos validasi docx. Kolom JSEA di tabel prosedur dilebarkan agar nomor JSEA tidak terpotong (kelima SWP lab pertama ikut dibangun ulang). Audit teks: setiap paragraf dan sel tabel lama ada di dokumen baru. Yang tidak cocok persis hanya judul bab lama, label tabel judul, baris register line (sekarang kolom JSEA), definisi yang diganti istilahnya, kalimat review yang dipecah, dan format tanggal.
 
 Skrip: `docs/Format-Heritage/build/swp/`. Jalankan dengan `TPL_X=<template SWP yang sudah di-unzip> run_swp.sh <SWP lama> <folder output>`.
+
+## Tambahan 2026-10-15: SWP-205, 207, 209, 210, 211 dan folder baru
+- Lima SWP MET baru (SWP-205, SWP-207, SWP-209, SWP-210, SWP-211) dikonversi dengan builder yang sama. Aturan yang dipakai sama dengan SWP sebelumnya:
+  - nomor SWP-2xx;
+  - tanpa rujukan register;
+  - bab 8 "Document Traceability".
+- Semua SWP sekarang ada di dua folder dari pengguna: `SWP-MET-Metallurgical-Services/` (205-211) dan `SWP-LAB-Laboratory/` (212-217). Folder `SWP/` lama dipindahkan ke sana.
+- File asli yang di-upload ke kedua folder (nama `MM-4034-033-OR-03-…`) diganti versi Heritage. File aslinya tetap ada di riwayat git (commit "Add files via upload").
+- SWP-213 dan SWP-216 hasil upload berbeda dari versi sebelumnya hanya karena tiga paragraf kosong setelah tabel Responsibilities. Isinya sama, dan versi Heritage-nya identik.
+- SWP-205: salah ketik di sumber "...online analyser verification. at the Mt. Morgan processing plant." diperbaiki menjadi "...verification at the Mt. Morgan processing plant.".
+- Kedelapan SWP lama dibangun ulang dari file upload. Teksnya identik dengan versi Heritage sebelumnya.
